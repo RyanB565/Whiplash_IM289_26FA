@@ -10,6 +10,7 @@ public class SlashAttack : MonoBehaviour
     private InputAction move;
     private Vector2 facingDirection = Vector2.right;
     public GameObject attackboxPrefab;
+    public GameObject spawnedboxPrefab;
 
     [SerializeField] private Animator slashAnim;
 
@@ -46,14 +47,14 @@ public class SlashAttack : MonoBehaviour
     {
         Vector3 spawnPos = transform.position + new Vector3(facingDirection.x, facingDirection.y, 0f) * 0.5f;
 
-        attackboxPrefab = Instantiate(attackboxPrefab, spawnPos, Quaternion.identity);
+        spawnedboxPrefab = Instantiate(attackboxPrefab, spawnPos, Quaternion.identity);
     }
 
     public void SlashEnd()
     {
-        if (attackboxPrefab != null)
+        if (spawnedboxPrefab != null)
         {
-            Destroy(attackboxPrefab);
+            Destroy(spawnedboxPrefab);
         }
     }
 
