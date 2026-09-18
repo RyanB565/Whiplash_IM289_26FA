@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 015817db9f919ea44ad8178c6efa59bd, type: 3}
+  m_Name: Skeleton
+  m_EditorClassIdentifier: Assembly-CSharp::CapacityData
+  enemyPrefab: {fileID: 2666769872620595773, guid: 0f012c64a3902924f852ef9eeffd8123, type: 3}
+  capacityCost: 2
