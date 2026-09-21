@@ -945,6 +945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlashAttack
   attackboxPrefab: {fileID: 450424904776660062, guid: ab28b373f38e91a499825cb3d19b2054, type: 3}
   spawnedboxPrefab: {fileID: 450424904776660062, guid: ab28b373f38e91a499825cb3d19b2054, type: 3}
+  distanceFromPlayer: 1.2
   slashAnim: {fileID: 2068519961}
 --- !u!61 &2068519963
 BoxCollider2D:
