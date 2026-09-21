@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
-    [SerializeField] float currentHealth = 1f;
-    [SerializeField] float maxHealth = 1f;
-    [SerializeField] float damage = 1f;
-    [SerializeField] float moveSpeed = 5f;
+    //[SerializeField] float currentHealth = 1f;
+    //[SerializeField] float maxHealth = 1f;
+    //[SerializeField] float slashDamage = 1f;
+    //[SerializeField] float soulDamage = 1f;
+    //[SerializeField] float moveSpeed = 5f;
 
     public PlayerController playerController;
     public SlashAttack slashAttack;
@@ -16,8 +17,9 @@ public class PickUps : MonoBehaviour
     {
         //float moveSpeed = playerController.moveSpeed;
         //float slashDamage = slashAttack.
-        //float soulAttack = soulAttack.
-
+        //float soulDamage = soulAttack.
+        //float maxHealth = playerHealth.
+        //float currentHealth = playerHealth.
     }
 
     void Update()
@@ -29,25 +31,26 @@ public class PickUps : MonoBehaviour
     {
         if (collision.CompareTag("HealthPickUp"))
         {
-            currentHealth += 1f;
+            //currentHealth += 1f;
             Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("MaxHealthBoost"))
         {
-            maxHealth += 1f;
+            //maxHealth += 1f;
             Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("DamageBoost"))
         {
-            damage += 1f;
+            //slashDamage += 1f;
+            //soulDamage += 1f;
             Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("SpeedBoost"))
         {
-            moveSpeed += 1f;
+            //moveSpeed += 1f;
             Destroy(collision.gameObject);
         }
     }
