@@ -31,8 +31,7 @@ public class SlashAttack : MonoBehaviour
     private void Move_performed (InputAction.CallbackContext move)
     {
         Vector2 input = move.ReadValue<Vector2>();
-
-        if(input.sqrMagnitude > 0.01f)
+        if (input.sqrMagnitude > 0.01f)
         {
             facingDirection = input.normalized;
         }
@@ -44,9 +43,15 @@ public class SlashAttack : MonoBehaviour
         slashAnim.SetTrigger("Slash");
     }
 
+    private void FixedUpdate()
+    {
+        
+
+    }
+
     public void SlashSpawn()
     {
-        Vector3 spawnPos = transform.position + new Vector3(facingDirection.x, facingDirection.y, 0f)
+        Vector3 spawnPos = transform.position + new Vector3(facingDirection.x, facingDirection.y, 1f)
             * distanceFromPlayer;
 
         spawnedboxPrefab = Instantiate(attackboxPrefab, spawnPos, Quaternion.identity);
