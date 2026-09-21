@@ -236,7 +236,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1417404308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlashAttack
   attackboxPrefab: {fileID: 450424904776660062, guid: ab28b373f38e91a499825cb3d19b2054, type: 3}
   spawnedboxPrefab: {fileID: 450424904776660062, guid: ab28b373f38e91a499825cb3d19b2054, type: 3}
+  distanceFromPlayer: 1
   slashAnim: {fileID: 1417404305}
 --- !u!114 &1417404310
 MonoBehaviour:
