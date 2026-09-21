@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 734277666}
   - component: {fileID: 734277665}
   - component: {fileID: 734277664}
+  - component: {fileID: 734277671}
+  - component: {fileID: 734277670}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -156,6 +158,9 @@ MonoBehaviour:
   maxHealth: 1
   damage: 1
   moveSpeed: 5
+  playerController: {fileID: 734277665}
+  slashAttack: {fileID: 0}
+  soulAttack: {fileID: 0}
 --- !u!114 &734277665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +322,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &734277670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734277663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b396d49b2507caa489293cb52d32c95e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoulAttack
+  AoEAnim: {fileID: 0}
+--- !u!114 &734277671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734277663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94c5a1fdf5fa084bbc85b21f9bb3d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlashAttack
+  attackboxPrefab: {fileID: 0}
+  spawnedboxPrefab: {fileID: 0}
+  distanceFromPlayer: 1.2
+  slashAnim: {fileID: 0}
 --- !u!1 &1384752670
 GameObject:
   m_ObjectHideFlags: 0
