@@ -4,13 +4,14 @@ using UnityEngine.InputSystem;
 
 public class SlashAttack : MonoBehaviour
 {
-  
-    
+
+
     private InputAction slash;
     private InputAction move;
     private Vector2 facingDirection = Vector2.right;
     public GameObject attackboxPrefab;
     public GameObject spawnedboxPrefab;
+    [SerializeField] private float distanceFromPlayer;
 
     [SerializeField] private Animator slashAnim;
 
@@ -45,7 +46,8 @@ public class SlashAttack : MonoBehaviour
 
     public void SlashSpawn()
     {
-        Vector3 spawnPos = transform.position + new Vector3(facingDirection.x, facingDirection.y, 0f) * 0.5f;
+        Vector3 spawnPos = transform.position + new Vector3(facingDirection.x, facingDirection.y, 0f)
+            * distanceFromPlayer;
 
         spawnedboxPrefab = Instantiate(attackboxPrefab, spawnPos, Quaternion.identity);
     }
