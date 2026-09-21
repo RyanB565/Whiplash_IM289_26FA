@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 968694859}
   - component: {fileID: 968694863}
   - component: {fileID: 968694864}
+  - component: {fileID: 968694865}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -290,6 +291,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlashAttack
   AoEAnim: {fileID: 968694863}
+--- !u!114 &968694865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968694858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c94c5a1fdf5fa084bbc85b21f9bb3d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlashAttack
+  attackboxPrefab: {fileID: 450424904776660062, guid: ab28b373f38e91a499825cb3d19b2054, type: 3}
+  spawnedboxPrefab: {fileID: 450424904776660062, guid: ab28b373f38e91a499825cb3d19b2054, type: 3}
+  slashAnim: {fileID: 968694863}
 --- !u!1 &1533748256
 GameObject:
   m_ObjectHideFlags: 0
