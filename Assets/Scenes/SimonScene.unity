@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ba2aeaf9a8e1149ac1868cfd0ac616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
+  moveSpeed: 3
   SoulAttack: {fileID: 7882513492092022633, guid: 9d7a90261ae0376479000688d2b9c7d0, type: 3}
 --- !u!50 &968694860
 Rigidbody2D:
