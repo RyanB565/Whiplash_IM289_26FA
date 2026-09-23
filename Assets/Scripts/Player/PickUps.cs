@@ -11,7 +11,7 @@ public class PickUps : MonoBehaviour
     public PlayerController playerController;
     public SlashAttack slashAttack;
     public SoulAttack soulAttack;
-    //public PlayerHealth playerHealth;
+    public PlayerHealth playerHealth;
 
     void Start()
     {
