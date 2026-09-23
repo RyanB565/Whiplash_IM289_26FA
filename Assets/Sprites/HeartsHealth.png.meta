@@ -1,28 +1,16 @@
 fileFormatVersion: 2
-guid: f2df9a281d8f6aa4b90264533f3ef4df
+guid: 44bc93414d88c6a4bb9d1bcce4a63d51
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 244479819270644369
-    second: zombieSpriteSheet_0
+      213: -7282990284778300011
+    second: HeartsHealth_0
   - first:
-      213: 2353599695215501240
-    second: zombieSpriteSheet_1
+      213: -4303858718051873374
+    second: HeartsHealth_1
   - first:
-      213: -1304470798194431263
-    second: zombieSpriteSheet_2
-  - first:
-      213: 1032868014958632780
-    second: zombieSpriteSheet_3
-  - first:
-      213: 8845338564433163594
-    second: zombieSpriteSheet_4
-  - first:
-      213: -3946189129112082760
-    second: zombieSpriteSheet_5
-  - first:
-      213: 3510207213253245109
-    second: zombieSpriteSheet_6
+      213: 5412655380944188311
+    second: HeartsHealth_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -69,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -118,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombieSpriteSheet_0
+      name: HeartsHealth_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 19
-        height: 30
+        x: 2
+        y: 1
+        width: 18
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 192e06ea911946300800000000000000
-      internalID: 244479819270644369
+      spriteID: 59d1b254cee9dea90800000000000000
+      internalID: -7282990284778300011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombieSpriteSheet_1
+      name: HeartsHealth_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 0
-        width: 17
-        height: 30
+        x: 23
+        y: 1
+        width: 18
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8bf99c0f37aa9a020800000000000000
-      internalID: 2353599695215501240
+      spriteID: 2adcc0b7c4f9544c0800000000000000
+      internalID: -4303858718051873374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombieSpriteSheet_2
+      name: HeartsHealth_2
       rect:
         serializedVersion: 2
-        x: 40
-        y: 0
-        width: 17
-        height: 30
+        x: 44
+        y: 1
+        width: 18
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,96 +165,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1ea20cd68b695ede0800000000000000
-      internalID: -1304470798194431263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: zombieSpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 0
-        width: 17
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c4fd87bbcfb755e00800000000000000
-      internalID: 1032868014958632780
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: zombieSpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 0
-        width: 17
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a453a1b4f84f0ca70800000000000000
-      internalID: 8845338564433163594
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: zombieSpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 97
-        y: 0
-        width: 17
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b624c615e15c39c0800000000000000
-      internalID: -3946189129112082760
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: zombieSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 0
-        width: 19
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5b839f1dcd2c6b030800000000000000
-      internalID: 3510207213253245109
+      spriteID: 793f8c8346d9d1b40800000000000000
+      internalID: 5412655380944188311
       vertices: []
       indices: 
       edges: []
@@ -275,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e05f01dbb45bf2a42bfe26352316d38d
+    spriteID: 7272e6859392b7244b77856955ef2373
     internalID: 0
     vertices: []
     indices: 
@@ -287,13 +187,9 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      zombieSpriteSheet_0: 244479819270644369
-      zombieSpriteSheet_1: 2353599695215501240
-      zombieSpriteSheet_2: -1304470798194431263
-      zombieSpriteSheet_3: 1032868014958632780
-      zombieSpriteSheet_4: 8845338564433163594
-      zombieSpriteSheet_5: -3946189129112082760
-      zombieSpriteSheet_6: 3510207213253245109
+      HeartsHealth_0: -7282990284778300011
+      HeartsHealth_1: -4303858718051873374
+      HeartsHealth_2: 5412655380944188311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
