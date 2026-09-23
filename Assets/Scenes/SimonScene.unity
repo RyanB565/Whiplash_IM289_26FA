@@ -130,8 +130,8 @@ GameObject:
   - component: {fileID: 968694862}
   - component: {fileID: 968694861}
   - component: {fileID: 968694860}
-  - component: {fileID: 968694859}
   - component: {fileID: 968694863}
+  - component: {fileID: 968694859}
   - component: {fileID: 968694864}
   - component: {fileID: 968694865}
   - component: {fileID: 968694866}
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ba2aeaf9a8e1149ac1868cfd0ac616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 3
+  moveSpeed: 5
   SoulAttack: {fileID: 7882513492092022633, guid: 9d7a90261ae0376479000688d2b9c7d0, type: 3}
 --- !u!50 &968694860
 Rigidbody2D:
@@ -182,7 +182,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &968694861
 SpriteRenderer:
   serializedVersion: 2
