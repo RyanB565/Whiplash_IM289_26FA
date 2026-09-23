@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
     private InputAction move;
     private Vector2 moveDir;
     private Rigidbody2D rb2d;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] public float moveSpeed;
     [SerializeField] private GameObject SoulAttack;
     private GameObject SoulSpawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
