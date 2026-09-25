@@ -31,7 +31,7 @@ public class SoulAttack : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(5);
             AoEEnabled = true;
         }
     }
