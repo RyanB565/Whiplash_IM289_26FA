@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 968694865}
   - component: {fileID: 968694866}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c94c5a1fdf5fa084bbc85b21f9bb3d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlashAttack
-  attackboxPrefab: {fileID: 450424904776660062, guid: ab28b373f38e91a499825cb3d19b2054, type: 3}
-  spawnedboxPrefab: {fileID: 450424904776660062, guid: ab28b373f38e91a499825cb3d19b2054, type: 3}
+  attackboxPrefab: {fileID: 3027945946635311595, guid: 270cf0b7916177746bec8fa51bf136e7, type: 3}
+  spawnedboxPrefab: {fileID: 3027945946635311595, guid: 270cf0b7916177746bec8fa51bf136e7, type: 3}
   distanceFromPlayer: 1.2
   slashAnim: {fileID: 968694863}
 --- !u!61 &968694866
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 1045212796}
   - component: {fileID: 1045212800}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: RangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
