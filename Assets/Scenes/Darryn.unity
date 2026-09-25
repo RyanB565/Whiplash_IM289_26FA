@@ -280,7 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CapacitySystem
   waves:
   - waveName: Starting (Wave 1)
-    capacitybudget: 30
+    capacitybudget: 20
     availableEnemies:
     - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
     - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
