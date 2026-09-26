@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private GameObject SoulAttack;
     private GameObject SoulSpawn;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

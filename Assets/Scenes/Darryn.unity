@@ -1079,10 +1079,10 @@ GameObject:
   - component: {fileID: 2068519958}
   - component: {fileID: 2068519957}
   - component: {fileID: 2068519959}
-  - component: {fileID: 2068519960}
-  - component: {fileID: 2068519962}
   - component: {fileID: 2068519961}
   - component: {fileID: 2068519963}
+  - component: {fileID: 2068519960}
+  - component: {fileID: 2068519962}
   - component: {fileID: 2068519964}
   - component: {fileID: 2068519965}
   m_Layer: 0
@@ -1275,7 +1275,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1318,7 +1318,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   health: 0
   maxHealth: 8
-  startingHealth: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
