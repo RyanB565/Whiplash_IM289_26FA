@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81da319fd1a29dc49b445a02bb9a0cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnCollision
+  knockbackPower: 15
+  knockbackDuration: 0.1
