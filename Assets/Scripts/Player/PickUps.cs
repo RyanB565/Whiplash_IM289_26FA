@@ -32,11 +32,11 @@ public class PickUps : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        if (collision.CompareTag("DamageBoost"))
+        //if (collision.CompareTag("DamageBoost"))
         {
             //slashAttack.slashDamage += 1f;
             //soulAttack.soulDamage += 1f;
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("SpeedBoost"))
