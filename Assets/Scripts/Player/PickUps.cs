@@ -2,11 +2,6 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
-    //[SerializeField] float currentHealth = 1f;
-    //[SerializeField] float maxHealth = 1f;
-    //[SerializeField] float slashDamage = 1f;
-    //[SerializeField] float soulDamage = 1f;
-    //[SerializeField] float moveSpeed = 5f;
 
     public PlayerController playerController;
     public SlashAttack slashAttack;
