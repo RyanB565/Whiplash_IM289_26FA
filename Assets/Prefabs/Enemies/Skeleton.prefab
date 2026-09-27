@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8291223963169986137}
   - component: {fileID: 3669286233701801164}
   - component: {fileID: 436329626243849176}
+  - component: {fileID: -6386195757221081920}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Skeleton
@@ -155,5 +156,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81da319fd1a29dc49b445a02bb9a0cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnCollision
-  knockbackPower: 15
+  knockbackPower: 10
   knockbackDuration: 0.1
+--- !u!114 &-6386195757221081920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666769872620595773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f245c581d0c32d40bc6af09cb15ddef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  speed: 1
+  stoppingDistance: 1

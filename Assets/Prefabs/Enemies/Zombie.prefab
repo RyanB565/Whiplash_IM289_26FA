@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3339311477045077224}
   - component: {fileID: 5709571954296589122}
   - component: {fileID: -1728115199748610894}
+  - component: {fileID: 3671833370998635428}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -142,5 +143,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81da319fd1a29dc49b445a02bb9a0cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageOnCollision
-  knockbackPower: 15
+  knockbackPower: 10
   knockbackDuration: 0.1
+--- !u!114 &3671833370998635428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667685574913833435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f245c581d0c32d40bc6af09cb15ddef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  speed: 1.5
+  stoppingDistance: 1

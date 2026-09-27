@@ -43,12 +43,6 @@ public class SlashAttack : MonoBehaviour
         slashAnim.SetTrigger("Slash");
     }
 
-    private void FixedUpdate()
-    {
-        
-
-    }
-
     public void SlashSpawn()
     {
         Vector3 spawnPos = transform.position + new Vector3(facingDirection.x, facingDirection.y, 1f)

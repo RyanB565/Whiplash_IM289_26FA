@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 882373241}
   m_Layer: 0
   m_Name: GameObject (2)
-  m_TagString: Player
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 1313164201}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Player
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -969,7 +969,7 @@ GameObject:
   - component: {fileID: 1895606989}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Player
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1205,7 +1205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ba2aeaf9a8e1149ac1868cfd0ac616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 10
+  moveSpeed: 6
   SoulAttack: {fileID: 7882513492092022633, guid: 9d7a90261ae0376479000688d2b9c7d0, type: 3}
 --- !u!95 &2068519961
 Animator:
