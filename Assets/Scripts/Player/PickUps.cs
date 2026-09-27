@@ -22,13 +22,13 @@ public class PickUps : MonoBehaviour
     {
         if (collision.CompareTag("HealthPickUp"))
         {
-            playerHealth.health += 1f;
+            playerHealth.Refill();
             Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("MaxHealthBoost"))
         {
-            playerHealth.maxHealth += 1f;
+            playerHealth.ExtraHearts();
             Destroy(collision.gameObject);
         }
 
