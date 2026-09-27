@@ -20,7 +20,7 @@ public class CapacitySystem : MonoBehaviour
     [Tooltip("Drag your empty 2D GameObjects here to act as spawn points.")]
     [SerializeField] private Transform[] spawnPoints;
 
-    private List<GameObject> spawnedEnemies = new List<GameObject>();
+    [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     //Current amount of capacity available.
     private int currentCapacity;
@@ -154,6 +154,8 @@ public class CapacitySystem : MonoBehaviour
 
         // Buy a new enemy using the returned budget.
         BuyEnemies(waves[currentWave]);
+
+        Debug.Log("Cacpacity Returned");
     }
 
 }

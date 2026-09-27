@@ -3,9 +3,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
-{
-    //Starting Health is used for testing at the moment
-    public float health, maxHealth, startingHealth;
+{ 
+    public float health, maxHealth;
 
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerDeath;
@@ -13,7 +12,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        health = startingHealth;
+        health = maxHealth;
     }
 
     public void TakeDamage(float amount)
