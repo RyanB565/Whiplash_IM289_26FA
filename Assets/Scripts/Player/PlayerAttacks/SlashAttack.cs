@@ -4,12 +4,15 @@ using UnityEngine.InputSystem;
 
 public class SlashAttack : MonoBehaviour
 {
+
+
     private InputAction slash;
     private InputAction move;
     private Vector2 facingDirection = Vector2.right;
     public GameObject attackboxPrefab;
     public GameObject spawnedboxPrefab;
     [SerializeField] private float distanceFromPlayer;
+    [SerializeField] private SpriteRenderer  slashSprite;
 
     [SerializeField] private Animator slashAnim;
 
@@ -23,6 +26,8 @@ public class SlashAttack : MonoBehaviour
         move = InputSystem.actions.FindAction("Move");
         move.performed += Move_performed;
 
+        slashSprite = GetComponent<SpriteRenderer>();
+
     }
 
     private void Move_performed (InputAction.CallbackContext move)
@@ -32,20 +37,36 @@ public class SlashAttack : MonoBehaviour
         {
             facingDirection = input.normalized;
         }
+
+       
     }
 
+
+    
     private void Slash_performed (InputAction.CallbackContext context)
     {
         slashAnim.SetTrigger("Slash");
     }
 
+  
+
     public void SlashSpawn()
+
     {
-        Vector3 spawnPos = transform.position + new Vector3(facingDirection.x, facingDirection.y, 1f)
+        Vector2 directionface = new Vector2(facingDirection.y, -facingDirection.x);
+
+
+        Vector3 spawnPos = transform.position + new Vector3(facingDirection.x, facingDirection.y,0f)
             * distanceFromPlayer;
 
-        spawnedboxPrefab = Instantiate(attackboxPrefab, spawnPos, Quaternion.identity);
+
+        Quaternion rot = Quaternion.LookRotation(-Vector3.forward, directionface);
+        spawnedboxPrefab = Instantiate(attackboxPrefab, spawnPos, rot);
+
+        slashSprite.flipX = facingDirection.x < 0f;
+        slashSprite.flipY = false;
     }
+
 
     public void SlashEnd()
     {
@@ -54,4 +75,5 @@ public class SlashAttack : MonoBehaviour
             Destroy(spawnedboxPrefab);
         }
     }
+
 }

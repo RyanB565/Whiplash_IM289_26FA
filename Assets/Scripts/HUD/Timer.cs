@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
 
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
 
-        countdownTime = 0f;
+        
 
 
         
