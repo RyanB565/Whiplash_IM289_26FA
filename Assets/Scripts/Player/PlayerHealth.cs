@@ -29,9 +29,22 @@ public class PlayerHealth : MonoBehaviour
     }
 
     //Power-Up Method 
-    public void HealthPickup()
+    public void Refill()
     {
+        health = maxHealth;
+    }
 
+    public void ExtraHearts()
+    {
+        if (maxHealth < 8)
+        {
+            maxHealth++;
+        }
+
+        if (maxHealth == 8)
+        {
+            Refill();
+        }
     }
 
 }
