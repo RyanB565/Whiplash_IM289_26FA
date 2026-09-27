@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 
 public class SlashAttack : MonoBehaviour
 {
-
-
     private InputAction slash;
     private InputAction move;
     private Vector2 facingDirection = Vector2.right;
@@ -25,7 +23,6 @@ public class SlashAttack : MonoBehaviour
         move = InputSystem.actions.FindAction("Move");
         move.performed += Move_performed;
 
-
     }
 
     private void Move_performed (InputAction.CallbackContext move)
@@ -37,16 +34,9 @@ public class SlashAttack : MonoBehaviour
         }
     }
 
-
     private void Slash_performed (InputAction.CallbackContext context)
     {
         slashAnim.SetTrigger("Slash");
-    }
-
-    private void FixedUpdate()
-    {
-        
-
     }
 
     public void SlashSpawn()
@@ -64,5 +54,4 @@ public class SlashAttack : MonoBehaviour
             Destroy(spawnedboxPrefab);
         }
     }
-
 }

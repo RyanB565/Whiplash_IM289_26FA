@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthHeartManager : MonoBehaviour
@@ -18,7 +19,7 @@ public class HealthHeartManager : MonoBehaviour
         PlayerHealth.OnPlayerDamaged -= DrawHearts;
     }
 
-    private void Start()
+    void Start()
     {
         DrawHearts();
     }
@@ -42,7 +43,6 @@ public class HealthHeartManager : MonoBehaviour
         {
             int heartStatusRemainder = (int)Mathf.Clamp(playerHealth.health - (i * 2), 0, 2);
             hearts[i].SetHeartImage((HeartStatus)heartStatusRemainder);
-
         }
     }
 
