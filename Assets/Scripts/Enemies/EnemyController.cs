@@ -6,12 +6,13 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float stoppingDistance;
 
     private Transform target;
-    public CapacitySystem capacitySystem;
+    private CapacitySystem capacitySystem;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        capacitySystem = FindFirstObjectByType<CapacitySystem>();
     }
 
     // Update is called once per frame
@@ -23,8 +24,13 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    public void Die()
     {
-        capacitySystem.EnemyDied(gameObject);
+        if (capacitySystem != null)
+        {
+            capacitySystem.EnemyDied(gameObject);
+        }
+
+        Destroy(gameObject);
     }
 }
