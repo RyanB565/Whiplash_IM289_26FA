@@ -10,11 +10,7 @@ public class PickUps : MonoBehaviour
 
     void Start()
     {
-        float moveSpeed = playerController.moveSpeed;
-        //float slashDamage = slashAttack.
-        //float soulDamage = soulAttack.
-        //float maxHealth = playerHealth.
-        //float currentHealth = playerHealth.
+
     }
 
     void Update()
@@ -26,13 +22,13 @@ public class PickUps : MonoBehaviour
     {
         if (collision.CompareTag("HealthPickUp"))
         {
-            //playerHealth.currentHealth += 1f;
+            playerHealth.health += 1f;
             Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("MaxHealthBoost"))
         {
-            //playerHealth.maxHealth += 1f;
+            playerHealth.maxHealth += 1f;
             Destroy(collision.gameObject);
         }
 
