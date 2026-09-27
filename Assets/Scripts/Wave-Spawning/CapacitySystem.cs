@@ -29,7 +29,7 @@ public class CapacitySystem : MonoBehaviour
     private Dictionary<GameObject, int> enemiesCosts =
         new Dictionary<GameObject, int>();
 
-    private int currentWave = 0;
+    public int currentWave = 0;
 
     void Start()
     {
