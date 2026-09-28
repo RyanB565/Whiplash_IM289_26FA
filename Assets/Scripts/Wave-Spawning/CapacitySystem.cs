@@ -41,8 +41,6 @@ public class CapacitySystem : MonoBehaviour
     public void WaveSystem()
     {
         currentWave = 1;
-
-
     }
 
     public void GenerateEnemiesWave()

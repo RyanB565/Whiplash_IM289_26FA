@@ -16,14 +16,13 @@ public class Timer : MonoBehaviour
         timeEnded.enabled = false;
 
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
+
+        WaveTimer();
     }
 
 
     private void FixedUpdate()
     {
-
-        WaveTimer();
-
 
         countdownTime -= Time.deltaTime;
         countdownTime = Mathf.Max(countdownTime, 0);
@@ -35,7 +34,6 @@ public class Timer : MonoBehaviour
         int seconds = time % 60;
 
 
-
         timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
 
         if (time == 0)
@@ -44,24 +42,20 @@ public class Timer : MonoBehaviour
             timeEnded.text = "Times up";
 
         }
-
     }
 
     public void WaveTimer()
     {
         if (capacitySystem.currentWave == 1)
         {
-            
             countdownTime = 60f;
         }
         else if (capacitySystem.currentWave == 2)
-        {
-            
+        {    
             countdownTime = 90f;
         }
         else if (capacitySystem.currentWave == 3)
         {
-
             countdownTime = 120f;
         }
         else if (capacitySystem.currentWave == 4)
