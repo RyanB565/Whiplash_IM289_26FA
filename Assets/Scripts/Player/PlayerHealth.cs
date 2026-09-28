@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 { 
     public float health, maxHealth;
+    private HealthHeartManager heartManager;
 
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerDeath;
@@ -13,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        heartManager = FindFirstObjectByType<HealthHeartManager>();
     }
 
     public void TakeDamage(float amount)
@@ -32,13 +34,16 @@ public class PlayerHealth : MonoBehaviour
     public void Refill()
     {
         health = maxHealth;
+        heartManager.DrawHearts();
     }
 
     public void ExtraHearts()
     {
         if (maxHealth < 8)
         {
-            maxHealth++;
+            maxHealth += 2;
+            heartManager.DrawHearts();
+            Refill();
         }
 
         if (maxHealth == 8)
