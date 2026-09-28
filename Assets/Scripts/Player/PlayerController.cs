@@ -10,14 +10,28 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float moveSpeed;
     [SerializeField] private GameObject SoulAttack;
     private GameObject SoulSpawn;
+    private Animator anim;
 
     private bool canMove = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         move = InputSystem.actions.FindAction("Move");
+        move.started += Move_started;
+        move.canceled += Move_canceled;
+    }
+
+    private void Move_canceled(InputAction.CallbackContext obj)
+    {
+        anim.SetBool("Walking",false);
+    }
+
+    private void Move_started(InputAction.CallbackContext obj)
+    {
+        anim.SetBool("Walking",true);
     }
 
     // Update is called once per frame
