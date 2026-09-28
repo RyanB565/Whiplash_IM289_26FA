@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(SoulSpawn);
             rb2d.constraints = RigidbodyConstraints2D.None;
+            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
     
