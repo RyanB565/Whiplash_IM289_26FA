@@ -30,10 +30,19 @@ public class CapacitySystem : MonoBehaviour
         new Dictionary<GameObject, int>();
 
     public int currentWave = 0;
+    private Timer time;
 
     void Start()
     {
         GenerateEnemiesWave();
+        time = FindFirstObjectByType<Timer>();
+    }
+
+    public void WaveSystem()
+    {
+        currentWave = 1;
+
+
     }
 
     public void GenerateEnemiesWave()
@@ -57,10 +66,11 @@ public class CapacitySystem : MonoBehaviour
 
     private void BuyEnemies(Wave wave)
     {
+        List<CapacityData> affordableEnemies =
+                new List<CapacityData>();
+
         while (currentCapacity > 0)
         {
-            List<CapacityData> affordableEnemies =
-                new List<CapacityData>();
 
             //Find all enemies that can currently be afforded.
             foreach (CapacityData enemies in wave.availableEnemies)
@@ -91,6 +101,8 @@ public class CapacitySystem : MonoBehaviour
             SpawnEnemies(chosenEnemies);
         }
     }
+
+    #region Spawning Method
 
     private void SpawnEnemies(CapacityData enemies)
     {
@@ -129,6 +141,10 @@ public class CapacitySystem : MonoBehaviour
         );
     }
 
+    #endregion
+
+    #region Death Method
+
     /// <summary>
     /// Call this in the enemies death script to give back the capacity
     /// </summary>
@@ -157,5 +173,7 @@ public class CapacitySystem : MonoBehaviour
 
         Debug.Log("Cacpacity Returned");
     }
+
+    #endregion
 
 }

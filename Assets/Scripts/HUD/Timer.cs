@@ -12,17 +12,10 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        
-
         timeEnded.text = "";
         timeEnded.enabled = false;
 
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
-
-        
-
-
-        
     }
 
 
@@ -53,8 +46,6 @@ public class Timer : MonoBehaviour
         }
 
     }
-
-  
 
     public void WaveTimer()
     {
