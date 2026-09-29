@@ -46,11 +46,11 @@ public class Timer : MonoBehaviour
 
     public void WaveTimer()
     {
-        if (capacitySystem.currentWave == 1)
+        if (capacitySystem.currentWave == 0)
         {
             countdownTime = 60f;
         }
-        else if (capacitySystem.currentWave == 2)
+        else if (capacitySystem.currentWave == 1)
         {    
             countdownTime = 90f;
         }

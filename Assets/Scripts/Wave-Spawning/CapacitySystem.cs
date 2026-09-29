@@ -38,10 +38,13 @@ public class CapacitySystem : MonoBehaviour
         time = FindFirstObjectByType<Timer>();
     }
 
+    #region Wave System w/ Timer
+
     public void WaveSystem()
     {
-        currentWave = 1;
     }
+
+    #endregion
 
     public void GenerateEnemiesWave()
     {
