@@ -32,14 +32,13 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void Daeth()
+    private void FixedUpdate()
     {
-        if (health <= 0)
+        if (health == 0)
         {
             gameManager.PlayerDeath();
         }
     }
-
 
 //Power-Up Method 
 public void Refill()

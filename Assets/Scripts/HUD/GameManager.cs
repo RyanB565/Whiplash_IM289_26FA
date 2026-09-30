@@ -1,5 +1,6 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class GameManager : MonoBehaviour
 
     private PlayerController controller;
 
+    public int EnemiesKilled;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = FindFirstObjectByType<PlayerController>();
+
+        EnemiesKilled = 0;
     }
 
     // Update is called once per frame
@@ -22,6 +27,14 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeath()
     {
+        controller.deathStop();
+        ReloadScene();
+        Debug.Log("Playing death called");
+        
+    }
 
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
