@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    [SerializeField] private TextMeshProUGUI daethtext;
+    [SerializeField] private TextMeshProUGUI deathText;
 
     private PlayerController controller;
 
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
         controller.deathStop();
         ReloadScene();
         Debug.Log("Playing death called");
-        
     }
 
     private void ReloadScene()

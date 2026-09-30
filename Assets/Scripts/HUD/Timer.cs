@@ -1,36 +1,39 @@
 using UnityEngine;
 using TMPro;
-using System.Runtime.CompilerServices;
+using System.Collections;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI timeEnded;
+    [SerializeField] private float startingTime;
+    [SerializeField] private float timeIncrease;
+    [SerializeField] private float waveCompleteUpTime;
+
     public float countdownTime;
+    private bool timeFinished;
 
     private CapacitySystem capacitySystem;
 
     private void Start()
     {
-        
+        countdownTime = startingTime;
 
         timeEnded.text = "";
         timeEnded.enabled = false;
-
-        capacitySystem = FindFirstObjectByType<CapacitySystem>();
-
-        
-
-
-        
-    }
-
-
-    private void FixedUpdate()
-    {
+        timeFinished = false;
 
         WaveTimer();
 
+        capacitySystem = FindFirstObjectByType<CapacitySystem>();
+    }
+
+    private void FixedUpdate()
+    {
+        if (timeFinished)
+        {
+            return;
+        }
 
         countdownTime -= Time.deltaTime;
         countdownTime = Mathf.Max(countdownTime, 0);
@@ -42,45 +45,43 @@ public class Timer : MonoBehaviour
         int seconds = time % 60;
 
 
-
         timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
 
+        //Calls the wave system when the timer ends and goes to the next wave
         if (time == 0)
         {
-            timerText.enabled = true;
-            timeEnded.text = "Times up";
+            timeFinished = true;
+            timerText.enabled = false;
+            timeEnded.enabled = true;
+            timeEnded.text = "Wave Completed";
 
+            StartCoroutine(WaveComplete());
         }
-
     }
 
-  
+    /// <summary>
+    /// Removes the wave complete text after a couple seconds when wave ends
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator WaveComplete()
+    {
+        yield return new WaitForSeconds(waveCompleteUpTime);
+
+        timeEnded.enabled = false;
+        timeEnded.text = "";
+
+        capacitySystem.WaveSystem();
+    }
 
     public void WaveTimer()
     {
-        if (capacitySystem.currentWave == 1)
+        if (capacitySystem == null)
         {
-            
-            countdownTime = 60f;
+            return;
         }
-        else if (capacitySystem.currentWave == 2)
-        {
-            
-            countdownTime = 90f;
-        }
-        else if (capacitySystem.currentWave == 3)
-        {
 
-            countdownTime = 120f;
-        }
-        else if (capacitySystem.currentWave == 4)
-        {
-            countdownTime = 150f;
-        }
-         else if (capacitySystem.currentWave == 5)
-        {
-            countdownTime = 180f;
-        }
+        //Adds time based on wave and timeIncrease (Ex. Wave 2 * 30 = 60 + startingTime(60) = 120)
+        countdownTime = startingTime + (capacitySystem.currentWave * timeIncrease);
 
     }
 }

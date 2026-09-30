@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (health == 0)
+        if (health == 0 && gameManager != null)
         {
             gameManager.PlayerDeath();
         }
