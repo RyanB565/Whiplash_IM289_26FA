@@ -26,8 +26,12 @@ public class PlayerController : MonoBehaviour
 
     private void Move_canceled(InputAction.CallbackContext obj)
     {
-        anim.SetBool("Walking",false);
-    }
+        if (move != null)
+        {
+            anim.SetBool("Walking", false);
+        }
+
+        }
 
     private void Move_started(InputAction.CallbackContext obj)
     {
@@ -81,6 +85,15 @@ public class PlayerController : MonoBehaviour
             rb2d.constraints = RigidbodyConstraints2D.None;
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+    }
+
+    public void deathStop()
+    {
+        move.started -= Move_started;
+
+        rb2d.constraints = RigidbodyConstraints2D.None;
+        rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
     }
     
 }
