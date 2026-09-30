@@ -3,9 +3,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
-{ 
+{
     public float health, maxHealth;
     private HealthHeartManager heartManager;
+    private GameManager gameManager;
 
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerDeath;
@@ -15,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health = maxHealth;
         heartManager = FindFirstObjectByType<HealthHeartManager>();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     public void TakeDamage(float amount)
@@ -22,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         health -= amount;
         OnPlayerDamaged?.Invoke();
 
-        if(health <= 0)
+        if (health <= 0)
         {
             health = 0;
             Debug.Log("You died, haha");
@@ -30,8 +32,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    //Power-Up Method 
-    public void Refill()
+    private void FixedUpdate()
+    {
+        if (health == 0 && gameManager != null)
+        {
+            gameManager.PlayerDeath();
+        }
+    }
+
+//Power-Up Method 
+public void Refill()
     {
         health = maxHealth;
         heartManager.DrawHearts();

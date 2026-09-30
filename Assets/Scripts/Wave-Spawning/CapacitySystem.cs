@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
-using Unity.VisualScripting;
 
 public class CapacitySystem : MonoBehaviour
 {
@@ -30,11 +28,37 @@ public class CapacitySystem : MonoBehaviour
         new Dictionary<GameObject, int>();
 
     public int currentWave = 0;
+    private Timer time;
 
     void Start()
     {
+        time = FindFirstObjectByType<Timer>();
         GenerateEnemiesWave();
     }
+
+    #region Wave System w/ Timer
+
+    public void WaveSystem()
+    {
+        currentWave++;
+
+        //Check if waves are completed 
+        if (currentWave >= waves.Count)
+        {
+            Debug.Log("All Waves are Completed");
+            return;
+        }
+
+        GenerateEnemiesWave();
+
+        //Null reference for the timer script
+        if (time != null)
+        {
+            time.WaveTimer();
+        }
+    }
+
+    #endregion
 
     public void GenerateEnemiesWave()
     {
@@ -57,10 +81,11 @@ public class CapacitySystem : MonoBehaviour
 
     private void BuyEnemies(Wave wave)
     {
+        List<CapacityData> affordableEnemies =
+                new List<CapacityData>();
+
         while (currentCapacity > 0)
         {
-            List<CapacityData> affordableEnemies =
-                new List<CapacityData>();
 
             //Find all enemies that can currently be afforded.
             foreach (CapacityData enemies in wave.availableEnemies)
@@ -77,20 +102,22 @@ public class CapacitySystem : MonoBehaviour
                 break;
             }
 
-            // Randomly choose one affordable enemy.
+            //Randomly choose one affordable enemy.
             int randomIndex =
                 Random.Range(0, affordableEnemies.Count);
 
             CapacityData chosenEnemies =
                 affordableEnemies[randomIndex];
 
-            // Spend the enemies cost.
+            //Spend the enemies cost.
             currentCapacity -= chosenEnemies.capacityCost;
 
-            // Spawn the enemies.
+            //Spawn the enemies.
             SpawnEnemies(chosenEnemies);
         }
     }
+
+    #region Spawning Method
 
     private void SpawnEnemies(CapacityData enemies)
     {
@@ -129,33 +156,39 @@ public class CapacitySystem : MonoBehaviour
         );
     }
 
+    #endregion
+
+    #region Death Method
+
     /// <summary>
     /// Call this in the enemies death script to give back the capacity
     /// </summary>
     /// <param name="deadEnemy"></param>
     public void EnemyDied(GameObject deadEnemy)
     {
-        // Make sure this enemy belongs to the spawner.
+        //Make sure this enemy belongs to the spawner.
         if (!enemiesCosts.ContainsKey(deadEnemy))
         {
             return;
         }
 
-        // Get the cost of the enemy that died.
+        //Get the cost of the enemy that died.
         int returnedCost =
             enemiesCosts[deadEnemy];
 
-        // Return that cost to the budget.
+        //Return that cost to the budget.
         currentCapacity += returnedCost;
 
-        // Remove the dead enemy from our tracking lists.
+        //Remove the dead enemy from our tracking lists.
         enemiesCosts.Remove(deadEnemy);
         spawnedEnemies.Remove(deadEnemy);
 
-        // Buy a new enemy using the returned budget.
+        //Buy a new enemy using the returned budget.
         BuyEnemies(waves[currentWave]);
 
         Debug.Log("Cacpacity Returned");
     }
+
+    #endregion
 
 }
