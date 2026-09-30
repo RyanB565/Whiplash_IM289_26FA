@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Collections;
-using Unity.VisualScripting;
 
 public class CapacitySystem : MonoBehaviour
 {
@@ -35,14 +33,29 @@ public class CapacitySystem : MonoBehaviour
     void Start()
     {
         time = FindFirstObjectByType<Timer>();
-        //GenerateEnemiesWave();
+        GenerateEnemiesWave();
     }
 
     #region Wave System w/ Timer
 
     public void WaveSystem()
     {
+        currentWave++;
 
+        //Check if waves are completed 
+        if (currentWave >= waves.Count)
+        {
+            Debug.Log("All Waves are Completed");
+            return;
+        }
+
+        GenerateEnemiesWave();
+
+        //Null reference for the timer script
+        if (time != null)
+        {
+            time.WaveTimer();
+        }
     }
 
     #endregion
@@ -89,17 +102,17 @@ public class CapacitySystem : MonoBehaviour
                 break;
             }
 
-            // Randomly choose one affordable enemy.
+            //Randomly choose one affordable enemy.
             int randomIndex =
                 Random.Range(0, affordableEnemies.Count);
 
             CapacityData chosenEnemies =
                 affordableEnemies[randomIndex];
 
-            // Spend the enemies cost.
+            //Spend the enemies cost.
             currentCapacity -= chosenEnemies.capacityCost;
 
-            // Spawn the enemies.
+            //Spawn the enemies.
             SpawnEnemies(chosenEnemies);
         }
     }
@@ -153,24 +166,24 @@ public class CapacitySystem : MonoBehaviour
     /// <param name="deadEnemy"></param>
     public void EnemyDied(GameObject deadEnemy)
     {
-        // Make sure this enemy belongs to the spawner.
+        //Make sure this enemy belongs to the spawner.
         if (!enemiesCosts.ContainsKey(deadEnemy))
         {
             return;
         }
 
-        // Get the cost of the enemy that died.
+        //Get the cost of the enemy that died.
         int returnedCost =
             enemiesCosts[deadEnemy];
 
-        // Return that cost to the budget.
+        //Return that cost to the budget.
         currentCapacity += returnedCost;
 
-        // Remove the dead enemy from our tracking lists.
+        //Remove the dead enemy from our tracking lists.
         enemiesCosts.Remove(deadEnemy);
         spawnedEnemies.Remove(deadEnemy);
 
-        // Buy a new enemy using the returned budget.
+        //Buy a new enemy using the returned budget.
         BuyEnemies(waves[currentWave]);
 
         Debug.Log("Cacpacity Returned");
