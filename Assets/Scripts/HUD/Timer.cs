@@ -40,7 +40,6 @@ public class Timer : MonoBehaviour
         {
             timerText.enabled = true;
             timeEnded.text = "Times up";
-
         }
     }
 
