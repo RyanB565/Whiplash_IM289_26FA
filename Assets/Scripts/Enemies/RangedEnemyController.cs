@@ -9,7 +9,7 @@ public class RangedEnemyController : MonoBehaviour
     private Transform enemyLoc;
     private float moveSpeed;
     private bool canShoot = false;
-
+    private CapacitySystem capacitySystem;
     private void Start()
     {
         enemyLoc = GetComponent<Transform>();
@@ -45,5 +45,15 @@ public class RangedEnemyController : MonoBehaviour
             yield return new WaitForSeconds(1f);
             
         }
+    }
+
+    public void Die()
+    {
+        if (capacitySystem != null)
+        {
+            capacitySystem.EnemyDied(gameObject);
+        }
+
+        Destroy(gameObject);
     }
 }

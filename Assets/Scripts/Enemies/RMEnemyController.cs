@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class RangedMeleeEnemyController : MonoBehaviour
+public class RMEnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform playerLoc;
@@ -9,6 +9,7 @@ public class RangedMeleeEnemyController : MonoBehaviour
     private Transform enemyLoc;
     private float moveSpeed;
     private bool canShoot = false;
+    private CapacitySystem capacitySystem;
 
     private void Start()
     {
@@ -49,5 +50,15 @@ public class RangedMeleeEnemyController : MonoBehaviour
             yield return new WaitForSeconds(1f);
 
         }
+    }
+
+    public void Die()
+    {
+        if (capacitySystem != null)
+        {
+            capacitySystem.EnemyDied(gameObject);
+        }
+
+        Destroy(gameObject);
     }
 }
