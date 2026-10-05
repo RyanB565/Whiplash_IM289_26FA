@@ -2306,9 +2306,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2abdee2b012ab49b1e757dca8f1a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
-  timerText: {fileID: 284263217}
-  timeEnded: {fileID: 961109065}
-  countdownTime: 60
+  timerText: {fileID: 0}
+  timeEnded: {fileID: 0}
+  startingTime: 10
+  timeIncrease: 60
+  waveCompleteUpTime: 2
+  countdownTime: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

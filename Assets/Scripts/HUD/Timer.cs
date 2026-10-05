@@ -26,6 +26,13 @@ public class Timer : MonoBehaviour
 
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
         gManager = FindFirstObjectByType<GameManager>();
+
+        if (startingTime == 0 || timeIncrease == 0 || waveCompleteUpTime == 0)
+        {
+            startingTime = 10;
+            timeIncrease = 60;
+            waveCompleteUpTime = 2;
+        }
     }
 
     void FixedUpdate()
