@@ -4,7 +4,7 @@ using UnityEngine;
 public class RangedEnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
-    [SerializeField] private Transform playerLoc;
+    private Transform playerLoc;
     [SerializeField] private Transform Targeting;
     private Transform enemyLoc;
     private float moveSpeed;
@@ -12,6 +12,7 @@ public class RangedEnemyController : MonoBehaviour
     private CapacitySystem capacitySystem;
     private void Start()
     {
+        playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
         enemyLoc = GetComponent<Transform>();
         moveSpeed = 2f;
         StartCoroutine(Shooting());
@@ -47,13 +48,13 @@ public class RangedEnemyController : MonoBehaviour
         }
     }
 
-    //public void Die()
-    //{
-    //    if (capacitySystem != null)
-    //    {
-    //        capacitySystem.EnemyDied(gameObject);
-    //    }
+    public void Die()
+    {
+        if (capacitySystem != null)
+        {
+            capacitySystem.EnemyDied(gameObject);
+        }
 
-    //    Destroy(gameObject);
-    //}
+        Destroy(gameObject);
+    }
 }
