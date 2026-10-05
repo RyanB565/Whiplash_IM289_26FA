@@ -165,7 +165,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &3650544090262895228
 CircleCollider2D:
@@ -216,5 +216,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyController
   bullet: {fileID: 7700531762784145275, guid: 2a8ddd75c31d71f4ca9de601e736f8e0, type: 3}
-  playerLoc: {fileID: 0}
   Targeting: {fileID: 5173117090954753688}
