@@ -52,13 +52,13 @@ public class RMEnemyController : MonoBehaviour
         }
     }
 
-    public void Die()
-    {
-        if (capacitySystem != null)
-        {
-            capacitySystem.EnemyDied(gameObject);
-        }
+    //public void Die()
+    //{
+    //    if (capacitySystem != null)
+    //    {
+    //        capacitySystem.EnemyDied(gameObject);
+    //    }
 
-        Destroy(gameObject);
-    }
+    //    Destroy(gameObject);
+    //}
 }
