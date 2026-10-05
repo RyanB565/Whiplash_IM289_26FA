@@ -39,5 +39,6 @@ public class GameManager : MonoBehaviour
     public void Ending()
     {
         ReloadScene();
+        Debug.Log("Playing game agian!");
     }
 }
