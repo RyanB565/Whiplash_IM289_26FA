@@ -14,8 +14,9 @@ public class Timer : MonoBehaviour
     private bool timeFinished;
 
     private CapacitySystem capacitySystem;
+    private GameManager gManager;
 
-    private void Start()
+    void Start()
     {
         countdownTime = startingTime;
 
@@ -23,12 +24,11 @@ public class Timer : MonoBehaviour
         timeEnded.enabled = false;
         timeFinished = false;
 
-        WaveTimer();
-
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
+        gManager = FindFirstObjectByType<GameManager>();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (timeFinished)
         {
@@ -82,6 +82,14 @@ public class Timer : MonoBehaviour
 
         //Adds time based on wave and timeIncrease (Ex. Wave 2 * 30 = 60 + startingTime(60) = 120)
         countdownTime = startingTime + (capacitySystem.currentWave * timeIncrease);
+
+        timerText.enabled = true;
+        timeFinished = false;
+
+        if (capacitySystem.currentWave == 5 && countdownTime == 0f)
+        {
+            gManager.Ending();
+        }
 
     }
 }
