@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   timerText: {fileID: 1020031190}
   timeEnded: {fileID: 514458609}
-  startingTime: 30
+  startingTime: 10
   timeIncrease: 60
   waveCompleteUpTime: 2
   countdownTime: 0
