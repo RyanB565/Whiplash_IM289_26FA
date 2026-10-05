@@ -14,24 +14,50 @@ public class PlayerController : MonoBehaviour
 
     private bool canMove = true;
 
+    #region Start Methods
+
+    private void Awake()
+    {
+        move = InputSystem.actions.FindAction("Move");
+    }
+
+    private void OnEnable()
+    {
+        move.Enable();
+        move.canceled += Move_canceled;
+    }
+
+    private void OnDisable()
+    {
+        move.canceled -= Move_canceled;
+        move.Disable();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-        move = InputSystem.actions.FindAction("Move");
         move.started += Move_started;
         move.canceled += Move_canceled;
     }
 
+    #endregion
+
     private void Move_canceled(InputAction.CallbackContext obj)
     {
-        anim.SetBool("Walking",false);
+        if (anim != null)
+        {
+            anim.SetBool("Walking", false);
+        }
     }
 
     private void Move_started(InputAction.CallbackContext obj)
     {
-        anim.SetBool("Walking",true);
+        if (anim != null)
+        {
+            anim.SetBool("Walking", true);
+        }
     }
 
     // Update is called once per frame
@@ -47,6 +73,8 @@ public class PlayerController : MonoBehaviour
             rb2d.linearVelocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
         }
     }
+
+    #region Knockback Method
 
     public void Knockback(Transform origin, float knockbackPower, float knockbackDuration)
     {
@@ -67,6 +95,10 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    #endregion
+
+    #region Attacking Methods
+
     public void Soul()
     {
         SoulSpawn =  Instantiate(SoulAttack, transform);
@@ -81,6 +113,17 @@ public class PlayerController : MonoBehaviour
             rb2d.constraints = RigidbodyConstraints2D.None;
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
+    }
+
+    #endregion
+
+    public void deathStop()
+    {
+        move.started -= Move_started;
+
+        rb2d.constraints = RigidbodyConstraints2D.None;
+        rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
     }
     
 }

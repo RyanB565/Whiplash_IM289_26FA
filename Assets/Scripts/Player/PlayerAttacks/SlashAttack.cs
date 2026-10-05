@@ -4,16 +4,16 @@ using UnityEngine.InputSystem;
 
 public class SlashAttack : MonoBehaviour
 {
-
-
     private InputAction slash;
     private InputAction move;
+
     private Vector2 facingDirection = Vector2.right;
+
     public GameObject attackboxPrefab;
     public GameObject spawnedboxPrefab;
+
     [SerializeField] private float distanceFromPlayer;
     [SerializeField] private SpriteRenderer  slashSprite;
-
     [SerializeField] private Animator slashAnim;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,19 +36,16 @@ public class SlashAttack : MonoBehaviour
         if (input.sqrMagnitude > 0.01f)
         {
             facingDirection = input.normalized;
-        }
-
-       
+        }   
     }
-
-
     
     private void Slash_performed (InputAction.CallbackContext context)
     {
-        slashAnim.SetTrigger("Slash");
+        if (slashAnim != null)
+        {
+            slashAnim.SetTrigger("Slash");
+        }
     }
-
-  
 
     public void SlashSpawn()
 
@@ -66,7 +63,6 @@ public class SlashAttack : MonoBehaviour
         slashSprite.flipX = facingDirection.x < 0f;
         slashSprite.flipY = false;
     }
-
 
     public void SlashEnd()
     {

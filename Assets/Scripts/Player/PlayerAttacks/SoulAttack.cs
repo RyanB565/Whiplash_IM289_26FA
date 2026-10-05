@@ -10,21 +10,18 @@ public class SoulAttack : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         AoE = InputSystem.actions.FindAction("Soul");
         AoE.performed += AoE_performed;
     }
 
     private void AoE_performed(InputAction.CallbackContext obj)
-    {
-        
-        if (AoEEnabled)
+    {   
+        if (AoEEnabled && AoEAnim != null)
         {
             AoEAnim.SetTrigger("Soul");
             AoEEnabled = false;
             StartCoroutine(SoulCooldown());
-        }
-        
+        }   
     }
 
     private IEnumerator SoulCooldown()
