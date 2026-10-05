@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     private bool timeFinished;
 
     private CapacitySystem capacitySystem;
+    private GameManager gManager;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class Timer : MonoBehaviour
         timeFinished = false;
 
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
+        gManager = FindFirstObjectByType<GameManager>();
     }
 
     void FixedUpdate()
@@ -67,7 +69,6 @@ public class Timer : MonoBehaviour
 
         timeEnded.enabled = false;
         timeEnded.text = "";
-        
 
         capacitySystem.WaveSystem();
     }
@@ -84,6 +85,11 @@ public class Timer : MonoBehaviour
 
         timerText.enabled = true;
         timeFinished = false;
+
+        if (capacitySystem.currentWave == 5 && countdownTime == 0f)
+        {
+            gManager.Ending();
+        }
 
     }
 }
