@@ -185,27 +185,27 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -4484209852172318383}
-    m_Position: {x: 80, y: 180, z: 0}
+    m_Position: {x: 170, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6382339441965260818}
-    m_Position: {x: -240, y: 410, z: 0}
+    m_Position: {x: -30, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7164396230801010343}
-    m_Position: {x: 470, y: 390, z: 0}
+    m_Position: {x: 1000, y: 300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6941577797406267512}
-    m_Position: {x: 80, y: 630, z: 0}
+    m_Position: {x: 170, y: 560, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6298787195020663322}
-    m_Position: {x: 210, y: 390, z: 0}
+    m_Position: {x: 310, y: 290, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 430, y: -90, z: 0}
-  m_EntryPosition: {x: 190, y: -10, z: 0}
-  m_ExitPosition: {x: 430, y: -10, z: 0}
+  m_AnyStatePosition: {x: 510, y: -140, z: 0}
+  m_EntryPosition: {x: 200, y: -30, z: 0}
+  m_ExitPosition: {x: 340, y: -140, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -4484209852172318383}
 --- !u!91 &9100000
@@ -214,7 +214,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Square
+  m_Name: Testing Animation
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Soul
@@ -382,7 +382,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Placeholder
+  m_Name: PlaceHolder
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
