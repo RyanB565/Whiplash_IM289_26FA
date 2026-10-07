@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public float health, maxHealth;
     private HealthHeartManager heartManager;
     private GameManager gameManager;
+    [SerializeField] private AudioSource damageSFX;
 
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerDeath;
@@ -22,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float amount)
     {
         health -= amount;
+        damageSFX.Play();
         OnPlayerDamaged?.Invoke();
 
         if (health <= 0)
