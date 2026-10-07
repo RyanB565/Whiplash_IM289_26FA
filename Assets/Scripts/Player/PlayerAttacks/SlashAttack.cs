@@ -7,6 +7,8 @@ public class SlashAttack : MonoBehaviour
     private InputAction slash;
     private InputAction move;
 
+    [SerializeField] private AudioSource slashFX;
+
     private Vector2 facingDirection = Vector2.right;
 
     public GameObject attackboxPrefab;
@@ -44,12 +46,14 @@ public class SlashAttack : MonoBehaviour
         if (slashAnim != null)
         {
             slashAnim.SetTrigger("Slash");
+            
         }
     }
 
     public void SlashSpawn()
 
     {
+       
         Vector2 directionface = new Vector2(facingDirection.y, -facingDirection.x);
 
 
@@ -62,6 +66,7 @@ public class SlashAttack : MonoBehaviour
 
         slashSprite.flipX = facingDirection.x < 0f;
         slashSprite.flipY = false;
+        
     }
 
     public void SlashEnd()
@@ -72,4 +77,8 @@ public class SlashAttack : MonoBehaviour
         }
     }
 
+    public void SlashSound()
+    {
+        slashFX.Play();
+    }
 }

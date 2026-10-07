@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class SoulAttack : MonoBehaviour
 {
     [SerializeField] private Animator AoEAnim;
+    [SerializeField] private AudioSource soulSound;
     private InputAction AoE;
     private bool AoEEnabled = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,6 +32,11 @@ public class SoulAttack : MonoBehaviour
             yield return new WaitForSeconds(5);
             AoEEnabled = true;
         }
+    }
+
+    public void soulSFX()
+    {
+        soulSound.Play();
     }
 
 
