@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioSource RunSFX;
     private GameObject SoulSpawn;
     private Animator anim;
+    private SpriteRenderer sr;
 
     private bool canMove = true;
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        sr = GetComponent<SpriteRenderer>();
         move = InputSystem.actions.FindAction("Move");
     }
 
@@ -71,6 +73,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (rb2d.linearVelocity.x < -0.1f)
+        {
+            sr.flipX = true;
+        }
+        else if (rb2d.linearVelocity.x > 0.1f)
+        {
+            sr.flipX = false;
+        }
         if (canMove == true)
         {
             rb2d.linearVelocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);

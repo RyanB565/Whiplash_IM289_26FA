@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8614033850258520041}
   - component: {fileID: 94663967858543800}
   m_Layer: 0
-  m_Name: KnightSpritesheet-export_0
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
