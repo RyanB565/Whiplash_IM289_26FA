@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BulletBehavior : MonoBehaviour
 {
+    private PlayerHealth playerHealth;
     private Rigidbody2D bullet;
     private float speed = 5;
     void Start()
@@ -16,6 +17,7 @@ public class BulletBehavior : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            playerHealth.TakeDamage(1);
             Destroy(gameObject);
         }
         
