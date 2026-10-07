@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
 
     private Transform target;
     private CapacitySystem capacitySystem;
+    private GameManager gameManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +32,7 @@ public class EnemyController : MonoBehaviour
             capacitySystem.EnemyDied(gameObject);
         }
 
+        gameManager.PickupCount();
         Destroy(gameObject);
     }
 }
