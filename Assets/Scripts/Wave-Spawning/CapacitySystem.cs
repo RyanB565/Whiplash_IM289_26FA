@@ -13,6 +13,7 @@ public class CapacitySystem : MonoBehaviour
 
     [Header("Waves")]
     [SerializeField] private List<Wave> waves;
+    public IReadOnlyList<Wave> Waves => waves;
 
     [Header("Spawn Locations")]
     [Tooltip("Drag your empty 2D GameObjects here to act as spawn points.")]
@@ -34,6 +35,8 @@ public class CapacitySystem : MonoBehaviour
     {
         time = FindFirstObjectByType<Timer>();
         GenerateEnemiesWave();
+
+        Debug.Log($"There are {Waves.Count} waves in this game");
     }
 
     #region Wave System w/ Timer
@@ -41,13 +44,6 @@ public class CapacitySystem : MonoBehaviour
     public void WaveSystem()
     {
         currentWave++;
-
-        //Check if waves are completed 
-        if (currentWave >= waves.Count)
-        {
-            Debug.Log("All Waves are Completed");
-            return;
-        }
 
         GenerateEnemiesWave();
 
@@ -134,9 +130,7 @@ public class CapacitySystem : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(
-                "No spawn points assigned! Spawning at (0,0,0) by default."
-            );
+            Debug.LogWarning("No spawn points assigned! Spawning at (0,0,0) by default.");
         }
 
         // Create the Enemy.

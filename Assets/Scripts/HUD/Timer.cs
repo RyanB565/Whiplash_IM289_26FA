@@ -33,7 +33,14 @@ public class Timer : MonoBehaviour
             timeIncrease = 60;
             waveCompleteUpTime = 2;
         }
+
+        if (capacitySystem.Waves != null && capacitySystem.Waves.Count > 0)
+        {
+            Debug.Log("Multiple waves detected.");  
+        }
     }
+
+    #region Timer Method
 
     void FixedUpdate()
     {
@@ -45,12 +52,10 @@ public class Timer : MonoBehaviour
         countdownTime -= Time.deltaTime;
         countdownTime = Mathf.Max(countdownTime, 0);
 
-
         int time = Mathf.CeilToInt(countdownTime);
 
         int minutes = time / 60;
         int seconds = time % 60;
-
 
         timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
 
@@ -62,9 +67,16 @@ public class Timer : MonoBehaviour
             timeEnded.enabled = true;
             timeEnded.text = "Wave Completed";
 
+            if (capacitySystem.Waves.Count == 0)
+            {
+                gManager.Ending();
+            }
+           
             StartCoroutine(WaveComplete());
         }
     }
+
+    #endregion
 
     /// <summary>
     /// Removes the wave complete text after a couple seconds when wave ends
@@ -87,16 +99,15 @@ public class Timer : MonoBehaviour
             return;
         }
 
-        //Adds time based on wave and timeIncrease (Ex. Wave 2 * 30 = 60 + startingTime(60) = 120)
-        countdownTime = startingTime + (capacitySystem.currentWave * timeIncrease);
-
-        timerText.enabled = true;
-        timeFinished = false;
-
         if (capacitySystem.currentWave == 5 && countdownTime == 0f)
         {
             gManager.Ending();
         }
 
+        //Adds time based on wave and timeIncrease (Ex. Wave 2 * 30 = 60 + startingTime(60) = 120)
+        countdownTime = startingTime + (capacitySystem.currentWave * timeIncrease);
+
+        timerText.enabled = true;
+        timeFinished = false;
     }
 }
