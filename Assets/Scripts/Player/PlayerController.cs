@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     [SerializeField] public float moveSpeed;
     [SerializeField] private GameObject SoulAttack;
+    [SerializeField] private AudioSource RunSFX;
     private GameObject SoulSpawn;
     private Animator anim;
 
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         if (anim != null)
         {
             anim.SetBool("Walking", false);
+            RunSFX.Stop();
         }
     }
 
@@ -56,6 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         if (anim != null)
         {
+            RunSFX.Play();
             anim.SetBool("Walking", true);
         }
     }
