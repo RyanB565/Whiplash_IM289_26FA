@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void PickupCount()
+    {
+
+    }
+
     public void PlayerDeath()
     {
         controller.deathStop();
