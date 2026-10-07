@@ -178,14 +178,21 @@ AnimationClip:
   - time: 0
     functionName: SlashSpawn
     data: 
-    objectReferenceParameter: {fileID: 8698842037970702824, guid: 06c95f1311c47764b91e49be121ff696, type: 3}
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: SlashSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.1
     functionName: SlashEnd
     data: 
-    objectReferenceParameter: {fileID: 8698842037970702824, guid: 06c95f1311c47764b91e49be121ff696, type: 3}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
