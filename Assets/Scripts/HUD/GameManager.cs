@@ -8,9 +8,12 @@ public class GameManager : MonoBehaviour
     public ScriptableObject skeleton;
     public ScriptableObject zombie;
 
+    public Canvas deathcanvas;
+
 
 
     [SerializeField] private TextMeshProUGUI deathText;
+
 
     private PlayerController controller;
 
@@ -22,12 +25,16 @@ public class GameManager : MonoBehaviour
         controller = FindFirstObjectByType<PlayerController>();
 
         EnemiesKilled = 0;
+
+        deathcanvas.enabled = false;
+
+       
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+       
     }
 
     public void PickupCount()
@@ -38,8 +45,9 @@ public class GameManager : MonoBehaviour
     public void PlayerDeath()
     {
         controller.deathStop();
-        ReloadScene();
         Debug.Log("Playing death called");
+        deathcanvas.enabled =true;
+        
     }
 
     private void ReloadScene()
@@ -51,5 +59,13 @@ public class GameManager : MonoBehaviour
     {
         ReloadScene();
         Debug.Log("Playing game agian!");
+
     }
+
+    public void UiMouse()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
 }
