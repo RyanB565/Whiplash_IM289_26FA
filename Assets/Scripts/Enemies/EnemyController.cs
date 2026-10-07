@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
             capacitySystem.EnemyDied(gameObject);
         }
 
-        gameManager.PickupCount();
+        //gameManager.PickupCount();
         Destroy(gameObject);
     }
 }
