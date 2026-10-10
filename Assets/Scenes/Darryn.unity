@@ -290,6 +290,22 @@ MonoBehaviour:
     availableEnemies:
     - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
     - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
+  - waveName: Wave 3
+    capacitybudget: 20
+    availableEnemies:
+    - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
+    - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
+  - waveName: Wave 4
+    capacitybudget: 20
+    availableEnemies:
+    - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
+    - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
+  - waveName: Wave 5
+    capacitybudget: 20
+    availableEnemies:
+    - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
+    - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
+  bossPrefab: {fileID: 0}
   spawnPoints:
   - {fileID: 1146881325}
   - {fileID: 1465318037}
@@ -1958,7 +1974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1947044507
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,8 @@ public class CapacitySystem : MonoBehaviour
     [Header("Waves")]
     [SerializeField] private List<Wave> waves;
 
-    public IReadOnlyList<Wave> Waves => waves;
+    [Header("Gerald(Boss) Settings")]
+    [SerializeField] private GameObject bossPrefab;
 
     [Header("Spawn Locations")]
     [Tooltip("Drag your empty 2D GameObjects here to act as spawn points.")]
@@ -31,6 +32,8 @@ public class CapacitySystem : MonoBehaviour
 
     private Timer time;
     private GameManager gManager;
+
+    public IReadOnlyList<Wave> Waves => waves;
 
     void Start()
     {
@@ -64,7 +67,6 @@ public class CapacitySystem : MonoBehaviour
 
         GenerateEnemiesWave();
 
-        //Null reference for the timer script
         if (time != null)
         {
             time.WaveTimer();
@@ -79,6 +81,12 @@ public class CapacitySystem : MonoBehaviour
     {
         if (currentWave >= waves.Count)
         {
+            return;
+        }
+
+        if (currentWave == 4)
+        {
+            //SpawnBoss();
             return;
         }
 
@@ -137,6 +145,11 @@ public class CapacitySystem : MonoBehaviour
 
     private void SpawnEnemies(CapacityData enemies)
     {
+        if (currentWave == 5)
+        {
+            return;
+        }
+
         Vector3 spawnPosition = Vector3.zero;
 
         // Pick a random spawn point.
@@ -171,6 +184,7 @@ public class CapacitySystem : MonoBehaviour
     }
 
     #endregion
+
 
     #region Death Method
 
