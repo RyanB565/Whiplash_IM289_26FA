@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43b4a7496de4b64785418caf75f5001, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
+  damageAmount: 1
 --- !u!50 &-7416996749601884913
 Rigidbody2D:
   serializedVersion: 5

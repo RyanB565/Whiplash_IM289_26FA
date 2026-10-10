@@ -1,23 +1,30 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackDamage : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        EnemyController enemy = collision.GetComponent<EnemyController>();
-        RangedEnemyController rangedEnemy = collision.GetComponent<RangedEnemyController>();
-        //RMEnemyController RMEnemy = collision.GetComponent<RMEnemyController>();
+    [SerializeField] private float damageAmount;
 
-        if (enemy != null)
+    public void DamageBoost()
+    {
+        if (damageAmount <= 4)
         {
-            enemy.Die();
-            //RMEnemy.Die();
-            Debug.Log("Killed");
+            return;
         }
 
-        if (rangedEnemy != null)
+        damageAmount++;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent<EnemyController>(out EnemyController enemyComponent))
         {
-            rangedEnemy.Die();
+            enemyComponent.TakeDamage(damageAmount);
+        }
+
+        if (collision.gameObject.TryGetComponent<RangedEnemyController>(out RangedEnemyController RenemyComponent))
+        {
+            RenemyComponent.TakeDamage(damageAmount);
         }
     }
 }

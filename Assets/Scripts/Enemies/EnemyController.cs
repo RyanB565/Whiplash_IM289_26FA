@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -11,6 +12,8 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer sr;
     private Vector2 lastPosition;
 
+    [SerializeField] float health, maxHealth;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +21,8 @@ public class EnemyController : MonoBehaviour
         lastPosition = transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
+
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -45,6 +50,20 @@ public class EnemyController : MonoBehaviour
         }
 
         Destroy(gameObject);
-        pickUps.PickupCount();
+        //pickUps.PickupCount();
     }
+
+    #region Enemies Health Method
+
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    #endregion
 }

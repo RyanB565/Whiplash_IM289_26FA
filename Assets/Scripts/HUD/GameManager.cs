@@ -1,12 +1,14 @@
-using TMPro;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Canvas deathcanvas;
-
+    [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
 
     private PlayerController controller;
@@ -18,8 +20,6 @@ public class GameManager : MonoBehaviour
         controller = FindFirstObjectByType<PlayerController>();
 
         deathcanvas.enabled = false;
-
-       
     }
 
     // Update is called once per frame
@@ -31,27 +31,28 @@ public class GameManager : MonoBehaviour
     public void PlayerDeath()
     {
         controller.deathStop();
-        Debug.Log("Playing death called");
-        deathcanvas.enabled =true;
-        
+        Time.timeScale = 0f;
+        deathcanvas.enabled = true;  
     }
 
     private void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
 
     public void Ending()
     {
         ReloadScene();
         Debug.Log("Playing game agian!");
-
     }
 
-    public void UiMouse()
+    public void QuitGame()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+    #if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
-
 }
