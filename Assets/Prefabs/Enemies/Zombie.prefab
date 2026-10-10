@@ -160,6 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   speed: 1.5
   stoppingDistance: 0.5
+  pickUps: {fileID: 3187379202815890602, guid: d157e625fc8464542b9728a6d7e295c5, type: 3}
+  healthPickup: {fileID: 7012302050225488438, guid: f95fb9968876df347ad5ef6f245b3f3d, type: 3}
 --- !u!95 &4981840884441638241
 Animator:
   serializedVersion: 7

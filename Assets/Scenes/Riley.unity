@@ -1077,11 +1077,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 26034ab75e9222b46a400beb56c10a8f, type: 2}
     - target: {fileID: 3985440527842078866, guid: d157e625fc8464542b9728a6d7e295c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 3985440527842078866, guid: d157e625fc8464542b9728a6d7e295c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.94
+      value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 3985440527842078866, guid: d157e625fc8464542b9728a6d7e295c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1117,7 +1117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7550569838891385244, guid: d157e625fc8464542b9728a6d7e295c5, type: 3}
       propertyPath: m_Name
-      value: KnightSpritesheet-export_0
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7550569838891385244, guid: d157e625fc8464542b9728a6d7e295c5, type: 3}
       propertyPath: m_Layer
@@ -1189,10 +1189,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100585907d743fc4ab7d1f93523fa09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUps
+  powerUps: []
   playerController: {fileID: 855402325}
   slashAttack: {fileID: 855402322}
   soulAttack: {fileID: 855402319}
   playerHealth: {fileID: 855402321}
+  EnemiesKilled: 0
+  healthPickup: {fileID: 7012302050225488438, guid: f95fb9968876df347ad5ef6f245b3f3d, type: 3}
+  MaxHealthBoost: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+  SpeedBoost: {fileID: 3830003738752181626, guid: 51b5194364beca048b86ce57c6f47f56, type: 3}
 --- !u!114 &855402321
 MonoBehaviour:
   m_ObjectHideFlags: 0

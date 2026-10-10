@@ -5,15 +5,26 @@ using System.Collections.Generic;
 public class PickUps : MonoBehaviour
 {
     public List<GameObject> powerUps;
+    
     public PlayerController playerController;
     public SlashAttack slashAttack;
     public SoulAttack soulAttack;
     public PlayerHealth playerHealth;
+    
     public int EnemiesKilled;
+    
+    public GameObject healthPickup;
+    public GameObject MaxHealthBoost;
+    //public GameObject DamageBoost;
+    public GameObject SpeedBoost;
+
     void Start()
     {
-
-         EnemiesKilled = 0;
+        powerUps.Add(MaxHealthBoost);
+        //powerUps.Add(DamageBoost);
+        powerUps.Add(SpeedBoost);
+        
+        EnemiesKilled = 0;
     }
 
     void Update()
@@ -27,7 +38,8 @@ public class PickUps : MonoBehaviour
 
         if (EnemiesKilled >= 15)
         {
-
+            int RandomIndex = Random.Range(0, powerUps.Count);
+            Instantiate(powerUps[RandomIndex], new Vector2(1, 0), Quaternion.identity);
         }
     }
 

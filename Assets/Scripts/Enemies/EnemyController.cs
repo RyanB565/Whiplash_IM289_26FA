@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -5,9 +6,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float stoppingDistance;
 
+    public PickUps pickUps;
     private Transform target;
     private CapacitySystem capacitySystem;
-    private PickUps pickUps;
     private SpriteRenderer sr;
     private Vector2 lastPosition;
 
@@ -37,6 +38,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public GameObject healthPickup;
     public void Die()
     {
         if (capacitySystem != null)
@@ -44,7 +46,19 @@ public class EnemyController : MonoBehaviour
             capacitySystem.EnemyDied(gameObject);
         }
 
+        int HealthRoll = Random.Range(1, 10);
+        
+        if(HealthRoll == 10)
+        {
+            Instantiate(healthPickup, gameObject.transform.position, Quaternion.identity);
+        }
+
+        if(pickUps != null)
+        {
+            pickUps.PickupCount();
+        }
+        
         Destroy(gameObject);
-        pickUps.PickupCount();
+        
     }
 }
