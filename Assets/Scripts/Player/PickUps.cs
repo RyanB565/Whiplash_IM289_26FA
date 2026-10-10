@@ -1,22 +1,34 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PickUps : MonoBehaviour
 {
-
+    public List<GameObject> powerUps;
     public PlayerController playerController;
     public SlashAttack slashAttack;
     public SoulAttack soulAttack;
     public PlayerHealth playerHealth;
-
+    public int EnemiesKilled;
     void Start()
     {
 
+         EnemiesKilled = 0;
     }
 
     void Update()
     {
 
+    }
+
+    public void PickupCount()
+    {
+        EnemiesKilled += 1;
+
+        if (EnemiesKilled >= 15)
+        {
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

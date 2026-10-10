@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 
     private Transform target;
     private CapacitySystem capacitySystem;
-    private GameManager gameManager;
+    private PickUps pickUps;
     private SpriteRenderer sr;
     private Vector2 lastPosition;
 
@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
             capacitySystem.EnemyDied(gameObject);
         }
 
-        //gameManager.PickupCount();
         Destroy(gameObject);
+        pickUps.PickupCount();
     }
 }
