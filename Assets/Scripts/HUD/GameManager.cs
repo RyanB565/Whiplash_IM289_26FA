@@ -5,26 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public ScriptableObject skeleton;
-    public ScriptableObject zombie;
-
     public Canvas deathcanvas;
-
-
 
     [SerializeField] private TextMeshProUGUI deathText;
 
-
     private PlayerController controller;
 
-    public int EnemiesKilled;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = FindFirstObjectByType<PlayerController>();
-
-        EnemiesKilled = 0;
 
         deathcanvas.enabled = false;
 
@@ -35,11 +26,6 @@ public class GameManager : MonoBehaviour
     void LateUpdate()
     {
        
-    }
-
-    public void PickupCount()
-    {
-
     }
 
     public void PlayerDeath()
