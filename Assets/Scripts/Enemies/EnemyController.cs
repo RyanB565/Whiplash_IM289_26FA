@@ -45,6 +45,6 @@ public class EnemyController : MonoBehaviour
         }
 
         Destroy(gameObject);
-        pickUps.PickupCount();
+        //pickUps.PickupCount();
     }
 }

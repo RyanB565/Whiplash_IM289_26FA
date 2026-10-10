@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
 
 public class CapacitySystem : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class CapacitySystem : MonoBehaviour
 
     [Header("Waves")]
     [SerializeField] private List<Wave> waves;
+
     public IReadOnlyList<Wave> Waves => waves;
 
     [Header("Spawn Locations")]
@@ -21,22 +23,37 @@ public class CapacitySystem : MonoBehaviour
 
     [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
 
-    //Current amount of capacity available.
-    private int currentCapacity;
-
-    //Stores the cost of each individual spawned enemies.
     private Dictionary<GameObject, int> enemiesCosts =
         new Dictionary<GameObject, int>();
 
     public int currentWave = 0;
+    private int currentCapacity;
+
     private Timer time;
+    private GameManager gManager;
 
     void Start()
     {
         time = FindFirstObjectByType<Timer>();
+        gManager = FindFirstObjectByType<GameManager>();
+
         GenerateEnemiesWave();
 
         Debug.Log($"There are {Waves.Count} waves in this game");
+
+        if (Waves.Count == 1)
+        {
+            Debug.Log("Game Ended: Please add 5 total waves");
+            EditorApplication.isPlaying = false;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (currentWave >= waves.Count - 0)
+        {
+            gManager.PlayerDeath();
+        }
     }
 
     #region Wave System w/ Timer
@@ -56,11 +73,12 @@ public class CapacitySystem : MonoBehaviour
 
     #endregion
 
+    #region Enemies Spawning Method
+
     public void GenerateEnemiesWave()
     {
         if (currentWave >= waves.Count)
         {
-            Debug.Log("No more waves available.");
             return;
         }
 
@@ -112,6 +130,8 @@ public class CapacitySystem : MonoBehaviour
             SpawnEnemies(chosenEnemies);
         }
     }
+
+    #endregion
 
     #region Spawning Method
 

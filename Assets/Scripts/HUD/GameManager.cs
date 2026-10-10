@@ -1,5 +1,4 @@
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,8 +17,6 @@ public class GameManager : MonoBehaviour
         controller = FindFirstObjectByType<PlayerController>();
 
         deathcanvas.enabled = false;
-
-       
     }
 
     // Update is called once per frame
@@ -32,8 +29,7 @@ public class GameManager : MonoBehaviour
     {
         controller.deathStop();
         Debug.Log("Playing death called");
-        deathcanvas.enabled =true;
-        
+        deathcanvas.enabled =true;  
     }
 
     private void ReloadScene()
@@ -45,7 +41,6 @@ public class GameManager : MonoBehaviour
     {
         ReloadScene();
         Debug.Log("Playing game agian!");
-
     }
 
     public void UiMouse()

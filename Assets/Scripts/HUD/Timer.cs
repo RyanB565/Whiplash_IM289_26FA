@@ -33,11 +33,6 @@ public class Timer : MonoBehaviour
             timeIncrease = 60;
             waveCompleteUpTime = 2;
         }
-
-        if (capacitySystem.Waves != null && capacitySystem.Waves.Count > 0)
-        {
-            Debug.Log("Multiple waves detected.");  
-        }
     }
 
     #region Timer Method
@@ -97,11 +92,6 @@ public class Timer : MonoBehaviour
         if (capacitySystem == null)
         {
             return;
-        }
-
-        if (capacitySystem.currentWave == 5 && countdownTime == 0f)
-        {
-            gManager.Ending();
         }
 
         //Adds time based on wave and timeIncrease (Ex. Wave 2 * 30 = 60 + startingTime(60) = 120)
