@@ -172,3 +172,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   speed: 1
   stoppingDistance: 0.5
+  health: 0
+  maxHealth: 1
