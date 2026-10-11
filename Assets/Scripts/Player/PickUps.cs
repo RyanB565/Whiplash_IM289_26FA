@@ -1,34 +1,21 @@
 using Unity.VisualScripting;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class PickUps : MonoBehaviour
 {
-    public List<GameObject> powerUps;
     public PlayerController playerController;
-    public SlashAttack slashAttack;
-    public SoulAttack soulAttack;
+    public AttackDamage slashAttackDamage;
+    public AttackDamage soulAttackDamage;
     public PlayerHealth playerHealth;
-    public int EnemiesKilled;
+    
     void Start()
     {
 
-         EnemiesKilled = 0;
     }
 
     void Update()
     {
 
-    }
-
-    public void PickupCount()
-    {
-        EnemiesKilled += 1;
-
-        if (EnemiesKilled >= 15)
-        {
-
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,11 +32,11 @@ public class PickUps : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        //if (collision.CompareTag("DamageBoost"))
+        if (collision.CompareTag("DamageBoost"))
         {
-            //slashAttack.slashDamage += 1f;
-            //soulAttack.soulDamage += 1f;
-            //Destroy(collision.gameObject);
+            slashAttackDamage.DamageBoost();
+            soulAttackDamage.DamageBoost();
+            Destroy(collision.gameObject);
         }
 
         if (collision.CompareTag("SpeedBoost"))
