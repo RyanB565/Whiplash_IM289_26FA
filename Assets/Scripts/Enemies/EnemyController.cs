@@ -44,11 +44,6 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        if (capacitySystem != null)
-        {
-            capacitySystem.EnemyDied(gameObject);
-        }
-
         enemyDrops.EnemyDeath();
         Destroy(gameObject);
     }
@@ -62,7 +57,14 @@ public class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+
+            if (capacitySystem != null)
+            {
+                capacitySystem.EnemyDied(gameObject);
+            }
         }
+
+
     }
 
     #endregion
