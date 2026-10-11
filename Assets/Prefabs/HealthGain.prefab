@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2717510842699512412}
   - component: {fileID: 4632068304911445273}
   - component: {fileID: 8141790853189883261}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HealthGain
   m_TagString: HealthPickUp
   m_Icon: {fileID: 0}
