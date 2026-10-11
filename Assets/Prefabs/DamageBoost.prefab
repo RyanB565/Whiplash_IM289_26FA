@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 930998461559045838}
   - component: {fileID: 4610717710512497917}
   - component: {fileID: 7969563512182067161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DamageBoost
   m_TagString: DamageBoost
   m_Icon: {fileID: 0}
