@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 504daf417683afd42b580a37768e6553
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bullet: {instanceID: 0}
+  - enemyDrops: {fileID: 1575586669843067381, guid: 791facf9ca9dfff46802a9ae8ff01279, type: 3}
+  - Targeting: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

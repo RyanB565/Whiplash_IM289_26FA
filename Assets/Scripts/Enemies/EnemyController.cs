@@ -5,10 +5,10 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float stoppingDistance;
+    public EnemyDrops enemyDrops;
 
     private Transform target;
     private CapacitySystem capacitySystem;
-    private PickUps pickUps;
     private SpriteRenderer sr;
     private Vector2 lastPosition;
 
@@ -49,8 +49,8 @@ public class EnemyController : MonoBehaviour
             capacitySystem.EnemyDied(gameObject);
         }
 
+        enemyDrops.EnemyDeath();
         Destroy(gameObject);
-        //pickUps.PickupCount();
     }
 
     #region Enemies Health Method
