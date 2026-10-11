@@ -161,7 +161,7 @@ MonoBehaviour:
   speed: 1.5
   stoppingDistance: 0.5
   health: 0
-  maxHealth: 2
+  maxHealth: 1
 --- !u!95 &4981840884441638241
 Animator:
   serializedVersion: 7

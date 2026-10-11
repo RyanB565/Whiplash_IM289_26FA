@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -15,8 +16,12 @@ public class CapacitySystem : MonoBehaviour
     [Header("Waves")]
     [SerializeField] private List<Wave> waves;
 
-    [Header("Gerald(Boss) Settings")]
+    [Header("Enemy Spawn Settings")]
+    [SerializeField] private float spawnDelay;
+
+    [Header("Gerald (Boss) Settings")]
     [SerializeField] private GameObject bossPrefab;
+    [SerializeField] private Transform bossSpawnLocation;
 
     [Header("Spawn Locations")]
     [Tooltip("Drag your empty 2D GameObjects here to act as spawn points.")]
@@ -29,6 +34,7 @@ public class CapacitySystem : MonoBehaviour
 
     public int currentWave = 0;
     private int currentCapacity;
+    private bool canPurchaseEnemies;
 
     private Timer time;
     private GameManager gManager;
@@ -39,6 +45,7 @@ public class CapacitySystem : MonoBehaviour
     {
         time = FindFirstObjectByType<Timer>();
         gManager = FindFirstObjectByType<GameManager>();
+        canPurchaseEnemies = false;
 
         GenerateEnemiesWave();
 
@@ -86,7 +93,7 @@ public class CapacitySystem : MonoBehaviour
 
         if (currentWave == 4)
         {
-            //SpawnBoss();
+            SpawnBoss();
             return;
         }
 
@@ -98,13 +105,14 @@ public class CapacitySystem : MonoBehaviour
         spawnedEnemies.Clear();
         enemiesCosts.Clear();
 
-        BuyEnemies(wave);
+        StartCoroutine(BuyEnemies(wave));
     }
 
-    private void BuyEnemies(Wave wave)
+    private IEnumerator BuyEnemies(Wave wave)
     {
         List<CapacityData> affordableEnemies =
                 new List<CapacityData>();
+
 
         while (currentCapacity > 0)
         {
@@ -136,7 +144,11 @@ public class CapacitySystem : MonoBehaviour
 
             //Spawn the enemies.
             SpawnEnemies(chosenEnemies);
+
+            yield return new WaitForSeconds(spawnDelay);
         }
+
+        canPurchaseEnemies = false;
     }
 
     #endregion
@@ -185,6 +197,22 @@ public class CapacitySystem : MonoBehaviour
 
     #endregion
 
+    #region Boss Spawing Method
+
+    public void SpawnBoss()
+    {
+        if (bossPrefab == null || bossSpawnLocation == null)
+        {
+            Debug.Log("Boss Prefab or Boss SpawnLocation is not assigned");
+            return;
+        }
+
+        Instantiate(bossPrefab, bossSpawnLocation.position, Quaternion.identity);
+
+        Debug.Log("Boss Wave Started");
+    }
+
+    #endregion
 
     #region Death Method
 
@@ -212,9 +240,9 @@ public class CapacitySystem : MonoBehaviour
         spawnedEnemies.Remove(deadEnemy);
 
         //Buy a new enemy using the returned budget.
-        BuyEnemies(waves[currentWave]);
+        StartCoroutine(BuyEnemies(waves[currentWave]));
 
-        Debug.Log("Cacpacity Returned");
+        Debug.Log($"Cacpacity Returned - Total: {currentCapacity} ");
     }
 
     #endregion
