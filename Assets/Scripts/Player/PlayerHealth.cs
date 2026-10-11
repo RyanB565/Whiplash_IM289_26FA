@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     private HealthHeartManager heartManager;
     private GameManager gameManager;
     [SerializeField] private AudioSource damageSFX;
+    [SerializeField] private int totalHearts;
 
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerDeath;
@@ -50,14 +51,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void ExtraHearts()
     {
-        if (maxHealth < 8)
+        if (maxHealth < totalHearts)
         {
             maxHealth += 2;
             heartManager.DrawHearts();
             Refill();
         }
 
-        if (maxHealth == 8)
+        if (maxHealth == totalHearts)
         {
             Refill();
         }
