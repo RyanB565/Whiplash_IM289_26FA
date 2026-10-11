@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 3650544090262895228}
   - component: {fileID: 2655842077390003962}
   m_Layer: 0
-  m_Name: Worm
+  m_Name: RangedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -217,5 +217,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyController
   bullet: {fileID: 7700531762784145275, guid: 2a8ddd75c31d71f4ca9de601e736f8e0, type: 3}
   health: 0
-  maxHealth: 1
+  maxHealth: 3
   Targeting: {fileID: 5173117090954753688}
