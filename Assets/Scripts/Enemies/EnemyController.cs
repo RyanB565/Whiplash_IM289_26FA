@@ -1,4 +1,4 @@
-using System.Security.Cryptography;
+using System;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -6,11 +6,13 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float stoppingDistance;
 
-    public PickUps pickUps;
     private Transform target;
     private CapacitySystem capacitySystem;
+    private PickUps pickUps;
     private SpriteRenderer sr;
     private Vector2 lastPosition;
+
+    [SerializeField] float health, maxHealth;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +21,8 @@ public class EnemyController : MonoBehaviour
         lastPosition = transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
+
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -38,7 +42,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public GameObject healthPickup;
     public void Die()
     {
         if (capacitySystem != null)
@@ -46,19 +49,21 @@ public class EnemyController : MonoBehaviour
             capacitySystem.EnemyDied(gameObject);
         }
 
-        int HealthRoll = Random.Range(1, 10);
-        
-        if(HealthRoll == 10)
-        {
-            Instantiate(healthPickup, gameObject.transform.position, Quaternion.identity);
-        }
-
-        if(pickUps != null)
-        {
-            pickUps.PickupCount();
-        }
-        
         Destroy(gameObject);
-        
+        //pickUps.PickupCount();
     }
+
+    #region Enemies Health Method
+
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    #endregion
 }
