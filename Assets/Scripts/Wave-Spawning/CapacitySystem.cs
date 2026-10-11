@@ -33,7 +33,6 @@ public class CapacitySystem : MonoBehaviour
 
     public int currentWave = 0;
     private int currentCapacity;
-    private bool canPurchaseEnemies;
 
     private Timer time;
     private GameManager gManager;
@@ -44,7 +43,6 @@ public class CapacitySystem : MonoBehaviour
     {
         time = FindFirstObjectByType<Timer>();
         gManager = FindFirstObjectByType<GameManager>();
-        canPurchaseEnemies = false;
 
         GenerateEnemiesWave();
 
@@ -114,7 +112,6 @@ public class CapacitySystem : MonoBehaviour
 
         while (currentCapacity > 0)
         {
-
             //Find all enemies that can currently be afforded.
             foreach (CapacityData enemies in wave.availableEnemies)
             {
@@ -137,16 +134,14 @@ public class CapacitySystem : MonoBehaviour
             CapacityData chosenEnemies =
                 affordableEnemies[randomIndex];
 
+            yield return new WaitForSeconds(spawnDelay);
+
             //Spend the enemies cost.
             currentCapacity -= chosenEnemies.capacityCost;
 
             //Spawn the enemies.
             SpawnEnemies(chosenEnemies);
-
-            yield return new WaitForSeconds(spawnDelay);
         }
-
-        canPurchaseEnemies = false;
     }
 
     #endregion

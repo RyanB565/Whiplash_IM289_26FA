@@ -187,8 +187,8 @@ GameObject:
   - component: {fileID: 155597819}
   - component: {fileID: 155597821}
   - component: {fileID: 155597820}
-  - component: {fileID: 155597823}
   - component: {fileID: 155597822}
+  - component: {fileID: 155597823}
   m_Layer: 5
   m_Name: HealthHearts
   m_TagString: Untagged
@@ -213,7 +213,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 80, y: -60}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &155597820
 MonoBehaviour:
@@ -276,21 +276,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 155597818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
     m_Left: 0
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 10, y: 0}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Spacing: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
+  m_ReverseArrangement: 0
 --- !u!1 &247866486
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +360,6 @@ MonoBehaviour:
   - waveName: Wave 5
     capacitybudget: 0
     availableEnemies: []
-  spawnDelay: 10
   bossPrefab: {fileID: 1061556387646958145, guid: d3c91c5eb320a21478e521794bbb3bd8, type: 3}
   bossSpawnLocation: {fileID: 1745223557}
   spawnPoints:
@@ -366,6 +367,7 @@ MonoBehaviour:
   - {fileID: 1465318037}
   - {fileID: 676846763}
   - {fileID: 1371665217}
+  spawnDelay: 3
   spawnedEnemies: []
   currentWave: 0
 --- !u!1 &276468708
@@ -1097,6 +1099,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+--- !u!1001 &915604648
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_Name
+      value: MaxHealth (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.021505376
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
 --- !u!1 &1020031188
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,6 +1616,63 @@ RectTransform:
   m_AnchoredPosition: {x: -960, y: -540.32184}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1351282954
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_Name
+      value: MaxHealth (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.021505376
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328264645986608407, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
 --- !u!1 &1371665216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2617,6 @@ MonoBehaviour:
   startingTime: 20
   timeIncrease: 1
   waveCompleteUpTime: 2
-  waveStartDelay: 0
   countdownTime: 0
 --- !u!114 &1992303564
 MonoBehaviour:
@@ -2902,6 +3017,7 @@ MonoBehaviour:
   health: 6
   maxHealth: 6
   damageSFX: {fileID: 2054156330}
+  totalHearts: 0
 --- !u!114 &2068519966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2931,6 +3047,8 @@ SceneRoots:
   - {fileID: 1886777137}
   - {fileID: 2054156331}
   - {fileID: 108585242}
+  - {fileID: 1351282954}
+  - {fileID: 915604648}
   - {fileID: 375076514}
   - {fileID: 894884697}
   - {fileID: 411093348}
