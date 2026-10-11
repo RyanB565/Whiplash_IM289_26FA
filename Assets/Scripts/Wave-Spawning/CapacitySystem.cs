@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
 
 public class CapacitySystem : MonoBehaviour
 {
@@ -14,26 +15,45 @@ public class CapacitySystem : MonoBehaviour
     [Header("Waves")]
     [SerializeField] private List<Wave> waves;
 
+    public IReadOnlyList<Wave> Waves => waves;
+
     [Header("Spawn Locations")]
     [Tooltip("Drag your empty 2D GameObjects here to act as spawn points.")]
     [SerializeField] private Transform[] spawnPoints;
 
     [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
 
-    //Current amount of capacity available.
-    private int currentCapacity;
-
-    //Stores the cost of each individual spawned enemies.
     private Dictionary<GameObject, int> enemiesCosts =
         new Dictionary<GameObject, int>();
 
     public int currentWave = 0;
+    private int currentCapacity;
+
     private Timer time;
+    private GameManager gManager;
 
     void Start()
     {
         time = FindFirstObjectByType<Timer>();
+        gManager = FindFirstObjectByType<GameManager>();
+
         GenerateEnemiesWave();
+
+        Debug.Log($"There are {Waves.Count} waves in this game");
+
+        if (Waves.Count == 1)
+        {
+            Debug.Log("Game Ended: Please add 5 total waves");
+            EditorApplication.isPlaying = false;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (currentWave >= waves.Count - 0)
+        {
+            gManager.PlayerDeath();
+        }
     }
 
     #region Wave System w/ Timer
@@ -41,13 +61,6 @@ public class CapacitySystem : MonoBehaviour
     public void WaveSystem()
     {
         currentWave++;
-
-        //Check if waves are completed 
-        if (currentWave >= waves.Count)
-        {
-            Debug.Log("All Waves are Completed");
-            return;
-        }
 
         GenerateEnemiesWave();
 
@@ -60,11 +73,12 @@ public class CapacitySystem : MonoBehaviour
 
     #endregion
 
+    #region Enemies Spawning Method
+
     public void GenerateEnemiesWave()
     {
         if (currentWave >= waves.Count)
         {
-            Debug.Log("No more waves available.");
             return;
         }
 
@@ -117,6 +131,8 @@ public class CapacitySystem : MonoBehaviour
         }
     }
 
+    #endregion
+
     #region Spawning Method
 
     private void SpawnEnemies(CapacityData enemies)
@@ -134,9 +150,7 @@ public class CapacitySystem : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(
-                "No spawn points assigned! Spawning at (0,0,0) by default."
-            );
+            Debug.LogWarning("No spawn points assigned! Spawning at (0,0,0) by default.");
         }
 
         // Create the Enemy.

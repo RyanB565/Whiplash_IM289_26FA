@@ -159,7 +159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   speed: 1.5
-  stoppingDistance: 2
+  stoppingDistance: 0.5
+  health: 0
+  maxHealth: 2
 --- !u!95 &4981840884441638241
 Animator:
   serializedVersion: 7

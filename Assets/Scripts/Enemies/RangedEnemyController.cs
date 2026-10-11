@@ -4,6 +4,8 @@ using UnityEngine;
 public class RangedEnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
+    [SerializeField] private float health, maxHealth;
+
     private Transform playerLoc;
     [SerializeField] private Transform Targeting;
     private Transform enemyLoc;
@@ -16,6 +18,8 @@ public class RangedEnemyController : MonoBehaviour
         enemyLoc = GetComponent<Transform>();
         moveSpeed = 2f;
         StartCoroutine(Shooting());
+
+        health = maxHealth;
     }
 
     private void Update()
@@ -57,4 +61,19 @@ public class RangedEnemyController : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    #region Enemies Health Method
+
+    public void TakeDamage(float damageAmount)
+    {
+        health -= damageAmount;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    #endregion
+
 }

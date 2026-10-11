@@ -26,7 +26,16 @@ public class Timer : MonoBehaviour
 
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
         gManager = FindFirstObjectByType<GameManager>();
+
+        if (startingTime == 0 || timeIncrease == 0 || waveCompleteUpTime == 0)
+        {
+            startingTime = 10;
+            timeIncrease = 60;
+            waveCompleteUpTime = 2;
+        }
     }
+
+    #region Timer Method
 
     void FixedUpdate()
     {
@@ -38,12 +47,10 @@ public class Timer : MonoBehaviour
         countdownTime -= Time.deltaTime;
         countdownTime = Mathf.Max(countdownTime, 0);
 
-
         int time = Mathf.CeilToInt(countdownTime);
 
         int minutes = time / 60;
         int seconds = time % 60;
-
 
         timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
 
@@ -55,9 +62,16 @@ public class Timer : MonoBehaviour
             timeEnded.enabled = true;
             timeEnded.text = "Wave Completed";
 
+            if (capacitySystem.Waves.Count == 0)
+            {
+                gManager.Ending();
+            }
+           
             StartCoroutine(WaveComplete());
         }
     }
+
+    #endregion
 
     /// <summary>
     /// Removes the wave complete text after a couple seconds when wave ends
@@ -85,11 +99,5 @@ public class Timer : MonoBehaviour
 
         timerText.enabled = true;
         timeFinished = false;
-
-        if (capacitySystem.currentWave == 5 && countdownTime == 0f)
-        {
-            gManager.Ending();
-        }
-
     }
 }

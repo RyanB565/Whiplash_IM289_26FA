@@ -1,54 +1,58 @@
-using TMPro;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
+
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public ScriptableObject skeleton;
-    public ScriptableObject zombie;
-
-
-
+    [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
 
     private PlayerController controller;
 
-    public int EnemiesKilled;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = FindFirstObjectByType<PlayerController>();
 
-        EnemiesKilled = 0;
+        deathcanvas.enabled = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
-    }
-
-    public void PickupCount()
-    {
-
+       
     }
 
     public void PlayerDeath()
     {
         controller.deathStop();
-        ReloadScene();
-        Debug.Log("Playing death called");
+        Time.timeScale = 0f;
+        deathcanvas.enabled = true;  
     }
 
     private void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f;
     }
 
     public void Ending()
     {
         ReloadScene();
+        Debug.Log("Playing game agian!");
+    }
+
+    public void QuitGame()
+    {
+    #if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
 }

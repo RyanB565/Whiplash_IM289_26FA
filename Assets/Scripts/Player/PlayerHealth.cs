@@ -29,7 +29,6 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            Debug.Log("You died, haha");
             OnPlayerDeath?.Invoke();
         }
     }
@@ -42,8 +41,8 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-//Power-Up Method 
-public void Refill()
+    //Power-Up Method 
+    public void Refill()
     {
         health = maxHealth;
         heartManager.DrawHearts();
