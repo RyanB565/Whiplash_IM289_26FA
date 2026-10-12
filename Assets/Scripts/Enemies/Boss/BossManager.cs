@@ -1,16 +1,23 @@
+using System.Collections;
 using UnityEngine;
 
 public class BossManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static bool shootAttack = false;
+    public static bool lungeAttack = true;
+    private void Start()
     {
-        
+        StartCoroutine(SwitchAttacks());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator SwitchAttacks()
     {
-        
+        while (true)
+        {
+            shootAttack = !shootAttack;
+            lungeAttack = !lungeAttack;
+            yield return new WaitForSeconds(5);
+        }
     }
+
 }
