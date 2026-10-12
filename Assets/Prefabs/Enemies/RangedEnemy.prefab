@@ -217,5 +217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyController
   bullet: {fileID: 7700531762784145275, guid: 2a8ddd75c31d71f4ca9de601e736f8e0, type: 3}
   health: 0
-  maxHealth: 3
+  maxHealth: 1
+  enemyDrops: {fileID: 0}
   Targeting: {fileID: 5173117090954753688}

@@ -9,6 +9,11 @@ TagManager:
   - Wall
   - SlashAttack
   - AOE
+  - HealthPickUp
+  - MaxHealthBoost
+  - SpeedBoost
+  - Enemy
+  - DamageBoost
   layers:
   - Default
   - TransparentFX
@@ -17,9 +22,9 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
-  - 
+  - Boss
+  - Picups
+  - Walls
   - 
   - 
   - 

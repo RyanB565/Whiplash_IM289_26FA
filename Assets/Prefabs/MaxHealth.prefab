@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3328264645986608407}
   - component: {fileID: 7826829773326553006}
   - component: {fileID: 5255837193195521344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MaxHealth
   m_TagString: MaxHealthBoost
   m_Icon: {fileID: 0}
