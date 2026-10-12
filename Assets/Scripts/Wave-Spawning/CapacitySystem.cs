@@ -188,6 +188,22 @@ public class CapacitySystem : MonoBehaviour
         );
     }
 
+    public void ClearEnemies()
+    {
+        foreach (GameObject enemy in spawnedEnemies)
+        {
+            if (enemy != null)
+            {
+                Destroy(enemy);
+            }
+        }
+
+        spawnedEnemies.Clear();
+        enemiesCosts.Clear();
+
+        Debug.Log("All the remaining enemies are cleared.");
+    }
+
     #endregion
 
     #region Boss Spawing Method

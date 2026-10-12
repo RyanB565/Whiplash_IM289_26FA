@@ -63,8 +63,6 @@ public class EnemyController : MonoBehaviour
                 capacitySystem.EnemyDied(gameObject);
             }
         }
-
-
     }
 
     #endregion

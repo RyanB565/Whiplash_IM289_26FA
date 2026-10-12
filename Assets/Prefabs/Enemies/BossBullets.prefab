@@ -169,4 +169,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca925bd726674b3439ce526ee54f0f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossBulletTargetBehavior
-  bulletSpeed: 5
+  bulletSpeed: 2

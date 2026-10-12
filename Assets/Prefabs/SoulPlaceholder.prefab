@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6989049593180547786}
   - component: {fileID: 50908694214074216}
-  - component: {fileID: -7723757701342233747}
   - component: {fileID: 5876659265763245794}
-  m_Layer: 0
+  - component: {fileID: 3786164096255282792}
+  m_Layer: 10
   m_Name: SoulPlaceholder
   m_TagString: AOE
   m_Icon: {fileID: 0}
@@ -93,18 +93,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &-7723757701342233747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7882513492092022633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c43b4a7496de4b64785418caf75f5001, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
 --- !u!58 &5876659265763245794
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121,7 +109,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -141,3 +129,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5000001
+--- !u!114 &3786164096255282792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7882513492092022633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c43b4a7496de4b64785418caf75f5001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
+  damageAmount: 2
