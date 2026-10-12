@@ -38,10 +38,4 @@ public class SoulAttack : MonoBehaviour
     {
         soulSound.Play();
     }
-
-
-
-
-
-
 }

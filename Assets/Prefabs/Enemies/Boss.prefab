@@ -155,7 +155,7 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1088
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -219,6 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9532d0f692c9cf2419a04fc3431aefa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossManager
+  health: 0
+  maxHealth: 5
 --- !u!1 &8673343032156247775
 GameObject:
   m_ObjectHideFlags: 0

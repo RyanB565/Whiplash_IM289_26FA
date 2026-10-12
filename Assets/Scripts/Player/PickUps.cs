@@ -3,20 +3,15 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
-    public PlayerController playerController;
-    public AttackDamage slashAttackDamage;
-    public AttackDamage soulAttackDamage;
-    public PlayerHealth playerHealth;
+    private PlayerController playerController;
+    private PlayerHealth playerHealth;
     
     void Start()
     {
-
+        playerController = FindFirstObjectByType<PlayerController>();
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
     }
 
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,8 +29,6 @@ public class PickUps : MonoBehaviour
 
         if (collision.CompareTag("DamageBoost"))
         {
-            slashAttackDamage.DamageBoost();
-            soulAttackDamage.DamageBoost();
             Destroy(collision.gameObject);
         }
 

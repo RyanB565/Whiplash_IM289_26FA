@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float moveSpeed;
     [SerializeField] private GameObject SoulAttack;
     [SerializeField] private AudioSource RunSFX;
+
+    [SerializeField] private float slashDamage;
+    [SerializeField] private float aoeDamage;
     private GameObject SoulSpawn;
     private Animator anim;
     private SpriteRenderer sr;
@@ -137,6 +140,11 @@ public class PlayerController : MonoBehaviour
         rb2d.constraints = RigidbodyConstraints2D.None;
         rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
+    }
+
+    public void DamageUpgrade()
+    {
+
     }
     
 }

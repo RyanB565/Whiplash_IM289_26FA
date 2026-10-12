@@ -62,6 +62,8 @@ public class Timer : MonoBehaviour
             timeEnded.enabled = true;
             timeEnded.text = "Wave Completed";
 
+            capacitySystem.ClearEnemies();
+
             if (capacitySystem.Waves.Count == 0)
             {
                 gManager.Ending();

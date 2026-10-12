@@ -7,7 +7,7 @@ public class AttackDamage : MonoBehaviour
 
     public void DamageBoost()
     {
-        if (damageAmount <= 4)
+        if (damageAmount == 4)
         {
             return;
         }
@@ -17,6 +17,7 @@ public class AttackDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.TryGetComponent<EnemyController>(out EnemyController enemyComponent))
         {
             enemyComponent.TakeDamage(damageAmount);
@@ -26,5 +27,11 @@ public class AttackDamage : MonoBehaviour
         {
             RenemyComponent.TakeDamage(damageAmount);
         }
+
+        if (collision.gameObject.TryGetComponent<BossManager>(out BossManager BossComponent))
+        {
+            BossComponent.TakeDamage(damageAmount);
+        }
+
     }
 }
