@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8337431565798608924}
   - component: {fileID: -5249364055237590554}
   - component: {fileID: 721870259061612534}
+  - component: {fileID: 642030258613382451}
   m_Layer: 7
   m_Name: Boss
   m_TagString: Untagged
@@ -179,7 +180,6 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7752493155210990386, guid: 42ba0aa33503605458710c65a0e6921c, type: 3}
   Target: {fileID: 635378843456725696}
   distanceFromPlayer: 5
-  fireRate: 1
 --- !u!50 &721870259061612534
 Rigidbody2D:
   serializedVersion: 5
@@ -207,6 +207,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &642030258613382451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061556387646958145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9532d0f692c9cf2419a04fc3431aefa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossManager
 --- !u!1 &8673343032156247775
 GameObject:
   m_ObjectHideFlags: 0

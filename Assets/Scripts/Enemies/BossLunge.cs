@@ -40,52 +40,56 @@ public class BossLunge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(playerLoc.position, enemyLoc.position);
-
-        // Handle cooldown
-        if (!canLunge)
+        if (BossManager.lungeAttack)
         {
-            lungeTimer += Time.deltaTime;
+            float distance = Vector2.Distance(playerLoc.position, enemyLoc.position);
 
-            if (lungeTimer >= lungeCooldown)
+            // Handle cooldown
+            if (!canLunge)
             {
-                canLunge = true;
+                lungeTimer += Time.deltaTime;
+
+                if (lungeTimer >= lungeCooldown)
+                {
+                    canLunge = true;
+                    lungeTimer = 0f;
+                }
+            }
+
+            // Handle lunge movement
+            if (isLunging)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, lungeTarget, lungeSpeed *
+                Time.deltaTime);
+
+                lungeTimeRemaining -= Time.deltaTime;
+
+                if (lungeTimeRemaining <= 0f)
+                {
+                    isLunging = false;
+                }
+
+                return;
+            }
+
+            // Chase player
+            if (distance > attackRange)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, playerLoc.position, moveSpeed *
+                Time.deltaTime);
+            }
+            // Lunge if in range and cooldown is finished
+            else if (canLunge)
+            {
+                lungeTarget = playerLoc.position;
+                isLunging = true;
+                canLunge = false;
+
+                lungeTimeRemaining = lungeDuration;
                 lungeTimer = 0f;
             }
         }
-
-        // Handle lunge movement
-        if (isLunging)
-        {
-            transform.position = Vector3.MoveTowards( transform.position, lungeTarget, lungeSpeed * 
-            Time.deltaTime);
-
-            lungeTimeRemaining -= Time.deltaTime;
-
-            if (lungeTimeRemaining <= 0f)
-            {
-                isLunging = false;
-            }
-
-            return;
-        }
-
-        // Chase player
-        if (distance > attackRange)
-        {
-            transform.position = Vector3.MoveTowards( transform.position, playerLoc.position, moveSpeed * 
-            Time.deltaTime);
-        }
-        // Lunge if in range and cooldown is finished
-        else if (canLunge)
-        {
-            lungeTarget = playerLoc.position;
-            isLunging = true;
-            canLunge = false;
-
-            lungeTimeRemaining = lungeDuration;
-            lungeTimer = 0f;
-        }
+        
     }
 }
 

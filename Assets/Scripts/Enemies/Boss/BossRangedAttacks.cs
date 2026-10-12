@@ -35,16 +35,20 @@ public class BossRangedAttacks : MonoBehaviour
     {
         while (true)
         {
-            if (bulletPrefab != null && Target != null)
+            if (BossManager.shootAttack)
             {
-                Vector2 direction = (playerLocation.position - Target.position).normalized;
+                if (bulletPrefab != null && Target != null)
+                {
+                    Vector2 direction = (playerLocation.position - Target.position).normalized;
 
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-                Quaternion rotation = Quaternion.Euler(0f, 0f, angle - 90f);
+                    Quaternion rotation = Quaternion.Euler(0f, 0f, angle - 90f);
 
-                Instantiate(bulletPrefab, Target.position, rotation);
+                    Instantiate(bulletPrefab, Target.position, rotation);
+                }
             }
+            
 
             yield return new WaitForSeconds(0.5f);
         }
