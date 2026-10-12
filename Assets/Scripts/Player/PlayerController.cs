@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float moveSpeed;
     [SerializeField] private GameObject SoulAttack;
     [SerializeField] private AudioSource RunSFX;
+    [SerializeField] private AudioSource BossTakeDamage;
 
     [SerializeField] private float slashDamage;
     [SerializeField] private float aoeDamage;
@@ -145,6 +146,11 @@ public class PlayerController : MonoBehaviour
     public void DamageUpgrade()
     {
 
+    }
+
+    public void BossTakeDamageSound()
+    {
+        BossTakeDamage.Play();
     }
     
 }
