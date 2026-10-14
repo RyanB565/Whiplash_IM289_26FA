@@ -42,11 +42,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void Die()
-    {
-        enemyDrops.EnemyDeath();
-        Destroy(gameObject);
-    }
 
     #region Enemies Health Method
 
@@ -57,6 +52,7 @@ public class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            enemyDrops.EnemyDeath();
 
             if (capacitySystem != null)
             {

@@ -12,7 +12,7 @@ public class EnemyDrops : MonoBehaviour
 
     void Start()
     {
-        EnemiesKilled = 0;   
+        EnemiesKilled = 0;
     }
 
     

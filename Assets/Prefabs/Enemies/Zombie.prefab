@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -1728115199748610894}
   - component: {fileID: 3671833370998635428}
   - component: {fileID: 4981840884441638241}
+  - component: {fileID: -3535162867088492069}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   speed: 1.5
   stoppingDistance: 0.5
-  enemyDrops: {fileID: 0}
+  enemyDrops: {fileID: -3535162867088492069}
   health: 0
   maxHealth: 1
 --- !u!95 &4981840884441638241
@@ -185,3 +186,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3535162867088492069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667685574913833435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6f508d97aa91445a22e0e9e0502d43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDrops
+  powerUps: []
+  healthPickup: {fileID: 7012302050225488438, guid: f95fb9968876df347ad5ef6f245b3f3d, type: 3}
+  MaxHealthBoost: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+  DamageBoost: {fileID: 7451875730911871668, guid: 99286c3ae60cb2040858bdd58adf49c4, type: 3}
+  SpeedBoost: {fileID: 3830003738752181626, guid: 51b5194364beca048b86ce57c6f47f56, type: 3}
