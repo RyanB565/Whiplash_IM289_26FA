@@ -7,10 +7,13 @@ public class SoulAttack : MonoBehaviour
     [SerializeField] private Animator AoEAnim;
     [SerializeField] private AudioSource soulSound;
     private InputAction AoE;
-    private bool AoEEnabled = true;
+    private bool AoEEnabled;
+    private bool isRoutineRunning;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AoEEnabled = true;
+        isRoutineRunning = false;
         AoE = InputSystem.actions.FindAction("Soul");
         AoE.performed += AoE_performed;
     }
@@ -19,18 +22,33 @@ public class SoulAttack : MonoBehaviour
     {   
         if (AoEEnabled && AoEAnim != null)
         {
-            AoEAnim.SetTrigger("Soul");
             AoEEnabled = false;
-            StartCoroutine(SoulCooldown());
+            AoEAnim.SetTrigger("Soul");
+            if (isRoutineRunning)
+            {
+                return;
+            }
+            else
+            {
+                StartCoroutine(SoulCooldown());
+            }
+            
         }   
     }
 
+
+    
     private IEnumerator SoulCooldown()
     {
         while (true)
         {
-            yield return new WaitForSeconds(5);
+            isRoutineRunning = true;
+            
+            yield return new WaitForSeconds(5f);
             AoEEnabled = true;
+
+            isRoutineRunning =false;
+            
         }
     }
 
