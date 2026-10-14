@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Builds/Starting Scene.unity
+    guid: 4de0503896ab49f4cbb20aa2aa4e71a0
+  - enabled: 1
     path: Assets/Scenes/Builds/Vertical Slice.unity
     guid: 20b425e3c4316ee418db78dff009d5c8
   m_configObjects:

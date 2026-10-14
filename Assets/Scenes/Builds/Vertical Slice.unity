@@ -984,6 +984,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Ending
       objectReference: {fileID: 0}
+    - target: {fileID: 7723696378414110197, guid: 602b2304296348c459f46def9b8cbfa1, type: 3}
+      propertyPath: m_text
+      value: Play again!
+      objectReference: {fileID: 0}
     - target: {fileID: 8272236961217927416, guid: 602b2304296348c459f46def9b8cbfa1, type: 3}
       propertyPath: m_Name
       value: Death Screen
