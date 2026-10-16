@@ -51,7 +51,7 @@ public class CapacitySystem : MonoBehaviour
         if (Waves.Count == 1)
         {
             Debug.Log("Game Ended: Please add 5 total waves");
-            EditorApplication.isPlaying = false;
+           
         }
     }
 
