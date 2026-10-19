@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     private CapacitySystem capacitySystem;
     private SpriteRenderer sr;
     private Vector2 lastPosition;
+   [SerializeField] public GameObject particlePrefab;
 
     [SerializeField] float health, maxHealth;
 
@@ -21,6 +22,7 @@ public class EnemyController : MonoBehaviour
         lastPosition = transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
+     
 
         health = maxHealth;
     }
@@ -53,6 +55,8 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
+
+        Instantiate(particlePrefab, transform.position, Quaternion.identity);
 
         if (health <= 0)
         {
