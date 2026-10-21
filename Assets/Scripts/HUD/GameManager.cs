@@ -5,13 +5,19 @@ using UnityEditor;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
     public int powerUpCounter;
-    public EnemyDrops enemyDrops;
+    public List<GameObject> powerUps;
+    private int powerUpSpawn = 10;
+    public GameObject MaxHealthBoost;
+    public GameObject DamageBoost;
+    public GameObject SpeedBoost;
+
     private PlayerController controller;
 
 
@@ -21,6 +27,9 @@ public class GameManager : MonoBehaviour
         controller = FindFirstObjectByType<PlayerController>();
 
         powerUpCounter = 0;
+        powerUps.Add(MaxHealthBoost);
+        powerUps.Add(DamageBoost);
+        powerUps.Add(SpeedBoost);
 
         deathcanvas.enabled = false;
     }
@@ -41,7 +50,12 @@ public class GameManager : MonoBehaviour
     public void EnemyDeath()
     {
         powerUpCounter += 1;
-        enemyDrops.DeathMath();
+        if (powerUpCounter >= powerUpSpawn)
+        {
+            int RandomIndex = Random.Range(0, powerUps.Count);
+            Instantiate(powerUps[RandomIndex]);
+            powerUpCounter -= powerUpSpawn;
+        }
     }
 
     private void ReloadScene()

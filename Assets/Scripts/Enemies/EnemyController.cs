@@ -57,16 +57,18 @@ public class EnemyController : MonoBehaviour
 
             Destroy(gameObject);
             
-            int HealthRoll = UnityEngine.Random.Range(1, 11);
-            if (HealthRoll == 10)
-            {
-                Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
-                Debug.Log("health spawn");
-            }
-
             if (capacitySystem != null)
             {
                 capacitySystem.EnemyDied(gameObject);
+            }
+            
+            gameManager.EnemyDeath();
+
+            int HealthRoll = UnityEngine.Random.Range(1, 11);
+
+            if (HealthRoll == 10)
+            {
+                Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
             }
         }
     }
