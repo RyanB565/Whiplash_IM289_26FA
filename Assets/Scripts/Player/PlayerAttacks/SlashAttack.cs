@@ -45,6 +45,7 @@ public class SlashAttack : MonoBehaviour
     {
         if (slashAnim != null)
         {
+            print("slash");
             slashAnim.SetTrigger("Slash");
             
         }
