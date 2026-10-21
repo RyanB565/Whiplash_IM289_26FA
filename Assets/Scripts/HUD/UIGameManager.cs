@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class UIGameManager : MonoBehaviour
 {
+    private SoulAttack aoeAttack;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        aoeAttack = FindFirstObjectByType<SoulAttack>();
     }
 
     // Update is called once per frame
