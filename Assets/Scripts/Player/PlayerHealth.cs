@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     private GameManager gameManager;
     [SerializeField] private AudioSource damageSFX;
     [SerializeField] private int totalHearts;
+    private Animator hitanim;
 
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerDeath;
@@ -16,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hitanim = GetComponent<Animator>();
         health = maxHealth;
         heartManager = FindFirstObjectByType<HealthHeartManager>();
         gameManager = FindFirstObjectByType<GameManager>();
@@ -23,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        hitanim.SetTrigger("Damaged");
         health -= amount;
         damageSFX.Play();
         OnPlayerDamaged?.Invoke();
