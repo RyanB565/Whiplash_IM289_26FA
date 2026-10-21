@@ -5,7 +5,6 @@ public class RangedEnemyController : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private float health, maxHealth;
-    public EnemyDrops enemyDrops;
 
     private Transform playerLoc;
     [SerializeField] private Transform Targeting;
@@ -56,7 +55,7 @@ public class RangedEnemyController : MonoBehaviour
 
     public void Die()
     {
-        enemyDrops.EnemyDeath();
+        
         Destroy(gameObject);
     }
 
