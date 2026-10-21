@@ -18,6 +18,7 @@ public class PickUps : MonoBehaviour
         if (collision.CompareTag("HealthPickUp"))
         {
             playerHealth.Refill();
+            Debug.Log("Healed!");
             Destroy(collision.gameObject);
         }
 

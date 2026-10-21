@@ -5,8 +5,8 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float stoppingDistance;
-    public EnemyDrops enemyDrops;
-
+    public GameManager gameManager;
+    public GameObject healthPickup;
     private Transform target;
     private CapacitySystem capacitySystem;
     private SpriteRenderer sr;
@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
         lastPosition = transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
-     
+        gameManager = FindFirstObjectByType<GameManager>();
 
         health = maxHealth;
     }
@@ -44,12 +44,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public void Die()
-    {
-        enemyDrops.EnemyDeath();
-        Destroy(gameObject);
-    }
-
     #region Enemies Health Method
 
     public void TakeDamage(float damageAmount)
@@ -60,7 +54,15 @@ public class EnemyController : MonoBehaviour
 
         if (health <= 0)
         {
+
             Destroy(gameObject);
+            
+            int HealthRoll = UnityEngine.Random.Range(1, 11);
+            if (HealthRoll == 10)
+            {
+                Instantiate(healthPickup, new Vector2(gameObject.transform.position.x, gameObject.transform.position.y), Quaternion.identity);
+                Debug.Log("health spawn");
+            }
 
             if (capacitySystem != null)
             {

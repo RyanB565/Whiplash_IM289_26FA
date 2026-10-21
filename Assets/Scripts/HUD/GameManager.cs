@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
-
+    public int powerUpCounter;
+    public EnemyDrops enemyDrops;
     private PlayerController controller;
 
 
@@ -18,6 +19,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         controller = FindFirstObjectByType<PlayerController>();
+
+        powerUpCounter = 0;
 
         deathcanvas.enabled = false;
     }
@@ -33,6 +36,12 @@ public class GameManager : MonoBehaviour
         controller.deathStop();
         Time.timeScale = 0f;
         deathcanvas.enabled = true;  
+    }
+
+    public void EnemyDeath()
+    {
+        powerUpCounter += 1;
+        enemyDrops.DeathMath();
     }
 
     private void ReloadScene()

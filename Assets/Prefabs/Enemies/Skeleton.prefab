@@ -172,7 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   speed: 1
   stoppingDistance: 0.5
-  enemyDrops: {fileID: 0}
+  gameManager: {fileID: 0}
+  healthPickup: {fileID: 7012302050225488438, guid: f95fb9968876df347ad5ef6f245b3f3d, type: 3}
   particlePrefab: {fileID: 8426181811424037020, guid: 17406a145c28c2a44bf6f2b708b858f9, type: 3}
   health: 0
   maxHealth: 1

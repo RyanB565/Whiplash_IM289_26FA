@@ -4,7 +4,10 @@ using UnityEngine;
 public class EnemyDrops : MonoBehaviour
 {
     public List<GameObject> powerUps;
-    private int EnemiesKilled;
+    public GameManager gameManager;
+    private int powerUpSpawn = 10;
+    public Transform enemy;
+
     public GameObject healthPickup;
     public GameObject MaxHealthBoost;
     public GameObject DamageBoost;
@@ -12,26 +15,28 @@ public class EnemyDrops : MonoBehaviour
 
     void Start()
     {
-        EnemiesKilled = 0;   
+        gameManager = FindFirstObjectByType<GameManager>();
+        powerUps.Add(MaxHealthBoost);
+        powerUps.Add(DamageBoost);
+        powerUps.Add(SpeedBoost);
     }
 
-    
+
     void Update()
     {
-        
+
     }
 
-    public void EnemyDeath()
+    public void DeathMath()
     {
-        EnemiesKilled += 1;
-
-        if (EnemiesKilled >= 10)
+        if (gameManager.powerUpCounter >= powerUpSpawn)
         {
             int RandomIndex = Random.Range(0, powerUps.Count);
-            Instantiate(powerUps[RandomIndex], new Vector2(1, 0), Quaternion.identity);
+            Instantiate(powerUps[RandomIndex]);
+            gameManager.powerUpCounter -= powerUpSpawn;
         }
 
-        int HealthRoll = Random.Range(1, 10);
+        int HealthRoll = Random.Range(1, 11);
 
         if (HealthRoll == 10)
         {
