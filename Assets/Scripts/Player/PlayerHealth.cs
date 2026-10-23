@@ -10,6 +10,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private AudioSource damageSFX;
     [SerializeField] private int totalHearts;
     private Animator hitanim;
+    private BoxCollider2D hitbox;
+    [SerializeField] private LayerMask EnemyLayer;
+    [SerializeField] private LayerMask BossLayer;
+
 
     public static event Action OnPlayerDamaged;
     public static event Action OnPlayerDeath;
@@ -17,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        hitbox = GetComponent<BoxCollider2D>();
         hitanim = GetComponent<Animator>();
         health = maxHealth;
         heartManager = FindFirstObjectByType<HealthHeartManager>();
@@ -67,4 +72,13 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void iFrames()
+    {
+        hitbox.excludeLayers = EnemyLayer + BossLayer;
+    }
+
+    public void iFrameEnd()
+    {
+        hitbox.excludeLayers = 0;
+    }
 }
