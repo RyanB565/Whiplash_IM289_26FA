@@ -50,7 +50,7 @@ public class EnemyController : MonoBehaviour
     {
         health -= damageAmount;
 
-        Instantiate(particlePrefab, transform.position, Quaternion.identity);
+        damageParticle();
 
         if (health <= 0)
         {
@@ -72,6 +72,11 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+    public void damageParticle()
+    {
+        GameObject partcicleinstance = Instantiate(particlePrefab, transform.position, Quaternion.identity);
 
+        Destroy(partcicleinstance, 1.5f);
+    }
     #endregion
 }
