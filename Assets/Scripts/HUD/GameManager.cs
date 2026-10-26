@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
 
     private PlayerController controller;
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,6 +44,19 @@ public class GameManager : MonoBehaviour
         controller.deathStop();
         Time.timeScale = 0f;
         deathcanvas.enabled = true;  
+    }
+
+    public void WaveChange(int currentWave)
+    {
+        if(currentWave == 3)
+        {
+            powerUpSpawn = 15;
+        }
+
+        if(currentWave == 4)
+        {
+            powerUpSpawn = 20;
+        }
     }
 
     public void EnemyDeath(Vector2 enemyPosition)
