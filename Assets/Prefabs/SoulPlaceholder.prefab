@@ -142,3 +142,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
   damageAmount: 2
+  maxDamage: 0
+  attackType: 1
