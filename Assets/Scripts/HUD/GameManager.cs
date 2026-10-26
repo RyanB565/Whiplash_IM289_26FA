@@ -48,11 +48,6 @@ public class GameManager : MonoBehaviour
 
     public void WaveChange(int currentWave)
     {
-        if(currentWave == 1)
-        {
-            powerUpSpawn = 10;
-        }
-
         if(currentWave == 3)
         {
             powerUpSpawn = 15;
