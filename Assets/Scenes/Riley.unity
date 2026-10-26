@@ -2002,9 +2002,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1314990761}
     - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: SpeedBoost
+      value: 
+      objectReference: {fileID: 3830003738752181626, guid: 51b5194364beca048b86ce57c6f47f56, type: 3}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: DamageBoost
+      value: 
+      objectReference: {fileID: 7451875730911871668, guid: 99286c3ae60cb2040858bdd58adf49c4, type: 3}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: deathcanvas
       value: 
       objectReference: {fileID: 977058420}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: MaxHealthBoost
+      value: 
+      objectReference: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
     - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: timeEnded
       value: 

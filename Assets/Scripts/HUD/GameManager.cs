@@ -47,14 +47,38 @@ public class GameManager : MonoBehaviour
         deathcanvas.enabled = true;  
     }
 
-    public void EnemyDeath()
+    public void EnemyDeath(Vector2 enemyPosition)
     {
+        int DBNumber = 0;
+        int SBNumber = 0;
+
         powerUpCounter += 1;
+
         if (powerUpCounter >= powerUpSpawn)
         {
             int RandomIndex = Random.Range(0, powerUps.Count);
-            Instantiate(powerUps[RandomIndex]);
+            Instantiate(powerUps[RandomIndex], new Vector2(enemyPosition.x, enemyPosition.y), Quaternion.identity);
             powerUpCounter -= powerUpSpawn;
+
+            if (powerUps[RandomIndex] = DamageBoost)
+            {
+                DBNumber += 1;
+            }
+
+            if (powerUps[RandomIndex] = SpeedBoost)
+            {
+                SBNumber += 1;
+            }
+            
+            if (DBNumber == 3)
+            {
+                powerUps.Remove(DamageBoost);
+            }
+
+            if (SBNumber == 3)
+            {
+                powerUps.Remove(SpeedBoost);
+            }
         }
     }
 
