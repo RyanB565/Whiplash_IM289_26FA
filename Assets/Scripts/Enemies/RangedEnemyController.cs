@@ -12,6 +12,7 @@ public class RangedEnemyController : MonoBehaviour
     private float moveSpeed;
     private bool canShoot = false;
     private CapacitySystem capacitySystem;
+    [SerializeField] public GameObject particlePrefab;
     private void Start()
     {
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
@@ -64,6 +65,8 @@ public class RangedEnemyController : MonoBehaviour
     {
         health -= damageAmount;
 
+        damageParticle();
+
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -74,6 +77,14 @@ public class RangedEnemyController : MonoBehaviour
             }
         }
     }
+
+    public void damageParticle()
+    {
+        GameObject partcicleinstance = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+
+        Destroy(partcicleinstance, 1.5f);
+    }
+
 
     #endregion
 

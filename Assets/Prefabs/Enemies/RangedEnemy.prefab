@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5173117090954753688}
   - component: {fileID: 1545242310678537005}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 3793487588450627701}
   - component: {fileID: 3650544090262895228}
   - component: {fileID: 2655842077390003962}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RangedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,3 +220,4 @@ MonoBehaviour:
   maxHealth: 1
   enemyDrops: {fileID: 0}
   Targeting: {fileID: 5173117090954753688}
+  particlePrefab: {fileID: 8426181811424037020, guid: 17406a145c28c2a44bf6f2b708b858f9, type: 3}

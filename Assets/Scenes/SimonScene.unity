@@ -803,9 +803,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1784646512}
     - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: SpeedBoost
+      value: 
+      objectReference: {fileID: 3830003738752181626, guid: 51b5194364beca048b86ce57c6f47f56, type: 3}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: DamageBoost
+      value: 
+      objectReference: {fileID: 7451875730911871668, guid: 99286c3ae60cb2040858bdd58adf49c4, type: 3}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: deathcanvas
       value: 
       objectReference: {fileID: 1780252282}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: MaxHealthBoost
+      value: 
+      objectReference: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
     - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: timeEnded
       value: 
@@ -1017,6 +1029,12 @@ MonoBehaviour:
   maxHealth: 6
   damageSFX: {fileID: 63302462}
   totalHearts: 18
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  BossLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &874656427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,7 +1131,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.057349443, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1123,7 +1141,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.71325254, y: 1}
   m_EdgeRadius: 0
 --- !u!95 &874656432
 Animator:
@@ -1221,7 +1239,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8063817490768453922, guid: 4df0c1db5261d324b847f91b145228fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2522,7 +2540,7 @@ Transform:
   m_GameObject: {fileID: 1948144858}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.62, y: -3.77, z: 0}
+  m_LocalPosition: {x: 0.99, y: -3.77, z: 0}
   m_LocalScale: {x: 4.8125, y: 4.8125, z: 4.8125}
   m_ConstrainProportionsScale: 0
   m_Children: []

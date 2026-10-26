@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossManager : MonoBehaviour
 {
     [SerializeField] float health, maxHealth;
+    [SerializeField] public GameObject particlePrefab;
     private PlayerController playerController;
 
     public static bool shootAttack = false;
@@ -32,10 +33,22 @@ public class BossManager : MonoBehaviour
         health -= damageAmount;
         playerController.BossTakeDamageSound();
 
+        damageParticle();
+
         if (health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    public void damageParticle()
+    {
+        GameObject partcicleinstance = Instantiate(particlePrefab, transform.position, Quaternion.identity);
+
+
+        
+
+        Destroy(partcicleinstance,1.5f);
     }
 
     #endregion
