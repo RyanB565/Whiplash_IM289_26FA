@@ -1,4 +1,6 @@
 #if UNITY_EDITOR
+using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 #endif
 using UnityEngine;
@@ -7,6 +9,10 @@ using UnityEngine.SceneManagement;
 public class UIGameManager : MonoBehaviour
 {
     private SoulAttack aoeAttack;
+
+    [SerializeField] private TextMeshPro slashAttack;
+    [SerializeField] private TextMeshPro soulAttack;
+    [SerializeField] private TextMeshPro speed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,5 +42,10 @@ public class UIGameManager : MonoBehaviour
         #else
         Application.Quit();
         #endif
+    }
+
+    public void statsInfo()
+    {
+
     }
 }
