@@ -128,7 +128,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -218,6 +218,5 @@ MonoBehaviour:
   bullet: {fileID: 7700531762784145275, guid: 2a8ddd75c31d71f4ca9de601e736f8e0, type: 3}
   health: 0
   maxHealth: 1
-  enemyDrops: {fileID: 0}
   Targeting: {fileID: 5173117090954753688}
   particlePrefab: {fileID: 8426181811424037020, guid: 17406a145c28c2a44bf6f2b708b858f9, type: 3}
