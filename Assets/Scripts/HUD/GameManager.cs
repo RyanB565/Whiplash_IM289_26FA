@@ -49,7 +49,6 @@ public class GameManager : MonoBehaviour
 
     public void EnemyDeath(Vector2 enemyPosition)
     {
-        int MHBNumber = 0;
         int DBNumber = 0;
         int SBNumber = 0;
 
@@ -61,11 +60,6 @@ public class GameManager : MonoBehaviour
             Instantiate(powerUps[RandomIndex], new Vector2(enemyPosition.x, enemyPosition.y), Quaternion.identity);
             powerUpCounter -= powerUpSpawn;
 
-            if (powerUps[RandomIndex] = MaxHealthBoost)
-            {
-                MHBNumber += 1;
-            }
-
             if (powerUps[RandomIndex] = DamageBoost)
             {
                 DBNumber += 1;
@@ -75,13 +69,8 @@ public class GameManager : MonoBehaviour
             {
                 SBNumber += 1;
             }
-
-            if(MHBNumber == 5)
-            {
-                powerUps.Remove(MaxHealthBoost);
-            }
             
-            if (DBNumber == 5)
+            if (DBNumber == 3)
             {
                 powerUps.Remove(DamageBoost);
             }
