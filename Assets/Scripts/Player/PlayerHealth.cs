@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
     //Power-Up Method 
     public void Refill()
     {
-        health = maxHealth;
+        health += 2;
         heartManager.DrawHearts();
     }
 
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
         {
             maxHealth += 2;
             heartManager.DrawHearts();
-            Refill();
+            health = maxHealth;
         }
 
         if (maxHealth == totalHearts)

@@ -86,6 +86,7 @@ public class Timer : MonoBehaviour
         timeEnded.enabled = false;
         timeEnded.text = "";
 
+        gManager.WaveChange(capacitySystem.currentWave);
         capacitySystem.WaveSystem();
     }
 
