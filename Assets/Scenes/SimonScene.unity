@@ -1017,6 +1017,12 @@ MonoBehaviour:
   maxHealth: 6
   damageSFX: {fileID: 63302462}
   totalHearts: 18
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  BossLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &874656427
 MonoBehaviour:
   m_ObjectHideFlags: 0
