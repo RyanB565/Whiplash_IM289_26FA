@@ -17,11 +17,15 @@ public class SlashAttack : MonoBehaviour
     [SerializeField] private float distanceFromPlayer;
     [SerializeField] private SpriteRenderer  slashSprite;
     [SerializeField] private Animator slashAnim;
+    private bool CanSlash = true;
+    private bool isRoutineRunning;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
       
+        isRoutineRunning = false;
+        CanSlash = true;
         slash = InputSystem.actions.FindAction("Slash");
         slash.performed += Slash_performed;
 
@@ -43,11 +47,19 @@ public class SlashAttack : MonoBehaviour
     
     private void Slash_performed (InputAction.CallbackContext context)
     {
-        if (slashAnim != null)
+        if (CanSlash && slashAnim != null)
         {
-            
+            CanSlash = false;
             slashAnim.SetTrigger("Slash");
-            
+            if (isRoutineRunning)
+            {
+                return;
+            }
+            else
+            {
+                StartCoroutine(SlashCooldown());
+            }
+
         }
     }
 
@@ -81,5 +93,19 @@ public class SlashAttack : MonoBehaviour
     public void SlashSound()
     {
         slashFX.Play();
+    }
+
+    private IEnumerator SlashCooldown()
+    {
+        while (true)
+        {
+            isRoutineRunning = true;
+
+            yield return new WaitForSeconds(0.8f);
+            CanSlash = true;
+
+            isRoutineRunning = false;
+
+        }
     }
 }
