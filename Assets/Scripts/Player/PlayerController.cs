@@ -19,9 +19,9 @@ public class PlayerController : MonoBehaviour
     public float Speed => moveSpeed;
 
     [Header("Attack Stats")]
-    [SerializeField] private float slashDamage;
-    [SerializeField] private float soulDamage;
-    [SerializeField] private float maxDamage;
+    [SerializeField] private float slashDamage = 1;
+    [SerializeField] private float soulDamage = 2;
+    [SerializeField] private float maxDamage = 8;
 
     public float SlashDamage => slashDamage;
     public float SoulDamage => soulDamage;
