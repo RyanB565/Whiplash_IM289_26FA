@@ -35,8 +35,6 @@ public class SoulAttack : MonoBehaviour
             
         }   
     }
-
-
     
     private IEnumerator SoulCooldown()
     {
@@ -48,7 +46,6 @@ public class SoulAttack : MonoBehaviour
             AoEEnabled = true;
 
             isRoutineRunning =false;
-            
         }
     }
 

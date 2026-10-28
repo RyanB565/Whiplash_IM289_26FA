@@ -5,11 +5,13 @@ public class PickUps : MonoBehaviour
 {
     private PlayerController playerController;
     private PlayerHealth playerHealth;
+    private UIGameManager uiGameManager;
     
     void Start()
     {
         playerController = FindFirstObjectByType<PlayerController>();
         playerHealth = FindFirstObjectByType<PlayerHealth>();
+        uiGameManager = FindFirstObjectByType<UIGameManager>();
     }
 
 
@@ -29,6 +31,7 @@ public class PickUps : MonoBehaviour
 
         if (collision.CompareTag("DamageBoost"))
         {
+            playerController.DamageBoost();
             Destroy(collision.gameObject);
         }
 

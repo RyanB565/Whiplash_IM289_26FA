@@ -4,21 +4,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private InputAction move;
-    private Vector2 moveDir;
-    private Rigidbody2D rb2d;
     [SerializeField] public float moveSpeed;
     [SerializeField] private GameObject SoulAttack;
     [SerializeField] private AudioSource RunSFX;
     [SerializeField] private AudioSource BossTakeDamage;
 
-    [SerializeField] private float slashDamage;
-    [SerializeField] private float aoeDamage;
     private GameObject SoulSpawn;
     private Animator anim;
     private SpriteRenderer sr;
-
+    private InputAction move;
+    private Vector2 moveDir;
+    private Rigidbody2D rb2d;
     private bool canMove = true;
+    public float Speed => moveSpeed;
+
+    [Header("Attack Stats")]
+    [SerializeField] private float slashDamage;
+    [SerializeField] private float soulDamage;
+    [SerializeField] private float maxDamage;
+
+    public float SlashDamage => slashDamage;
+    public float SoulDamage => soulDamage;
 
     #region Start Methods
 
@@ -50,6 +56,8 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
+    #region Move InputActions Methods
 
     private void Move_canceled(InputAction.CallbackContext obj)
     {
@@ -90,6 +98,8 @@ public class PlayerController : MonoBehaviour
             rb2d.linearVelocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
         }
     }
+
+    #endregion
 
     #region Knockback Method
 
@@ -134,6 +144,25 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
+    #region Attack DamageBoost Functions
+
+    public void DamageBoost()
+    {
+        BoostSlashDamage();
+        BoostSoulDamage();
+    }
+    public void BoostSlashDamage()
+    {
+        slashDamage = Mathf.Min(slashDamage + 1, maxDamage);
+    }
+
+    public void BoostSoulDamage()
+    {
+        soulDamage = Mathf.Min(soulDamage + 1, maxDamage);
+    }
+
+    #endregion
+
     public void deathStop()
     {
         move.started -= Move_started;
@@ -143,10 +172,7 @@ public class PlayerController : MonoBehaviour
         rb2d.constraints = RigidbodyConstraints2D.FreezePosition;
     }
 
-    public void DamageUpgrade()
-    {
 
-    }
 
     public void BossTakeDamageSound()
     {
