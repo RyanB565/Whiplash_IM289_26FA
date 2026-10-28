@@ -67,7 +67,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.02352187, y: -0.018920183}
+  m_Offset: {x: -0.039883196, y: -0.013597488}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -77,7 +77,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.491133, y: 0.5613297}
+  m_Size: {x: 1.676561, y: 1.6577909}
   m_EdgeRadius: 0
 --- !u!114 &3485923464268714338
 MonoBehaviour:
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyController
   speed: 1.5
-  stoppingDistance: 1
+  stoppingDistance: 1.1
   gameManager: {fileID: 0}
   healthPickup: {fileID: 7012302050225488438, guid: f95fb9968876df347ad5ef6f245b3f3d, type: 3}
   particlePrefab: {fileID: 8426181811424037020, guid: 17406a145c28c2a44bf6f2b708b858f9, type: 3}
