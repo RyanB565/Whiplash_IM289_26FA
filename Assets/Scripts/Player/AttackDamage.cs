@@ -3,16 +3,18 @@ using UnityEngine;
 
 public class AttackDamage : MonoBehaviour
 {
-    [SerializeField] private float damageAmount;
 
-    public void DamageBoost()
+    [SerializeField] private AttackType attackType;
+
+    public enum AttackType { Slash, Soul }
+    private PlayerController pController;
+
+    public float DamageAmount { get { if (attackType == AttackType.Slash) 
+            { return pController.SlashDamage; } return pController.SoulDamage; } }
+
+    private void Awake()
     {
-        if (damageAmount == 4)
-        {
-            return;
-        }
-
-        damageAmount++;
+        pController = FindFirstObjectByType<PlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,17 +22,17 @@ public class AttackDamage : MonoBehaviour
 
         if (collision.gameObject.TryGetComponent<EnemyController>(out EnemyController enemyComponent))
         {
-            enemyComponent.TakeDamage(damageAmount);
+            enemyComponent.TakeDamage(DamageAmount);
         }
 
         if (collision.gameObject.TryGetComponent<RangedEnemyController>(out RangedEnemyController RenemyComponent))
         {
-            RenemyComponent.TakeDamage(damageAmount);
+            RenemyComponent.TakeDamage(DamageAmount);
         }
 
         if (collision.gameObject.TryGetComponent<BossManager>(out BossManager BossComponent))
         {
-            BossComponent.TakeDamage(damageAmount);
+            BossComponent.TakeDamage(DamageAmount);
         }
 
     }
