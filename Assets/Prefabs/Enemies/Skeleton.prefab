@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3669286233701801164}
   - component: {fileID: 436329626243849176}
   - component: {fileID: -6386195757221081920}
+  - component: {fileID: 3674621219147558324}
   m_Layer: 11
   m_Name: Skeleton
   m_TagString: Skeleton
@@ -177,3 +178,25 @@ MonoBehaviour:
   particlePrefab: {fileID: 8426181811424037020, guid: 17406a145c28c2a44bf6f2b708b858f9, type: 3}
   health: 0
   maxHealth: 1
+--- !u!95 &3674621219147558324
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2666769872620595773}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
