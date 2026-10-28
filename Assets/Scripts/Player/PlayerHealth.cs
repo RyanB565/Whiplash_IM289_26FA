@@ -54,6 +54,10 @@ public class PlayerHealth : MonoBehaviour
     public void Refill()
     {
         health += 2;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
         heartManager.DrawHearts();
     }
 
@@ -62,13 +66,14 @@ public class PlayerHealth : MonoBehaviour
         if (maxHealth < totalHearts)
         {
             maxHealth += 2;
-            heartManager.DrawHearts();
             health = maxHealth;
+            heartManager.DrawHearts();
         }
 
         if (maxHealth == totalHearts)
         {
-            Refill();
+            health = maxHealth;
+            heartManager.DrawHearts();
         }
     }
 
