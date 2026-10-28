@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public GameObject particlePrefab;
     [SerializeField] float health, maxHealth;
     private Animator animator;
+    [SerializeField] private AudioSource 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
