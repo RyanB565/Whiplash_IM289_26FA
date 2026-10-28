@@ -643,6 +643,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 965365633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &608096455 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1686080975583251535, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
+  m_PrefabInstance: {fileID: 1235793449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &748341759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1588342016130304206, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
+  m_PrefabInstance: {fileID: 1235793449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &762870615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762870617}
+  - component: {fileID: 762870616}
+  m_Layer: 0
+  m_Name: UIGManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &762870616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762870615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3b1e50462efb03409d4b63888604ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIGameManager
+  slashPrefab: {fileID: 3027945946635311595, guid: 270cf0b7916177746bec8fa51bf136e7, type: 3}
+  soulPrefab: {fileID: 7882513492092022633, guid: 9d7a90261ae0376479000688d2b9c7d0, type: 3}
+  playerController: {fileID: 1592158943}
+  statsPage: {fileID: 748341759}
+  slashAttack: {fileID: 891883679}
+  soulAttack: {fileID: 1051570164}
+  speed: {fileID: 2097268568}
+--- !u!4 &762870617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762870615}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -968.696, y: -541.9448, z: 0}
+  m_LocalScale: {x: 3.1527095, y: 3.1527095, z: 3.1527095}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608096455}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &768115550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -765,6 +826,17 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 6276077845819100687, guid: 602b2304296348c459f46def9b8cbfa1, type: 3}
   m_PrefabInstance: {fileID: 768115550}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &891883679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2471036883454785139, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
+  m_PrefabInstance: {fileID: 1235793449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &965365632
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +873,17 @@ Transform:
   - {fileID: 433333118}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051570164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8513770504706922090, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
+  m_PrefabInstance: {fileID: 1235793449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1109744452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1043,7 +1126,10 @@ PrefabInstance:
       objectReference: {fileID: 1592158939}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1686080975583251535, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 762870617}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
 --- !u!114 &1235793450 stripped
@@ -1686,8 +1772,9 @@ MonoBehaviour:
   SoulAttack: {fileID: 7882513492092022633, guid: 9d7a90261ae0376479000688d2b9c7d0, type: 3}
   RunSFX: {fileID: 1382460853}
   BossTakeDamage: {fileID: 433333119}
-  slashDamage: 0
-  aoeDamage: 0
+  slashDamage: 1
+  soulDamage: 2
+  maxDamage: 8
 --- !u!61 &1592158944
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2017,6 +2104,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2097268568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5170436716598987770, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
+  m_PrefabInstance: {fileID: 1235793449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
