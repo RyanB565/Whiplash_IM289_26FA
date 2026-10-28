@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        slashDamage = 1;
+        soulDamage = 2;
+        maxDamage = 8;
         sr = GetComponent<SpriteRenderer>();
         move = InputSystem.actions.FindAction("Move");
     }

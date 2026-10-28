@@ -11,13 +11,14 @@ public class EnemyController : MonoBehaviour
     private CapacitySystem capacitySystem;
     private SpriteRenderer sr;
     private Vector2 lastPosition;
-   [SerializeField] public GameObject particlePrefab;
-
+    [SerializeField] public GameObject particlePrefab;
     [SerializeField] float health, maxHealth;
+    private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         lastPosition = transform.position;
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -40,7 +41,12 @@ public class EnemyController : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
         {
+            animator.SetBool("Hit", false);
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }
+        else
+        {
+            animator.SetBool("Hit", true);
         }
     }
 

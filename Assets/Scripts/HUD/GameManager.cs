@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
     public int powerUpCounter;
+    public int powerUpSpawn = 8;
     public List<GameObject> powerUps;
-    private int powerUpSpawn = 10;
     public GameObject MaxHealthBoost;
     public GameObject DamageBoost;
     public GameObject SpeedBoost;
@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
         powerUpCounter = 0;
         powerUps.Add(MaxHealthBoost);
         powerUps.Add(DamageBoost);
+        powerUps.Add(DamageBoost);
+        powerUps.Add(DamageBoost);
+        powerUps.Add(SpeedBoost);
+        powerUps.Add(SpeedBoost);
         powerUps.Add(SpeedBoost);
 
         deathcanvas.enabled = false;
@@ -50,20 +54,17 @@ public class GameManager : MonoBehaviour
     {
         if(currentWave == 3)
         {
-            powerUpSpawn = 15;
+            powerUpSpawn = 12;
         }
 
         if(currentWave == 4)
         {
-            powerUpSpawn = 20;
+            powerUpSpawn = 16;
         }
     }
 
     public void EnemyDeath(Vector2 enemyPosition)
     {
-        int DBNumber = 0;
-        int SBNumber = 0;
-
         powerUpCounter += 1;
 
         if (powerUpCounter >= powerUpSpawn)
@@ -72,22 +73,12 @@ public class GameManager : MonoBehaviour
             Instantiate(powerUps[RandomIndex], new Vector2(enemyPosition.x, enemyPosition.y), Quaternion.identity);
             powerUpCounter -= powerUpSpawn;
 
-            if (powerUps[RandomIndex] = DamageBoost)
-            {
-                DBNumber += 1;
-            }
-
-            if (powerUps[RandomIndex] = SpeedBoost)
-            {
-                SBNumber += 1;
-            }
-            
-            if (DBNumber == 3)
+            if (powerUps[RandomIndex] == DamageBoost)
             {
                 powerUps.Remove(DamageBoost);
             }
 
-            if (SBNumber == 3)
+            if (powerUps[RandomIndex] == SpeedBoost)
             {
                 powerUps.Remove(SpeedBoost);
             }
