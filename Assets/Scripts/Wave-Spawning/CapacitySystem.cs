@@ -33,7 +33,7 @@ public class CapacitySystem : MonoBehaviour
 
     public int currentWave = 0;
     private int currentCapacity;
-
+            
     private Timer time;
     private GameManager gManager;
 
