@@ -19,7 +19,7 @@ public class SoulAttack : MonoBehaviour
     }
 
     private void AoE_performed(InputAction.CallbackContext obj)
-    {   
+    {
         if (AoEEnabled && AoEAnim != null)
         {
             AoEEnabled = false;
@@ -32,20 +32,20 @@ public class SoulAttack : MonoBehaviour
             {
                 StartCoroutine(SoulCooldown());
             }
-            
-        }   
+
+        }
     }
-    
+
     private IEnumerator SoulCooldown()
     {
         while (true)
         {
             isRoutineRunning = true;
-            
+
             yield return new WaitForSeconds(5f);
             AoEEnabled = true;
 
-            isRoutineRunning =false;
+            isRoutineRunning = false;
         }
     }
 
