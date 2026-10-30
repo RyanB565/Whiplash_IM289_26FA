@@ -14,10 +14,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public GameObject particlePrefab;
     [SerializeField] float health, maxHealth;
     private Animator animator;
-    [SerializeField] private AudioSource 
+    [SerializeField] private AudioSource chud;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+     private void Start()
     {
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
