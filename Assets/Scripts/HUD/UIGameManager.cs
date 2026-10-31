@@ -58,22 +58,4 @@ public class UIGameManager : MonoBehaviour
         soulAttack.text = $"Soul Damage: {playerController.SoulDamage}";
         speed.text = $"Speed: {playerController.Speed}";
     }
-    
-    public void PlayGame()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentSceneIndex < SceneManager.sceneCountInBuildSettings - 1)
-        {
-            SceneManager.LoadScene(currentSceneIndex + 1);
-        }
-    }
-
-    public void ExitGame()
-    {
-        #if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
-        #else
-        Application.Quit();
-        #endif
-    }
 }
