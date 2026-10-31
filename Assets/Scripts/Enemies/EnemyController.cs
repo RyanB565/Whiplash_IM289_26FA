@@ -14,9 +14,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public GameObject particlePrefab;
     [SerializeField] float health, maxHealth;
     private Animator animator;
+    [SerializeField] private AudioSource hitSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+     private void Start()
     {
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
@@ -57,6 +58,7 @@ public class EnemyController : MonoBehaviour
         health -= damageAmount;
 
         damageParticle();
+        DamageSfx();
 
         if (health <= 0)
         {
@@ -78,6 +80,12 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+    public void DamageSfx()
+    {
+        hitSound.Play();
+    }
+
+
     public void damageParticle()
     {
         GameObject partcicleinstance = Instantiate(particlePrefab, transform.position, Quaternion.identity);

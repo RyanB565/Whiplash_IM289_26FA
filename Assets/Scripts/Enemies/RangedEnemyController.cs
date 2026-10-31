@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class RangedEnemyController : MonoBehaviour
@@ -15,6 +16,7 @@ public class RangedEnemyController : MonoBehaviour
     private Animator animator;
     private Vector2 lastPosition;
     private SpriteRenderer sr;
+    [SerializeField] private AudioSource rangedDamageSfx;
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -24,6 +26,7 @@ public class RangedEnemyController : MonoBehaviour
         enemyLoc = GetComponent<Transform>();
         moveSpeed = 2f;
         health = maxHealth;
+        
     }
 
     private void Update()
@@ -74,6 +77,7 @@ public class RangedEnemyController : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
+        RangedTakeDamageSound();
 
         damageParticle();
 
@@ -95,6 +99,10 @@ public class RangedEnemyController : MonoBehaviour
         Destroy(partcicleinstance, 1.5f);
     }
 
+    private void RangedTakeDamageSound()
+    {
+        rangedDamageSfx.Play();
+    }
 
     #endregion
 
