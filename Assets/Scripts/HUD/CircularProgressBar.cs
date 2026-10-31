@@ -32,10 +32,14 @@ public class CircularProgressBar : MonoBehaviour
         isActive = true;
         maxIndicatorTimer = countdownTime;
         indicatorTimer = maxIndicatorTimer;
+
+        radialProgressBar.fillAmount = 1f;
     }
 
     public void StopCountdown()
     {
         isActive = false;
+        indicatorTimer = 0f;
+        radialProgressBar.fillAmount = 0f;
     }
 }

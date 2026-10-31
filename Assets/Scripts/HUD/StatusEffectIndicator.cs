@@ -6,6 +6,8 @@ public class StatusEffectIndicator : MonoBehaviour
     [SerializeField] private GameObject indicatorEffect;
     public bool isFinished;
 
+    private Coroutine indicatorCoroutine;
+
     private void Start()
     {
          
@@ -13,12 +15,17 @@ public class StatusEffectIndicator : MonoBehaviour
 
     public void StartIndicatorEffect(float duration)
     {
+        if (indicatorCoroutine != null)
+        {
+            StopCoroutine(indicatorCoroutine);
+        }
+
         isFinished = true;
-        indicatorEffect.SetActive(false);
+        indicatorEffect.SetActive(true);
         indicatorEffect.transform.Find("RadialProgressBar").GetComponent<CircularProgressBar>().
             ActivateCountdown(duration);
 
-        StartCoroutine(EndIndicatorEffect(duration));
+        indicatorCoroutine = StartCoroutine(EndIndicatorEffect(duration));
     }
 
     IEnumerator EndIndicatorEffect(float delay)
@@ -27,5 +34,6 @@ public class StatusEffectIndicator : MonoBehaviour
 
         isFinished = false;
         indicatorEffect.SetActive(false);
+        indicatorCoroutine = null;
     }
 }
