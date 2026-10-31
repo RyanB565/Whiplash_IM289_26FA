@@ -859,6 +859,12 @@ MonoBehaviour:
   maxHealth: 6
   damageSFX: {fileID: 1636988952}
   totalHearts: 18
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  BossLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &669637468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -907,8 +913,9 @@ MonoBehaviour:
   SoulAttack: {fileID: 7882513492092022633, guid: 9d7a90261ae0376479000688d2b9c7d0, type: 3}
   RunSFX: {fileID: 1698467093}
   BossTakeDamage: {fileID: 254193746}
-  slashDamage: 0
-  aoeDamage: 0
+  slashDamage: 1
+  soulDamage: 2
+  maxDamage: 4
 --- !u!61 &669637471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1798,9 +1805,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 740754201}
     - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: SpeedBoost
+      value: 
+      objectReference: {fileID: 3830003738752181626, guid: 51b5194364beca048b86ce57c6f47f56, type: 3}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: DamageBoost
+      value: 
+      objectReference: {fileID: 7451875730911871668, guid: 99286c3ae60cb2040858bdd58adf49c4, type: 3}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: deathcanvas
       value: 
       objectReference: {fileID: 699774997}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: MaxHealthBoost
+      value: 
+      objectReference: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
     - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: timeEnded
       value: 
