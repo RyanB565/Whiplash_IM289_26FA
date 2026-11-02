@@ -7,6 +7,8 @@ public class BossManager : MonoBehaviour
     [SerializeField] public GameObject particlePrefab;
     private PlayerController playerController;
 
+    private GameManager gmanager;
+
     public static bool shootAttack = false;
     public static bool lungeAttack = true;
     private void Start()
@@ -14,6 +16,7 @@ public class BossManager : MonoBehaviour
         StartCoroutine(SwitchAttacks());
         health = maxHealth;
         playerController = FindFirstObjectByType <PlayerController>();
+        gmanager = FindFirstObjectByType<GameManager>();
     }
 
     private IEnumerator SwitchAttacks()
@@ -37,6 +40,7 @@ public class BossManager : MonoBehaviour
 
         if (health <= 0)
         {
+            gmanager.PlayerDeath();
             Destroy(gameObject);
         }
     }

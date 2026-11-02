@@ -5,7 +5,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float stoppingDistance;
-    public GameManager gameManager;
+    private GameManager gameManager;
     public GameObject healthPickup;
     private Transform target;
     private CapacitySystem capacitySystem;
