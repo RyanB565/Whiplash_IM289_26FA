@@ -1281,7 +1281,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: spawnDelay
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[4].waveName
+      value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[4].waveBGMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 7b98e5c82e839f340b9607fecc204306, type: 3}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[0].musicStopTime
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[1].musicStopTime
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[2].musicStopTime
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[3].musicStopTime
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[4].musicStopTime
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: waves.Array.data[0].capacitybudget
@@ -1300,6 +1332,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[4].capacitybudget
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: waves.Array.data[0].availableEnemies.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1310,6 +1346,10 @@ PrefabInstance:
     - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: waves.Array.data[3].availableEnemies.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[4].availableEnemies.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: 'waves.Array.data[0].availableEnemies.Array.data[0]'
@@ -1325,6 +1365,18 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
     - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: 'waves.Array.data[3].availableEnemies.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: 'waves.Array.data[4].availableEnemies.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: 'waves.Array.data[4].availableEnemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: 'waves.Array.data[4].availableEnemies.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
     - target: {fileID: 8598228621366742819, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
@@ -1374,19 +1426,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1635171999662282571, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1109744455}
   m_SourcePrefab: {fileID: 100100000, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
 --- !u!114 &1109744453 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
   m_PrefabInstance: {fileID: 1109744452}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1109744454}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7876d35ef530b644483cfbecb2740b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!1 &1109744454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1635171999662282571, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+  m_PrefabInstance: {fileID: 1109744452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109744455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109744454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7e50545aef1a343aca00a86781119b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  musicSource: {fileID: 1337826717}
+  fadeDuration: 2
+  musicVolume: 1
 --- !u!1001 &1235793449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1603,10 +1678,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7b98e5c82e839f340b9607fecc204306, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
