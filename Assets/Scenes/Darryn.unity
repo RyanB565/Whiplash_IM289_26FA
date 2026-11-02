@@ -1177,6 +1177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100585907d743fc4ab7d1f93523fa09e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUps
+  pickUpsSound: {fileID: 0}
 --- !u!1 &2104329898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1766,6 +1767,14 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1020031190}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: waves.Array.data[0].availableEnemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: 'waves.Array.data[0].availableEnemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
     - target: {fileID: 8598228621366742819, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_IsActive
       value: 1
