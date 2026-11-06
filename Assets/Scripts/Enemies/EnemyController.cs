@@ -72,7 +72,7 @@ public class EnemyController : MonoBehaviour
 
             gameManager.EnemyDeath(gameObject.transform.position);
 
-            int HealthRoll = UnityEngine.Random.Range(1, 11);
+            int HealthRoll = UnityEngine.Random.Range(1, 18);
 
             if (HealthRoll == 10)
             {

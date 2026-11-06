@@ -4,9 +4,11 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - skeleton: {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
-  - zombie: {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
+  - deathcanvas: {instanceID: 0}
   - deathText: {instanceID: 0}
+  - MaxHealthBoost: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+  - DamageBoost: {fileID: 7451875730911871668, guid: 99286c3ae60cb2040858bdd58adf49c4, type: 3}
+  - SpeedBoost: {fileID: 3830003738752181626, guid: 51b5194364beca048b86ce57c6f47f56, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

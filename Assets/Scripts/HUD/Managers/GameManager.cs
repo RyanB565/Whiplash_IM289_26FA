@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
     public int powerUpCounter;
-    public int powerUpSpawn = 8;
+    private int powerUpSpawn = 20;
     public List<GameObject> powerUps;
     public GameObject MaxHealthBoost;
     public GameObject DamageBoost;
@@ -52,14 +52,19 @@ public class GameManager : MonoBehaviour
 
     public void WaveChange(int currentWave)
     {
-        if(currentWave == 3)
+        if (currentWave == 2)
         {
-            powerUpSpawn = 12;
+            powerUpSpawn = 25;
+        }
+
+        if (currentWave == 3)
+        {
+            powerUpSpawn = 30;
         }
 
         if(currentWave == 4)
         {
-            powerUpSpawn = 16;
+            powerUpSpawn = 35;
         }
     }
 
