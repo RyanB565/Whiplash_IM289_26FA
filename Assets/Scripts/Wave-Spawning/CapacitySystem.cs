@@ -11,6 +11,9 @@ public class CapacitySystem : MonoBehaviour
         public string waveName;
         public int capacitybudget;
         public List<CapacityData> availableEnemies;
+
+        [Header("Music")]
+        public float musicStopTime = 30f;
     }
 
     [Header("Waves")]
@@ -28,6 +31,7 @@ public class CapacitySystem : MonoBehaviour
 
     [SerializeField] private List<GameObject> spawnedEnemies = new List<GameObject>();
 
+    
     private Dictionary<GameObject, int> enemiesCosts =
         new Dictionary<GameObject, int>();
 
@@ -36,6 +40,7 @@ public class CapacitySystem : MonoBehaviour
             
     private Timer time;
     private GameManager gManager;
+    private MusicManager backgroundMusic;
 
     public IReadOnlyList<Wave> Waves => waves;
 
@@ -43,6 +48,7 @@ public class CapacitySystem : MonoBehaviour
     {
         time = FindFirstObjectByType<Timer>();
         gManager = FindFirstObjectByType<GameManager>();
+        backgroundMusic = FindFirstObjectByType<MusicManager>();
 
         GenerateEnemiesWave();
 
@@ -96,6 +102,11 @@ public class CapacitySystem : MonoBehaviour
 
         Wave wave = waves[currentWave];
 
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.BackgroundMusicPlay(wave.musicStopTime);
+        }
+
         //Give the wave its starting budget.
         currentCapacity = wave.capacitybudget;
 
@@ -112,6 +123,8 @@ public class CapacitySystem : MonoBehaviour
 
         while (currentCapacity > 0)
         {
+            affordableEnemies.Clear();
+
             //Find all enemies that can currently be afforded.
             foreach (CapacityData enemies in wave.availableEnemies)
             {

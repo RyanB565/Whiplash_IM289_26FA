@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6812705570402822024
 Transform:
   m_ObjectHideFlags: 0
@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 8639323596534013280}
   - component: {fileID: 3152797506666075612}
   - component: {fileID: 1653791540563855687}
+  - component: {fileID: 3141833219275155941}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -85,8 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   timerText: {fileID: 0}
   timeEnded: {fileID: 0}
-  startingTime: 5
-  timeIncrease: 1
+  startingTime: 30
+  timeIncrease: 30
   waveCompleteUpTime: 2
   countdownTime: 0
 --- !u!114 &1653791540563855687
@@ -103,6 +104,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   deathcanvas: {fileID: 0}
   deathText: {fileID: 0}
+  powerUpCounter: 0
+  powerUpSpawn: 8
+  powerUps: []
+  MaxHealthBoost: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+  DamageBoost: {fileID: 7451875730911871668, guid: 99286c3ae60cb2040858bdd58adf49c4, type: 3}
+  SpeedBoost: {fileID: 3830003738752181626, guid: 51b5194364beca048b86ce57c6f47f56, type: 3}
+--- !u!114 &3141833219275155941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635171999662282571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7e50545aef1a343aca00a86781119b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  musicSource: {fileID: 0}
+  fadeDuration: 2
+  musicVolume: 1
 --- !u!1 &6547473552452739382
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4594372630292663262
 Transform:
   m_ObjectHideFlags: 0
@@ -304,27 +326,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CapacitySystem
   waves:
   - waveName: Starting (Wave 1)
-    capacitybudget: 5
-    availableEnemies:
-    - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
-  - waveName: Wave 2
     capacitybudget: 20
+    availableEnemies:
+    - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
+    musicStopTime: 30
+  - waveName: Wave 2
+    capacitybudget: 30
     availableEnemies:
     - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
     - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
+    musicStopTime: 60
   - waveName: Wave 3
-    capacitybudget: 30
+    capacitybudget: 40
     availableEnemies:
     - {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
     - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
-    - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
+    musicStopTime: 90
   - waveName: Wave 4
-    capacitybudget: 40
+    capacitybudget: 50
     availableEnemies:
     - {fileID: 11400000, guid: 877bfd5604d4e3141bd2ee486ffa22fe, type: 2}
-  - waveName: Wave 5
-    capacitybudget: 0
+    - {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
+    - {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
+    musicStopTime: 120
+  - waveName: Boss
+    capacitybudget: 50
     availableEnemies: []
+    musicStopTime: 120
   bossPrefab: {fileID: 1061556387646958145, guid: d3c91c5eb320a21478e521794bbb3bd8, type: 3}
   bossSpawnLocation: {fileID: 3976419324309320108}
   spawnPoints:
@@ -332,6 +360,6 @@ MonoBehaviour:
   - {fileID: 5510404039761780960}
   - {fileID: 998752847478804183}
   - {fileID: 2490040480907956463}
-  spawnDelay: 3
+  spawnDelay: 5
   spawnedEnemies: []
   currentWave: 0
