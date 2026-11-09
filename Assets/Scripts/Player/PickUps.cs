@@ -7,6 +7,7 @@ public class PickUps : MonoBehaviour
     private PlayerHealth playerHealth;
     private UIGameManager uiGameManager;
     [SerializeField] private AudioSource pickUpsSound;
+    [SerializeField] private GameObject HealthUpText;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class PickUps : MonoBehaviour
     {
         if (collision.CompareTag("HealthPickUp"))
         {
+            Instantiate(HealthUpText, gameObject.transform);
             playerHealth.Refill();
             PickUpsSfx();
             Destroy(collision.gameObject);
@@ -51,4 +53,6 @@ public class PickUps : MonoBehaviour
     {
         pickUpsSound.Play();
     }
+
+    
 }
