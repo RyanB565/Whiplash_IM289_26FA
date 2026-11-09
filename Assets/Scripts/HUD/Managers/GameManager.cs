@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
         if(currentWave == 4)
         {
-            powerUpSpawn = 35;
+            powerUpSpawn = 40;
         }
     }
 
@@ -75,17 +75,20 @@ public class GameManager : MonoBehaviour
         if (powerUpCounter >= powerUpSpawn)
         {
             int RandomIndex = Random.Range(0, powerUps.Count);
-            Instantiate(powerUps[RandomIndex], new Vector2(enemyPosition.x, enemyPosition.y), Quaternion.identity);
-            powerUpCounter -= powerUpSpawn;
-
-            if (powerUps[RandomIndex] == DamageBoost)
+            if (powerUps[RandomIndex] != null)
             {
-                powerUps.Remove(DamageBoost);
-            }
+                Instantiate(powerUps[RandomIndex], new Vector2(enemyPosition.x, enemyPosition.y), Quaternion.identity);
+                powerUpCounter -= powerUpSpawn;
 
-            if (powerUps[RandomIndex] == SpeedBoost)
-            {
-                powerUps.Remove(SpeedBoost);
+                if (powerUps[RandomIndex] == DamageBoost)
+                {
+                    powerUps.Remove(DamageBoost);
+                }
+
+                if (powerUps[RandomIndex] == SpeedBoost)
+                {
+                    powerUps.Remove(SpeedBoost);
+                }
             }
         }
     }
