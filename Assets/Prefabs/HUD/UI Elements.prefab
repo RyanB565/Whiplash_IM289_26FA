@@ -1432,6 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SlashAttackIndicator
   indicatorEffect: {fileID: 6552626647371974716}
   isFinished: 0
+  slashsfx: {fileID: 0}
 --- !u!1 &7708567053411038996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StatusEffectIndicator
   indicatorEffect: {fileID: 3511739533380862344}
   isFinished: 0
+  statuseEfectSfx: {fileID: 0}
 --- !u!1 &8426004955219962902
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,14 +19,18 @@ public class BulletBehavior : MonoBehaviour
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
             Destroy(gameObject);
+
+
         }
-        
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+
         if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }
