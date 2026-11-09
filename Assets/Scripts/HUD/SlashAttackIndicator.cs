@@ -6,6 +6,8 @@ public class SlashAttackIndicator : MonoBehaviour
     [SerializeField] private GameObject indicatorEffect;
     public bool isFinished;
 
+    [SerializeField] private AudioSource slashsfx;
+
     private Coroutine indicatorCoroutine;
 
     private void Start()
@@ -35,5 +37,12 @@ public class SlashAttackIndicator : MonoBehaviour
         isFinished = false;
         indicatorEffect.SetActive(false);
         indicatorCoroutine = null;
+
+        slashEndSfx();
+    }
+
+    private void slashEndSfx()
+    {
+        slashsfx.Play();
     }
 }

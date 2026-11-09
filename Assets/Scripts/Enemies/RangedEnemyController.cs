@@ -26,6 +26,8 @@ public class RangedEnemyController : MonoBehaviour
         enemyLoc = GetComponent<Transform>();
         moveSpeed = 2f;
         health = maxHealth;
+
+        capacitySystem = FindFirstObjectByType<CapacitySystem>();
         
     }
 
@@ -64,12 +66,6 @@ public class RangedEnemyController : MonoBehaviour
     public void ShootBullet()
     {
         Instantiate(bullet, Targeting.position, Targeting.rotation);
-    }
-
-    public void Die()
-    {
-        
-        Destroy(gameObject);
     }
 
     #region Enemies Health Method

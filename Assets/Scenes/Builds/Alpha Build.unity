@@ -857,7 +857,7 @@ Transform:
   m_GameObject: {fileID: 633700439}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8667, y: 3.5695498, z: 0}
+  m_LocalPosition: {x: 0, y: 4.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1130,7 +1130,7 @@ Transform:
   m_GameObject: {fileID: 797614681}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8897, y: -0.45945, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1235,10 +1235,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 653802473652825829, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1635171999662282571, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1248,21 +1244,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1235793450}
     - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: SpeedBoost
-      value: 
-      objectReference: {fileID: 3830003738752181626, guid: 51b5194364beca048b86ce57c6f47f56, type: 3}
-    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: DamageBoost
-      value: 
-      objectReference: {fileID: 7451875730911871668, guid: 99286c3ae60cb2040858bdd58adf49c4, type: 3}
-    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: deathcanvas
       value: 
       objectReference: {fileID: 768115551}
-    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: MaxHealthBoost
+    - target: {fileID: 3141833219275155941, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: musicSource
       value: 
-      objectReference: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+      objectReference: {fileID: 1337826717}
     - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: timeEnded
       value: 
@@ -1271,66 +1259,6 @@ PrefabInstance:
       propertyPath: timerText
       value: 
       objectReference: {fileID: 1235793452}
-    - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: startingTime
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: timeIncrease
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: spawnDelay
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: waves.Array.data[0].capacitybudget
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: waves.Array.data[1].capacitybudget
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: waves.Array.data[2].capacitybudget
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: waves.Array.data[3].capacitybudget
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: waves.Array.data[0].availableEnemies.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: waves.Array.data[2].availableEnemies.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: waves.Array.data[3].availableEnemies.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: 'waves.Array.data[0].availableEnemies.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: 'waves.Array.data[0].availableEnemies.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: 'waves.Array.data[3].availableEnemies.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
-    - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: 'waves.Array.data[3].availableEnemies.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: d86a8f9392cce1141871b59ec24fb244, type: 2}
-    - target: {fileID: 8598228621366742819, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8639323596534013280, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1550,7 +1478,7 @@ Transform:
   m_GameObject: {fileID: 1249582994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8897, y: 0.45945, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1603,10 +1531,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7b98e5c82e839f340b9607fecc204306, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
