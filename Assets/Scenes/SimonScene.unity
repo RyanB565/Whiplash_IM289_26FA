@@ -1309,6 +1309,10 @@ PrefabInstance:
       propertyPath: MaxHealthBoost
       value: 
       objectReference: {fileID: 1420640227308985460, guid: f58377008b7b65545838ce3890f3d4c0, type: 3}
+    - target: {fileID: 3141833219275155941, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1720537229}
     - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: timeEnded
       value: 
@@ -2507,6 +2511,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 887040349687497166, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
+      propertyPath: slashsfx
+      value: 
+      objectReference: {fileID: 316449483}
     - target: {fileID: 1588342016130304206, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
       propertyPath: m_IsActive
       value: 0
