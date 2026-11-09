@@ -5,6 +5,7 @@ public class StatusEffectIndicator : MonoBehaviour
 {
     [SerializeField] private GameObject indicatorEffect;
     public bool isFinished;
+    [SerializeField] private AudioSource statuseEfectSfx;
 
     private Coroutine indicatorCoroutine;
 
@@ -20,10 +21,13 @@ public class StatusEffectIndicator : MonoBehaviour
             StopCoroutine(indicatorCoroutine);
         }
 
+        
+
         isFinished = true;
         indicatorEffect.SetActive(true);
         indicatorEffect.transform.Find("RadialProgressBar").GetComponent<CircularProgressBar>().
             ActivateCountdown(duration);
+
 
         indicatorCoroutine = StartCoroutine(EndIndicatorEffect(duration));
     }
@@ -35,5 +39,12 @@ public class StatusEffectIndicator : MonoBehaviour
         isFinished = false;
         indicatorEffect.SetActive(false);
         indicatorCoroutine = null;
+
+        StatusSfx();
+    }
+
+    private void StatusSfx()
+    {
+        statuseEfectSfx.Play();
     }
 }
