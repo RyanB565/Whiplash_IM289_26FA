@@ -6,11 +6,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
+    [SerializeField] private Slider healthbarSlider;
     public int powerUpCounter;
     private int powerUpSpawn = 20;
     public List<GameObject> powerUps;
