@@ -296,8 +296,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossManager
   health: 0
-  maxHealth: 10
+  maxHealth: 5
   particlePrefab: {fileID: 7954955630494516293, guid: 1f14a610ffda1234cbe25d13c55febbe, type: 3}
+  healthBar: {fileID: 988211150665004637}
 --- !u!1 &2414421010006079608
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7212055128551158243}
   - component: {fileID: 7017843339628840628}
+  - component: {fileID: 988211150665004637}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -485,10 +487,26 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.55
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &988211150665004637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2674080422146444297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1a492a48e14ad243b38538bff37e678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingHealthBar
+  healthbarSlider: {fileID: 7017843339628840628}
+  camera: {fileID: 0}
+  target: {fileID: 1437938203061332312}
+  barPositionOffset: {x: 0, y: 3, z: 0}
 --- !u!1 &7623484256956989170
 GameObject:
   m_ObjectHideFlags: 0
