@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-
+        animator.SetTrigger("Hurt");
         damageParticle();
         DamageSfx();
 
