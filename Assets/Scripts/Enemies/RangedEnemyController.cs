@@ -74,7 +74,7 @@ public class RangedEnemyController : MonoBehaviour
     {
         health -= damageAmount;
         RangedTakeDamageSound();
-
+        animator.SetTrigger("Hurt");
         damageParticle();
 
         if (health <= 0)
