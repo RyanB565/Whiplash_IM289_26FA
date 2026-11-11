@@ -2596,6 +2596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUps
   pickUpsSound: {fileID: 1919884383}
+  HealthUpText: {fileID: 2390706617646242898, guid: b445cc98f85eeae42aba2f316475afbb, type: 3}
 --- !u!114 &1706779904
 MonoBehaviour:
   m_ObjectHideFlags: 0
