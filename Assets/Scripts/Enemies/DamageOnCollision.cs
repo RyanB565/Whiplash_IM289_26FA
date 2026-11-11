@@ -5,7 +5,7 @@ public class DamageOnCollision : MonoBehaviour
 {
     [SerializeField] private float knockbackPower;
     [SerializeField] private float knockbackDuration;
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
