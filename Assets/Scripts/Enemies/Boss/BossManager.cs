@@ -5,18 +5,26 @@ public class BossManager : MonoBehaviour
 {
     [SerializeField] float health, maxHealth;
     [SerializeField] public GameObject particlePrefab;
+    [SerializeField] FloatingHealthBar healthBar;
+
     private PlayerController playerController;
 
     private GameManager gmanager;
 
     public static bool shootAttack = false;
     public static bool lungeAttack = true;
+
     private void Start()
     {
         StartCoroutine(SwitchAttacks());
         health = maxHealth;
+        healthBar.UpdateHealthBar(health, maxHealth);
+
         playerController = FindFirstObjectByType <PlayerController>();
         gmanager = FindFirstObjectByType<GameManager>();
+
+        healthBar = GetComponentInChildren<FloatingHealthBar>();
+
     }
 
     private IEnumerator SwitchAttacks()
@@ -35,6 +43,7 @@ public class BossManager : MonoBehaviour
     {
         health -= damageAmount;
         playerController.BossTakeDamageSound();
+        healthBar.UpdateHealthBar(health, maxHealth);
 
         damageParticle();
 
@@ -48,11 +57,7 @@ public class BossManager : MonoBehaviour
     public void damageParticle()
     {
         GameObject partcicleinstance = Instantiate(particlePrefab, transform.position, Quaternion.identity);
-
-
-        
-
-        Destroy(partcicleinstance,1.5f);
+        Destroy(partcicleinstance, 1.5f);
     }
 
     #endregion

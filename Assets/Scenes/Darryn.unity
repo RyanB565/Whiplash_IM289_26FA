@@ -1425,6 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUps
   pickUpsSound: {fileID: 0}
+  HealthUpText: {fileID: 0}
 --- !u!1 &2104329898
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,7 +1993,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 653802473652825829, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1635171999662282571, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_Name
@@ -2006,6 +2007,10 @@ PrefabInstance:
       propertyPath: deathcanvas
       value: 
       objectReference: {fileID: 1947044509}
+    - target: {fileID: 1653791540563855687, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: healthbarSlider
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: timeEnded
       value: 
@@ -2024,7 +2029,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
     - target: {fileID: 8598228621366742819, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8639323596534013280, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_LocalPosition.x
