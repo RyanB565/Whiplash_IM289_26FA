@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     public void PlayerDeath()
     {
         controller.deathStop();
-        Time.timeScale = 0f;
+      Time.timeScale = 0f;
         deathcanvas.enabled = true;  
     }
 
@@ -62,6 +62,8 @@ public class GameManager : MonoBehaviour
     {
         controller.deathStop();
         Time.timeScale = 0f;
+
+        Debug.Log("You Suck");
 
         BossWincanvas.SetActive(true);
 
