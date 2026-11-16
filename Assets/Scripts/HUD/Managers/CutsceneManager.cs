@@ -11,4 +11,9 @@ public class CutsceneManager : MonoBehaviour
     {
         
     }
+
+    public void WaveEnd()
+    {
+
+    }
 }
