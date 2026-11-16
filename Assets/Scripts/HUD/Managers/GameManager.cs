@@ -7,11 +7,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.UI;
-
+ 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
-    [SerializeField] private Canvas BossWincanvas;
+    [SerializeField] private GameObject BossWincanvas;
     [SerializeField] private TextMeshProUGUI deathText;
 
     private BossManager bossManager;
@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour
 
         deathcanvas.enabled = false;
 
-        BossWincanvas.enabled = false;
-
+       
+        BossWincanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -62,10 +62,10 @@ public class GameManager : MonoBehaviour
     {
         controller.deathStop();
         Time.timeScale = 0f;
-          
-        BossWincanvas.enabled = true;
 
-    }
+        BossWincanvas.SetActive(true);
+
+    } 
 
     #region Wave System Methods
 
