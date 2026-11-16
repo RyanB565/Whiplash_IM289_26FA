@@ -6,6 +6,9 @@ public class BossManager : MonoBehaviour
     [SerializeField] float health, maxHealth;
     [SerializeField] public GameObject particlePrefab;
     [SerializeField] FloatingHealthBar healthBar;
+    [SerializeField] private Canvas BossWincanvas;
+
+   
 
     private PlayerController playerController;
 
@@ -13,6 +16,7 @@ public class BossManager : MonoBehaviour
 
     public static bool shootAttack = false;
     public static bool lungeAttack = true;
+    public bool  bossDead = false;
 
     private void Start()
     {
@@ -24,6 +28,8 @@ public class BossManager : MonoBehaviour
         gmanager = FindFirstObjectByType<GameManager>();
 
         healthBar = GetComponentInChildren<FloatingHealthBar>();
+
+        BossWincanvas.enabled = false;
 
     }
 
@@ -49,9 +55,22 @@ public class BossManager : MonoBehaviour
 
         if (health <= 0)
         {
-            gmanager.PlayerDeath();
+           // gmanager.PlayerDeath();
             Destroy(gameObject);
+            bossDead = true;
+            gmanager.PlayerWin();
         }
+    }
+
+    public void BossWin()
+
+
+    {
+        if (bossDead == true)
+        {
+            BossWincanvas.enabled = true;
+        }
+        
     }
 
     public void damageParticle()
