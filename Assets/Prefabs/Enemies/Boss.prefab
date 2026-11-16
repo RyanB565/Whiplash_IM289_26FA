@@ -299,6 +299,7 @@ MonoBehaviour:
   maxHealth: 75
   particlePrefab: {fileID: 7954955630494516293, guid: 1f14a610ffda1234cbe25d13c55febbe, type: 3}
   healthBar: {fileID: 988211150665004637}
+  BossWincanvas: {fileID: 7065423834770670383, guid: a92485a7b96195e49bbd8d8643b66447, type: 3}
 --- !u!1 &2414421010006079608
 GameObject:
   m_ObjectHideFlags: 0

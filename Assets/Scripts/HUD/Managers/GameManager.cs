@@ -7,11 +7,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine.UI;
-
+ 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
+    [SerializeField] private GameObject BossWincanvas;
     [SerializeField] private TextMeshProUGUI deathText;
+
+    private BossManager bossManager;
 
     public int powerUpCounter;
     private int powerUpSpawn = 20;
@@ -37,6 +40,9 @@ public class GameManager : MonoBehaviour
         powerUps.Add(SpeedBoost);
 
         deathcanvas.enabled = false;
+
+       
+        BossWincanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,9 +54,20 @@ public class GameManager : MonoBehaviour
     public void PlayerDeath()
     {
         controller.deathStop();
-        Time.timeScale = 0f;
+      Time.timeScale = 0f;
         deathcanvas.enabled = true;  
     }
+
+    public void PlayerWin()
+    {
+        controller.deathStop();
+        Time.timeScale = 0f;
+
+        Debug.Log("You Suck");
+
+        BossWincanvas.SetActive(true);
+
+    } 
 
     #region Wave System Methods
 
