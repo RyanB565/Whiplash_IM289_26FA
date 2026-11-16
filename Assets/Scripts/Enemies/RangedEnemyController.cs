@@ -20,7 +20,7 @@ public class RangedEnemyController : MonoBehaviour
     [SerializeField] private AudioSource rangedDamageSfx;
     private void Start()
     {
-        tempSpeed = moveSpeed;
+        
         sr = GetComponent<SpriteRenderer>();
         lastPosition = transform.position;
         animator = GetComponent<Animator>();
@@ -28,7 +28,7 @@ public class RangedEnemyController : MonoBehaviour
         enemyLoc = GetComponent<Transform>();
         moveSpeed = 2f;
         health = maxHealth;
-
+        tempSpeed = moveSpeed;
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
         
     }
