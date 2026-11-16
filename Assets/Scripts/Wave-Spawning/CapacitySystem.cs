@@ -79,7 +79,7 @@ public class CapacitySystem : MonoBehaviour
 
         if (time != null)
         {
-            time.WaveTimer();
+            time.BetweenWaveCooldown();
         }
     }
 

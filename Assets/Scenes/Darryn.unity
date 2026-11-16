@@ -1554,8 +1554,8 @@ Camera:
   m_GameObject: {fileID: 1614860775}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1605,7 +1605,7 @@ Transform:
   m_GameObject: {fileID: 1614860775}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -0.26, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2562,6 +2562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1770510924625164453, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7820632779911065413, guid: 251b630a371a0c842844f9dcf04de19e, type: 3}
       propertyPath: playerHealth
       value: 
@@ -2775,7 +2779,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 653802473652825829, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1635171999662282571, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_Name
@@ -2809,13 +2813,17 @@ PrefabInstance:
       propertyPath: startingTime
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3152797506666075612, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
+      propertyPath: completeCooldown
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6753181718142784061, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: 'waves.Array.data[0].availableEnemies.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: e63aefe06caeeab4ea176d5f37566520, type: 2}
     - target: {fileID: 8598228621366742819, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8639323596534013280, guid: 5cb7d229e28805d468cd2a8911877e22, type: 3}
       propertyPath: m_LocalPosition.x
