@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] private float speed;
+    private float tempSpeed;
     [SerializeField] private float stoppingDistance;
     private GameManager gameManager;
     public GameObject healthPickup;
@@ -21,6 +22,7 @@ public class EnemyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
      private void Start()
     {
+        tempSpeed = speed;
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         lastPosition = transform.position;
@@ -54,6 +56,16 @@ public class EnemyController : MonoBehaviour
                 animator.SetBool("Hit", true);
             }
         }   
+    }
+
+    public void StopMoving()
+    {
+        speed = 0;
+    }
+
+    public void StartMoving()
+    {
+        speed = tempSpeed;
     }
 
     #region Enemies Health Method

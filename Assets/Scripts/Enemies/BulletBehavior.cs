@@ -23,7 +23,7 @@ public class BulletBehavior : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("SlashAttack"))
         {
             Destroy(gameObject);
         }
