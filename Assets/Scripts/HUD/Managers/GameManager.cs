@@ -6,11 +6,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
+
     public int powerUpCounter;
     private int powerUpSpawn = 20;
     public List<GameObject> powerUps;
@@ -50,6 +52,8 @@ public class GameManager : MonoBehaviour
         deathcanvas.enabled = true;  
     }
 
+    #region Wave System Methods
+
     public void WaveChange(int currentWave)
     {
         if (currentWave == 2)
@@ -68,6 +72,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Death Methods
     public void EnemyDeath(Vector2 enemyPosition)
     {
         powerUpCounter += 1;
@@ -93,6 +100,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Scene Managers Methods
+
     private void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -113,4 +124,6 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     #endif
     }
+
+    #endregion
 }
