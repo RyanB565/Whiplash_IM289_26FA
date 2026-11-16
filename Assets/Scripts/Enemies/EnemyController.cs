@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -15,6 +16,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float health, maxHealth;
     private Animator animator;
     [SerializeField] private AudioSource hitSound;
+    bool canMove = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
      private void Start()
@@ -33,22 +35,25 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         float moveDeltaX = transform.position.x - lastPosition.x;
-        if (moveDeltaX != 0)
+        if (canMove == true)
         {
-            sr.flipX = moveDeltaX < 0;
-        }
+            if (moveDeltaX != 0)
+            {
+                sr.flipX = moveDeltaX < 0;
+            }
 
-        lastPosition = transform.position;
+            lastPosition = transform.position;
 
-        if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
-        {
-            animator.SetBool("Hit", false);
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        }
-        else
-        {
-            animator.SetBool("Hit", true);
-        }
+            if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
+            {
+                animator.SetBool("Hit", false);
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            }
+            else
+            {
+                animator.SetBool("Hit", true);
+            }
+        }   
     }
 
     #region Enemies Health Method
@@ -80,6 +85,17 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+
+    public void TookDamage()
+    {
+        canMove = false;
+    }
+
+    public void TookDamageEnd()
+    {
+        canMove = true;
+    }
+
     public void DamageSfx()
     {
         hitSound.Play();
