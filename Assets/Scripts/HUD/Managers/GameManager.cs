@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
+    [SerializeField] private GameObject winScreen;
 
     public int powerUpCounter;
     private int powerUpSpawn = 20;
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
         powerUps.Add(SpeedBoost);
 
         deathcanvas.enabled = false;
+
+        winScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -50,6 +53,13 @@ public class GameManager : MonoBehaviour
         controller.deathStop();
         Time.timeScale = 0f;
         deathcanvas.enabled = true;  
+    }
+
+    public void WinScreen ()
+    {
+        controller.deathStop();
+        Time.timeScale = 0f;
+        winScreen.SetActive(true);
     }
 
     #region Wave System Methods

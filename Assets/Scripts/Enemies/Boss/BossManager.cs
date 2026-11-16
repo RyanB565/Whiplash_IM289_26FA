@@ -49,8 +49,9 @@ public class BossManager : MonoBehaviour
 
         if (health <= 0)
         {
-            gmanager.PlayerDeath();
+            gmanager.WinScreen();
             Destroy(gameObject);
+            
         }
     }
 
