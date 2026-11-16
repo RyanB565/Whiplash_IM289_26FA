@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
+    [SerializeField] private Canvas BossWincanvas;
     [SerializeField] private TextMeshProUGUI deathText;
 
     private BossManager bossManager;
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
 
         deathcanvas.enabled = false;
 
-        bossManager = FindFirstObjectByType<BossManager>();
+        BossWincanvas.enabled = false;
 
     }
 
@@ -61,8 +62,8 @@ public class GameManager : MonoBehaviour
     {
         controller.deathStop();
         Time.timeScale = 0f;
-
-        bossManager.BossWin();
+          
+        BossWincanvas.enabled = true;
 
     }
 
