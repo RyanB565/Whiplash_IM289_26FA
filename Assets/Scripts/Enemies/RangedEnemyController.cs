@@ -10,6 +10,7 @@ public class RangedEnemyController : MonoBehaviour
     [SerializeField] private Transform Targeting;
     private Transform enemyLoc;
     private float moveSpeed;
+    private float tempSpeed;
     private bool canShoot = false;
     private CapacitySystem capacitySystem;
     [SerializeField] public GameObject particlePrefab;
@@ -19,6 +20,7 @@ public class RangedEnemyController : MonoBehaviour
     [SerializeField] private AudioSource rangedDamageSfx;
     private void Start()
     {
+        tempSpeed = moveSpeed;
         sr = GetComponent<SpriteRenderer>();
         lastPosition = transform.position;
         animator = GetComponent<Animator>();
@@ -68,6 +70,16 @@ public class RangedEnemyController : MonoBehaviour
         Instantiate(bullet, Targeting.position, Targeting.rotation);
     }
 
+    public void StopMoving()
+    {
+        moveSpeed = 0;
+    }
+
+    public void StartMoving()
+    {
+        moveSpeed = tempSpeed;
+    }
+
     #region Enemies Health Method
 
     public void TakeDamage(float damageAmount)
@@ -95,10 +107,12 @@ public class RangedEnemyController : MonoBehaviour
         Destroy(partcicleinstance, 1.5f);
     }
 
-    private void RangedTakeDamageSound()
+    public void RangedTakeDamageSound()
     {
         rangedDamageSfx.Play();
     }
+
+
 
     #endregion
 
