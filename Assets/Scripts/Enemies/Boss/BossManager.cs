@@ -43,6 +43,8 @@ public class BossManager : MonoBehaviour
         }
     }
 
+    
+
     #region Boss Health Method
 
     public void TakeDamage(float damageAmount)
@@ -56,9 +58,10 @@ public class BossManager : MonoBehaviour
         if (health <= 0)
         {
             //gmanager.PlayerDeath();
+            gmanager.PlayerWin();
             Destroy(gameObject);
             
-            gmanager.PlayerWin();
+            
         }
     }
 
