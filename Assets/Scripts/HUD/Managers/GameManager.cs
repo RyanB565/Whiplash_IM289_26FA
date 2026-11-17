@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Canvas deathcanvas;
     [SerializeField] private TextMeshProUGUI deathText;
+    [SerializeField] private TextMeshProUGUI waveCountText;
     [SerializeField] private GameObject winScreen;
 
     public int powerUpCounter;
@@ -22,11 +23,13 @@ public class GameManager : MonoBehaviour
     public GameObject SpeedBoost;
 
     private PlayerController controller;
+    private CapacitySystem capacitySystem;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         controller = FindFirstObjectByType<PlayerController>();
+        capacitySystem = FindFirstObjectByType<CapacitySystem>();
 
         powerUpCounter = 0;
         powerUps.Add(MaxHealthBoost);
@@ -38,14 +41,14 @@ public class GameManager : MonoBehaviour
         powerUps.Add(SpeedBoost);
 
         deathcanvas.enabled = false;
-
         winScreen.SetActive(false);
+        waveCountText.enabled = true;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-       
+        waveCountText.text = $"Current Wave: {capacitySystem.currentWave}";
     }
 
     public void PlayerDeath()

@@ -74,13 +74,7 @@ public class CapacitySystem : MonoBehaviour
     public void WaveSystem()
     {
         currentWave++;
-
         GenerateEnemiesWave();
-
-        if (time != null)
-        {
-            time.BetweenWaveCooldown();
-        }
     }
 
     #endregion
@@ -203,6 +197,8 @@ public class CapacitySystem : MonoBehaviour
 
     public void ClearEnemies()
     {
+        StopAllCoroutines();
+
         foreach (GameObject enemy in spawnedEnemies)
         {
             if (enemy != null)
