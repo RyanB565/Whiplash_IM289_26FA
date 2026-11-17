@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        waveCountText.text = $"Current Wave: {capacitySystem.currentWave}";
+        waveCountText.text = $"Current Wave: {capacitySystem.currentWave + 1}";
     }
 
     public void PlayerDeath()
