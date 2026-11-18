@@ -12,7 +12,7 @@ public class CutsceneManager : MonoBehaviour
         
     }
 
-    public void WaveEnd()
+    public void WaveEnd(int waveNumber)
     {
 
     }
