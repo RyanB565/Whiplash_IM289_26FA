@@ -11,11 +11,12 @@ public class BossRangedAttacks : MonoBehaviour
     //[SerializeField] private float fireRate;
 
     private Transform playerLocation;
-
+    private Animator animator;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponent<Animator>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         playerLocation = player.transform;
@@ -37,6 +38,7 @@ public class BossRangedAttacks : MonoBehaviour
         {
             if (BossManager.shootAttack)
             {
+                animator.SetBool("Ranged",true);
                 if (bulletPrefab != null && Target != null)
                 {
                     Vector2 direction = (playerLocation.position - Target.position).normalized;
