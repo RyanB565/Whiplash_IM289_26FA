@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
 
     private CapacitySystem capacitySystem;
     private GameManager gManager;
+    private CutsceneManager cutManager;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class Timer : MonoBehaviour
 
         capacitySystem = FindFirstObjectByType<CapacitySystem>();
         gManager = FindFirstObjectByType<GameManager>();
+        cutManager = FindFirstObjectByType<CutsceneManager>();
 
         if (startingTime == 0 || timeIncrease == 0 || waveCompleteUpTime == 0)
         {
@@ -88,6 +90,7 @@ public class Timer : MonoBehaviour
         timeEnded.text = "";
 
         gManager.WaveChange(capacitySystem.currentWave);
+        cutManager.WaveEnd(capacitySystem.currentWave);
 
         yield return new WaitForSeconds(completeCooldown);
 
