@@ -3,7 +3,7 @@ using UnityEngine;
 public class BossLunge : MonoBehaviour
 {
 
-    private float moveSpeed;
+    [SerializeField]private float moveSpeed;
     private Transform playerLoc;
     private Transform enemyLoc;
     [SerializeField] private Transform Targeting;
@@ -12,26 +12,30 @@ public class BossLunge : MonoBehaviour
     [SerializeField] private float lungeCooldown = 5f;
     [SerializeField] private float lungeSpeed = 8f;
     [SerializeField] private float attackRange = 4f;
+    [SerializeField] private AudioSource chomp;
 
     private bool isLunging;
     private bool playerInRange;
+    private Vector2 lastPosition;
    
     private float lungeTimeRemaining;
     private float lungeTimer;
     private Vector3 lungeTarget;
     private bool canLunge = true;
-
-
+    private SpriteRenderer sr;
+    private Animator animator;
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        animator = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();    
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
         enemyLoc = GetComponent<Transform>();
-
-        moveSpeed = 2f;
+        chomp = GetComponent<AudioSource>();
+        
 
 
 
@@ -42,11 +46,13 @@ public class BossLunge : MonoBehaviour
     {
         if (BossManager.lungeAttack)
         {
+            animator.SetBool("Ranged",false);
             float distance = Vector2.Distance(playerLoc.position, enemyLoc.position);
 
             // Handle cooldown
             if (!canLunge)
             {
+                
                 lungeTimer += Time.deltaTime;
 
                 if (lungeTimer >= lungeCooldown)
@@ -59,13 +65,15 @@ public class BossLunge : MonoBehaviour
             // Handle lunge movement
             if (isLunging)
             {
+                
                 transform.position = Vector3.MoveTowards(transform.position, lungeTarget, lungeSpeed *
                 Time.deltaTime);
 
                 lungeTimeRemaining -= Time.deltaTime;
-
+                
                 if (lungeTimeRemaining <= 0f)
                 {
+                    
                     isLunging = false;
                 }
 
@@ -75,6 +83,13 @@ public class BossLunge : MonoBehaviour
             // Chase player
             if (distance > attackRange)
             {
+                float moveDeltaX = transform.position.x - lastPosition.x;
+                if (moveDeltaX != 0)
+                {
+                    sr.flipX = moveDeltaX > 0;
+                }
+
+                lastPosition = transform.position;
                 transform.position = Vector3.MoveTowards(transform.position, playerLoc.position, moveSpeed *
                 Time.deltaTime);
             }
@@ -83,6 +98,7 @@ public class BossLunge : MonoBehaviour
             {
                 lungeTarget = playerLoc.position;
                 isLunging = true;
+                chomp.Play();
                 canLunge = false;
 
                 lungeTimeRemaining = lungeDuration;

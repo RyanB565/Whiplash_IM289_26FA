@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
     private InputAction move;
+    private InputAction quit;
     private Vector2 moveDir;
     private Rigidbody2D rb2d;
     private bool canMove = true;
@@ -35,13 +36,18 @@ public class PlayerController : MonoBehaviour
         maxDamage = 8;
         sr = GetComponent<SpriteRenderer>();
         move = InputSystem.actions.FindAction("Move");
+        quit = InputSystem.actions.FindAction("Quit");
     }
 
     private void OnEnable()
     {
+        
         move.Enable();
         move.canceled += Move_canceled;
+        
     }
+
+   
 
     private void OnDisable()
     {
@@ -56,6 +62,12 @@ public class PlayerController : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         move.started += Move_started;
         move.canceled += Move_canceled;
+        quit.started += Quit_started;
+    }
+
+    private void Quit_started(InputAction.CallbackContext obj)
+    {
+       Application.Quit();
     }
 
     #endregion
@@ -79,6 +91,7 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Walking", true);
         }
     }
+
 
     // Update is called once per frame
     void Update()

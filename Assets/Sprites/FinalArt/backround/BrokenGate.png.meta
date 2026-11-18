@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: f00eb41ebaaf2ae4ca80d682ce23f2cb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9035901943960160523
+    second: BrokenGate_0
+  - first:
+      213: 4196177183668791703
+    second: BrokenGate_1
+  - first:
+      213: 523834017405340550
+    second: BrokenGate_2
+  - first:
+      213: -7353837527082046133
+    second: BrokenGate_3
+  - first:
+      213: 7484194836827039017
+    second: BrokenGate_4
+  - first:
+      213: 2436889637430753790
+    second: BrokenGate_5
+  - first:
+      213: -992334632821367249
+    second: BrokenGate_6
+  - first:
+      213: 5074583150043765131
+    second: BrokenGate_7
+  - first:
+      213: -415103419927120390
+    second: BrokenGate_8
+  - first:
+      213: -9172176312394265213
+    second: BrokenGate_9
+  - first:
+      213: 5918749502822567033
+    second: BrokenGate_10
+  - first:
+      213: 3814837393249277611
+    second: BrokenGate_11
+  - first:
+      213: -1588878908170838652
+    second: BrokenGate_12
+  - first:
+      213: -2899444418885426532
+    second: BrokenGate_13
+  - first:
+      213: -908417777550431823
+    second: BrokenGate_14
+  - first:
+      213: 5879633756544642745
+    second: BrokenGate_15
+  - first:
+      213: 3881620125249043453
+    second: BrokenGate_16
+  - first:
+      213: 6278864009283227458
+    second: BrokenGate_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BrokenGate_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5
+        width: 8
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09c10b91f8f56d70800000000000000
+      internalID: 9035901943960160523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 5
+        width: 9
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7996d2f8ae0db3a30800000000000000
+      internalID: 4196177183668791703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 5
+        width: 9
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b06b07348054700800000000000000
+      internalID: 523834017405340550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_3
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 5
+        width: 9
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d665e3bbbe1f990800000000000000
+      internalID: -7353837527082046133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 5
+        width: 8
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92563e61d833dd760800000000000000
+      internalID: 7484194836827039017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_5
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 5
+        width: 9
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9f3ebc63291d120800000000000000
+      internalID: 2436889637430753790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_6
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 5
+        width: 9
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e5d58b8e48a32f0800000000000000
+      internalID: -992334632821367249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_7
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 5
+        width: 9
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b899a891d7a8c6640800000000000000
+      internalID: 5074583150043765131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_8
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 5
+        width: 9
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5b13e83a14d3af0800000000000000
+      internalID: -415103419927120390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_9
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 5
+        width: 9
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38dcc7a7d32e5b080800000000000000
+      internalID: -9172176312394265213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_10
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 5
+        width: 9
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97c424e505f932250800000000000000
+      internalID: 5918749502822567033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_11
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 5
+        width: 9
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba61084b56601f430800000000000000
+      internalID: 3814837393249277611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_12
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 5
+        width: 9
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ddd5f1d0b23f9e0800000000000000
+      internalID: -1588878908170838652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_13
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 5
+        width: 8
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c926856b9aa13c7d0800000000000000
+      internalID: -2899444418885426532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_14
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 5
+        width: 9
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b9e47528d6a463f0800000000000000
+      internalID: -908417777550431823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_15
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 5
+        width: 9
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be2d3cffb7a89150800000000000000
+      internalID: 5879633756544642745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_16
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 5
+        width: 9
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfbf97e20f84ed530800000000000000
+      internalID: 3881620125249043453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BrokenGate_17
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 5
+        width: 8
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24fcf42bc81032750800000000000000
+      internalID: 6278864009283227458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BrokenGate_0: 9035901943960160523
+      BrokenGate_1: 4196177183668791703
+      BrokenGate_10: 5918749502822567033
+      BrokenGate_11: 3814837393249277611
+      BrokenGate_12: -1588878908170838652
+      BrokenGate_13: -2899444418885426532
+      BrokenGate_14: -908417777550431823
+      BrokenGate_15: 5879633756544642745
+      BrokenGate_16: 3881620125249043453
+      BrokenGate_17: 6278864009283227458
+      BrokenGate_2: 523834017405340550
+      BrokenGate_3: -7353837527082046133
+      BrokenGate_4: 7484194836827039017
+      BrokenGate_5: 2436889637430753790
+      BrokenGate_6: -992334632821367249
+      BrokenGate_7: 5074583150043765131
+      BrokenGate_8: -415103419927120390
+      BrokenGate_9: -9172176312394265213
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

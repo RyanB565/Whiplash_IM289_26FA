@@ -11,8 +11,8 @@ public class BossManager : MonoBehaviour
 
     private GameManager gmanager;
 
-    public static bool shootAttack = false;
-    public static bool lungeAttack = true;
+    public static bool shootAttack = true;
+    public static bool lungeAttack = false;
 
     private void Start()
     {
