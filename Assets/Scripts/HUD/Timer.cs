@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private float startingTime;
     [SerializeField] private float timeIncrease;
     [SerializeField] private float waveCompleteUpTime;
+    [SerializeField] private float completeCooldown;
 
     public float countdownTime;
     private bool timeFinished;
@@ -87,7 +88,10 @@ public class Timer : MonoBehaviour
         timeEnded.text = "";
 
         gManager.WaveChange(capacitySystem.currentWave);
-        capacitySystem.WaveSystem();
+
+        yield return new WaitForSeconds(completeCooldown);
+
+        WaveTimer();
     }
 
     public void WaveTimer()
@@ -97,10 +101,12 @@ public class Timer : MonoBehaviour
             return;
         }
 
+        capacitySystem.WaveSystem();
+
         //Adds time based on wave and timeIncrease (Ex. Wave 2 * 30 = 60 + startingTime(60) = 120)
         countdownTime = startingTime + (capacitySystem.currentWave * timeIncrease);
 
         timerText.enabled = true;
-        timeFinished = false;
+        timeFinished = false;        
     }
 }
