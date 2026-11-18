@@ -3,7 +3,7 @@ using UnityEngine;
 public class BossLunge : MonoBehaviour
 {
 
-    private float moveSpeed;
+    [SerializeField]private float moveSpeed;
     private Transform playerLoc;
     private Transform enemyLoc;
     [SerializeField] private Transform Targeting;
@@ -12,6 +12,7 @@ public class BossLunge : MonoBehaviour
     [SerializeField] private float lungeCooldown = 5f;
     [SerializeField] private float lungeSpeed = 8f;
     [SerializeField] private float attackRange = 4f;
+    [SerializeField] private AudioSource chomp;
 
     private bool isLunging;
     private bool playerInRange;
@@ -23,7 +24,7 @@ public class BossLunge : MonoBehaviour
     private bool canLunge = true;
     private SpriteRenderer sr;
     private Animator animator;
-
+    
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,8 +34,8 @@ public class BossLunge : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();    
         playerLoc = GameObject.FindGameObjectWithTag("Player").transform;
         enemyLoc = GetComponent<Transform>();
-
-        moveSpeed = 2f;
+        chomp = GetComponent<AudioSource>();
+        
 
 
 
@@ -51,6 +52,7 @@ public class BossLunge : MonoBehaviour
             // Handle cooldown
             if (!canLunge)
             {
+                chomp.Play();
                 lungeTimer += Time.deltaTime;
 
                 if (lungeTimer >= lungeCooldown)
