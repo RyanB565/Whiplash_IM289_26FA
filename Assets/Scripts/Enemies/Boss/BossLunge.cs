@@ -52,7 +52,7 @@ public class BossLunge : MonoBehaviour
             // Handle cooldown
             if (!canLunge)
             {
-                chomp.Play();
+                
                 lungeTimer += Time.deltaTime;
 
                 if (lungeTimer >= lungeCooldown)
@@ -65,13 +65,15 @@ public class BossLunge : MonoBehaviour
             // Handle lunge movement
             if (isLunging)
             {
+                
                 transform.position = Vector3.MoveTowards(transform.position, lungeTarget, lungeSpeed *
                 Time.deltaTime);
 
                 lungeTimeRemaining -= Time.deltaTime;
-
+                
                 if (lungeTimeRemaining <= 0f)
                 {
+                    
                     isLunging = false;
                 }
 
@@ -96,6 +98,7 @@ public class BossLunge : MonoBehaviour
             {
                 lungeTarget = playerLoc.position;
                 isLunging = true;
+                chomp.Play();
                 canLunge = false;
 
                 lungeTimeRemaining = lungeDuration;
