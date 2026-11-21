@@ -1928,10 +1928,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Blood PS
       objectReference: {fileID: 0}
-    - target: {fileID: 7040778518702613068, guid: 8c0b51d6fb0cf2e4387eaa715c0c7af2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
