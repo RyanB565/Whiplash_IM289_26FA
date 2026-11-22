@@ -1721,9 +1721,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Can you survive the 5 waves in order to face and defeat Gerald. Wave one
-    starts off with\n30 seconds and increases by 30 seconds as each wave progresses.
-    Power-ups will\n spawn to help you become stronger. Good luck out there!!!\r\n"
+  m_text: "Five total waves with 30 seconds and increases by 30 seconds as each wave
+    progresses. \nPower-ups will spawn to help you become stronger. With the slash
+    attack \nyou can destoy enemy projectiles \nGood luck out there!!!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 37757925a22644248864d4268e322722, type: 2}
   m_sharedMaterial: {fileID: 7060640937524939343, guid: 37757925a22644248864d4268e322722, type: 2}
