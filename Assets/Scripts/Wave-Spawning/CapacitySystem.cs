@@ -52,7 +52,7 @@ public class CapacitySystem : MonoBehaviour
 
         GenerateEnemiesWave();
 
-        Debug.Log($"There are {Waves.Count} waves in this game");
+        //Debug.Log($"There are {Waves.Count} waves in this game");
 
         if (Waves.Count == 1)
         {
@@ -260,7 +260,7 @@ public class CapacitySystem : MonoBehaviour
         //Buy a new enemy using the returned budget.
         StartCoroutine(BuyEnemies(waves[currentWave]));
 
-        Debug.Log($"Cacpacity Returned - Total: {currentCapacity} ");
+        //Debug.Log($"Cacpacity Returned - Total: {currentCapacity} ");
     }
 
     #endregion
